@@ -1,0 +1,4 @@
+interface:
+  display_name: "SCI/SSCI Academic Polishing"
+  short_description: "Faithful SCI/SSCI translation and manuscript polishing"
+  default_prompt: "Use $sci-ssci-polishing to translate or polish this manuscript passage while preserving every scientific claim, number, citation, limitation, and conclusion."

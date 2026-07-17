@@ -1,0 +1,15 @@
+.DS_Store
+__pycache__/
+*.pyc
+*.pdf
+*.xml
+*.jats
+*.docx
+*.zip
+fulltext/
+private/
+tmp/
+.env
+.env.*
+cookies*
+*session*
