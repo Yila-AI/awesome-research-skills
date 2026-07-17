@@ -30,19 +30,19 @@
 - Consumes: the existing English and Chinese README content.
 - Produces: one canonical English landing page and one complete Chinese translation with reciprocal links.
 
-- [ ] **Step 1: Preserve the current Chinese README as `README_CN.md`**
+- [x] **Step 1: Preserve the current Chinese README as `README_CN.md`**
 
 Move the complete current Chinese landing page without dropping installation, corpus, evaluation, copyright, or license sections.
 
-- [ ] **Step 2: Promote the English README to `README.md`**
+- [x] **Step 2: Promote the English README to `README.md`**
 
 Expand it to include the full content depth of the Chinese version, led by global positioning and precise corpus language.
 
-- [ ] **Step 3: Add reciprocal language links and banner reference**
+- [x] **Step 3: Add reciprocal language links and banner reference**
 
 Both files must link to the other language and reference `assets/sci-ssci-skills-banner.png` at the top.
 
-- [ ] **Step 4: Verify relative links**
+- [x] **Step 4: Verify relative links**
 
 Run a Python standard-library Markdown-link check from repository root.
 
@@ -57,15 +57,15 @@ Expected: every relative target in `README.md` and `README_CN.md` exists; no ref
 - Consumes: approved headline, support line, dark scientific editorial art direction, and factual constraints.
 - Produces: a repository-local banner legible at standard GitHub README width.
 
-- [ ] **Step 1: Generate the banner with the built-in image tool**
+- [x] **Step 1: Generate the banner with the built-in image tool**
 
 Use a maximum 3:1 landscape composition, original navy/indigo scientific editorial design, clear left-to-right hierarchy, manuscript refinement and protected-token visual metaphors, and no third-party branding.
 
-- [ ] **Step 2: Inspect the generated asset**
+- [x] **Step 2: Inspect the generated asset**
 
 Check exact text, spelling, crop safety, hierarchy, contrast, absence of watermarks, and readability at reduced width.
 
-- [ ] **Step 3: Save the selected asset in the repository**
+- [x] **Step 3: Save the selected asset in the repository**
 
 Copy the final generated image to `assets/sci-ssci-skills-banner.png`; do not leave a README-referenced asset only in the generated-images directory.
 
@@ -78,7 +78,7 @@ Copy the final generated image to `assets/sci-ssci-skills-banner.png`; do not le
 - Consumes: completed English/Chinese documentation and banner.
 - Produces: a tested GitHub commit available from `yilaai/sci-ssci-skills`.
 
-- [ ] **Step 1: Run repository checks**
+- [x] **Step 1: Run repository checks**
 
 Run:
 
@@ -90,7 +90,7 @@ git diff --check
 
 Expected: five unit tests pass, Skill validation reports valid, and the Git diff has no whitespace errors.
 
-- [ ] **Step 2: Run corpus, privacy, and asset checks**
+- [x] **Step 2: Run corpus, privacy, and asset checks**
 
 Verify the 1,000/200/60 row counts and split balance; scan for credentials and local paths; confirm no paper PDF/XML/JATS full text is tracked; confirm the banner exists and is a valid image.
 
