@@ -94,11 +94,11 @@ Expected: five unit tests pass, Skill validation reports valid, and the Git diff
 
 Verify the 1,000/200/60 row counts and split balance; scan for credentials and local paths; confirm no paper PDF/XML/JATS full text is tracked; confirm the banner exists and is a valid image.
 
-- [ ] **Step 3: Review, commit, and push**
+- [x] **Step 3: Review, commit, and push**
 
 Stage only the intended README, banner, design, and plan changes; review the staged diff; commit with a concise English-first branding message; push `main`.
 
-- [ ] **Step 4: Verify the remote landing page and installation discovery**
+- [x] **Step 4: Verify the remote landing page and installation discovery**
 
 Run `npx skills add yilaai/sci-ssci-skills --list` from a clean temporary directory.
 
