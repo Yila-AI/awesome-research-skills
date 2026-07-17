@@ -67,7 +67,7 @@ The 1,000-paper pool is a screening universe. It is not a claim that 1,000 full 
 Node.js 18 or later is required.
 
 ```bash
-npx skills add yilaai/sci-ssci-skills \
+npx skills add Yila-AI/sci-ssci-skills \
   --global \
   --agent codex \
   --skill sci-ssci-polishing \
@@ -78,7 +78,7 @@ npx skills add yilaai/sci-ssci-skills \
 List the installable Skills first:
 
 ```bash
-npx skills add yilaai/sci-ssci-skills --list
+npx skills add Yila-AI/sci-ssci-skills --list
 ```
 
 ## Use

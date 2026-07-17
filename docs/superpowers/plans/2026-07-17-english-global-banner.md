@@ -76,7 +76,7 @@ Copy the final generated image to `assets/sci-ssci-skills-banner.png`; do not le
 
 **Interfaces:**
 - Consumes: completed English/Chinese documentation and banner.
-- Produces: a tested GitHub commit available from `yilaai/sci-ssci-skills`.
+- Produces: a tested GitHub commit available from `Yila-AI/sci-ssci-skills`.
 
 - [x] **Step 1: Run repository checks**
 
@@ -100,6 +100,6 @@ Stage only the intended README, banner, design, and plan changes; review the sta
 
 - [x] **Step 4: Verify the remote landing page and installation discovery**
 
-Run `npx skills add yilaai/sci-ssci-skills --list` from a clean temporary directory.
+Run `npx skills add Yila-AI/sci-ssci-skills --list` from a clean temporary directory.
 
 Expected: the remote repository exposes `sci-ssci-polishing` and the GitHub landing page uses the English README with the banner.

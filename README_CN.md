@@ -54,13 +54,13 @@
 需要 Node.js 18 或更高版本。
 
 ```bash
-npx skills add yilaai/sci-ssci-skills --global --agent codex --skill sci-ssci-polishing --yes --copy
+npx skills add Yila-AI/sci-ssci-skills --global --agent codex --skill sci-ssci-polishing --yes --copy
 ```
 
 查看仓库中可安装的 Skills：
 
 ```bash
-npx skills add yilaai/sci-ssci-skills --list
+npx skills add Yila-AI/sci-ssci-skills --list
 ```
 
 ## 快速使用
