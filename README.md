@@ -1,100 +1,166 @@
+<div align="center">
+  <img src="assets/sci-ssci-skills-banner.png" alt="1,000 high-quality papers. One SCI/SSCI polishing skill." width="100%">
+</div>
+
+<p align="center">
+  <a href="README_CN.md">中文</a>
+</p>
+
 # SCI/SSCI Skills
 
-> 只润色表达，不改写科学。
+> **1,000 high-quality papers. One SCI/SSCI polishing skill.**
+>
+> Polish the writing. Preserve the science.
 
-`sci-ssci-skills` 是一组面向科研写作的开源 Agent Skills。首个 Skill `sci-ssci-polishing` 支持：
+`sci-ssci-skills` is an open-source collection of Agent Skills for research writing. Its first package, `sci-ssci-polishing`, translates Chinese academic prose into publication-oriented English and polishes English paragraphs or complete manuscript sections.
 
-- 中文学术段落或章节翻译为学术英文；
-- 英文论文段落与完整章节润色；
-- 按 Abstract、Introduction、Methods、Results、Discussion 和 Conclusion 路由表达策略；
-- 在语言修订前后审计数据、统计量、术语、引用、论断强度、局限与结论。
+It is built for one constraint that generic polishing prompts often miss: a sentence can become more fluent while becoming less scientifically faithful.
 
-## 为什么不是一句“Please polish”？
+## What it does
 
-通用润色往往只优化流畅度，却可能把 `was associated with` 改成 `led to`，把零结果或限定条件顺手删掉。
+- Chinese academic paragraphs or sections -> academic English;
+- English manuscript polishing at paragraph or complete-section level;
+- rhetorical routing for Abstract, Introduction, Methods, Results, Discussion, and Conclusion;
+- SCI, SSCI, and interdisciplinary manuscript support;
+- post-edit audits of data, statistics, technical entities, citations, claim strength, limitations, and conclusions.
 
-`sci-ssci-polishing` 采用一个保真工作流：
+The core principle is simple:
+
+> **Polish the writing. Never rewrite the science.**
+
+## Why this is not another “Please polish” prompt
+
+Generic language polishing often optimizes fluency alone. It may silently turn `was associated with` into `led to`, detach a citation from its proposition, remove a null result, or smooth away a limitation.
+
+`sci-ssci-polishing` uses a preservation-first workflow:
 
 ```text
-判断任务 -> 锁定不可变信息 -> 识别章节功能 -> 润色 -> 逐项审计
+classify -> lock invariants -> route by section -> revise -> audit
 ```
 
-它不会为了让句子看起来更“高级”，擅自新增机制、文献、数据、局限或实践意义。
+It will not invent mechanisms, citations, data, limitations, or implications merely to make a passage sound more complete or more “top-journal-like.” If the scientific meaning is ambiguous, it preserves the narrower interpretation and asks the author.
 
-## 语料和“蒸馏”是什么？
+## The 1,000-paper evidence pool
 
-本项目的 V2 建立了一个 **1,000 篇论文的元数据候选池**，然后经过分层筛选：
+V2 began with a **1,000-paper SCI/SSCI metadata candidate pool** and used staged screening to build a balanced core corpus:
 
 ```text
-1,000 篇元数据候选论文
-               ↓
-        200 篇平衡候选
-               ↓
-          60 篇核心语料
-       ↙          ↓          ↘
-40 篇蒸馏   10 篇校准   10 篇封闭盲测
+1,000-paper metadata candidate pool
+                 ↓
+        200-paper balanced shortlist
+                 ↓
+          60-paper core portfolio
+        ↙           ↓           ↘
+40 distillation  10 calibration  10 sealed blind evaluation
 ```
 
-最终 60 篇中 SCI 和 SSCI 各 30 篇，覆盖 9 个跨学科组合。其中 40 篇蒸馏集来自 28 本期刊，产生了 1,750 个可用段落、220,158 个英文词的聚合观察。
+The final portfolio contains 30 SCI and 30 SSCI papers across nine broad discipline clusters. The 40-paper distillation split contains 20 SCI and 20 SSCI papers from 28 journals, yielding aggregate observations from 1,750 usable paragraphs and 220,158 words.
 
-这里的“蒸馏”不是微调模型，也不是复制顶刊句子，而是提炼跨论文重复出现的章节功能、信息顺序、证据边界和失败模式，再把它们编码成可复用的 Skill 规则。
+Here, **distillation does not mean model fine-tuning or copying journal sentences**. It means abstracting recurring rhetorical functions, information order, evidence boundaries, and failure modes into reusable editing rules.
 
-[查看语料方法](skills/sci-ssci-polishing/references/corpus-method.md) · [查看筛选标准](corpus/selection-rubric.md) · [查看语料分布](corpus/corpus-summary.md)
+The 1,000-paper pool is a screening universe. It is not a claim that 1,000 full texts were downloaded, read, or used to train a model.
 
-## 安装
+[Corpus method](skills/sci-ssci-polishing/references/corpus-method.md) · [Selection method](corpus/selection-rubric.md) · [Corpus summary](corpus/corpus-summary.md) · [Public metadata](corpus/README.md)
 
-需要 Node.js 18 或更高版本。
+## Install
+
+Node.js 18 or later is required.
 
 ```bash
-npx skills add yilaai/sci-ssci-skills --global --agent codex --skill sci-ssci-polishing --yes --copy
+npx skills add yilaai/sci-ssci-skills \
+  --global \
+  --agent codex \
+  --skill sci-ssci-polishing \
+  --yes \
+  --copy
 ```
 
-查看仓库中可安装的 Skills：
+List the installable Skills first:
 
 ```bash
 npx skills add yilaai/sci-ssci-skills --list
 ```
 
-## 快速使用
+## Use
+
+### Chinese to academic English
 
 ```text
-使用 $sci-ssci-polishing 把下面的中文 Results 段落翻译成学术英文。
-保留所有数字、统计量、术语、引用和因果限定。
+Use $sci-ssci-polishing to translate this Chinese Results paragraph into
+academic English. Preserve every number, statistic, technical term, citation,
+and causal qualification.
 ```
+
+### English manuscript polishing
 
 ```text
-使用 $sci-ssci-polishing 润色下面的 SSCI Discussion 章节。
-改善跨段衔接，但不要改变论断、引用、局限或结论。
+Use $sci-ssci-polishing to polish this SSCI Discussion section. Improve
+cross-paragraph coherence without changing claims, citations, limitations,
+or conclusions.
 ```
 
-默认输出包含：
+The default response contains:
 
-1. 润色后英文；
-2. 关键语言或组织修改；
-3. 保真审计；
-4. 必要时的作者确认问题。
+1. polished English;
+2. key language or organization changes;
+3. a preservation audit;
+4. author queries only when the source is ambiguous or incomplete.
 
-## 当前评测
+[See synthetic input/output examples](examples/quick-examples.md)
 
-| 评测 | 结果 |
+## Section-aware editing
+
+The Skill routes prose by rhetorical job rather than applying one generic “academic style.”
+
+| Section | Primary editing objective |
+|---|---|
+| Abstract | Compact problem, approach, result, and calibrated implication |
+| Introduction | Clear progression from established knowledge to gap and present study |
+| Methods | Reproducibility, stable terminology, and procedural order |
+| Results | Evidence order, quantitative precision, and null-result preservation |
+| Discussion | Separation of finding, interpretation, implication, and limitation |
+| Conclusion | Synthesis without scope inflation |
+
+For a complete section, the Skill maps each paragraph's rhetorical job before repairing cross-paragraph progression.
+
+## Preservation contract
+
+Unless the author explicitly requests and verifies a substantive correction, the Skill preserves:
+
+- numbers, statistics, ranges, units, sample sizes, and time points;
+- genes, proteins, chemicals, datasets, instruments, scales, algorithms, and model names;
+- in-text citations and the proposition each citation supports;
+- positive, negative, and null directions;
+- association, prediction, explanation, and causation boundaries;
+- uncertainty markers, exceptions, limitations, and conclusions.
+
+The included `check_invariants.py` helper provides a deterministic first pass over numbers, citations, and protected terms. Semantic checks—such as negation, causal strength, citation scope, and conclusion reach—remain mandatory and cannot be reduced to token matching.
+
+## Current evaluation
+
+| Evaluation | Result |
 |---|---:|
-| 冻结的合成转换案例 | 6/6 通过 |
-| 盲测全文获取 | 9/10 |
-| 发表级原文保留案例 | 18/18 通过 |
-| 发明的科学内容 | 0/18 |
-| 不必要重写 | 0/18 |
+| Frozen synthetic transformation cases | 6/6 passed |
+| Verified blind full texts available | 9/10 |
+| Publication-grade retention cases | 18/18 passed |
+| Invented scientific content | 0/18 |
+| Changed numbers or citation markers | 0/18 |
+| Unnecessary rewrites | 0/18 |
 
-盲测主要检验“遇到已经很好的正式发表文字时，Skill 能否克制不改”。它不等于独立人类评分，也不能证明期刊录用率。
+The blind test asks a deliberately narrow question: when already strong, publication-grade prose does not clearly benefit from editing, can the Skill retain it instead of forcing cosmetic rewrites?
 
-[查看合成案例](benchmarks/synthetic-cases.md) · [查看盲测结果](benchmarks/blind-retention-results.md)
+These results support safety and consistency claims only. They are not independent human ratings, evidence of journal acceptance, proof of universal disciplinary coverage, or proof of superiority to professional domain editors.
 
-## 学术与版权边界
+[Synthetic cases](benchmarks/synthetic-cases.md) · [Synthetic outputs](benchmarks/synthetic-case-outputs.md) · [Blind retention report](benchmarks/blind-retention-results.md)
 
-- 本仓库不包含论文 PDF、订阅全文、大段原文或私有解析文件。
-- 公开语料表仅保留书目元数据、筛选标签和聚合结果。
-- `SCI` 和 `SSCI` 在本项目中用于描述研究语料范围；本项目与 Clarivate 或任何期刊、出版商无隶属关系。
-- Skill 是公开测试版，不替代作者、领域专家或专业编辑的最终审核。
+## Copyright, data, and affiliation boundaries
+
+- The repository contains no article PDFs, subscription full text, extracted paper paragraphs, or private access traces.
+- Public corpus tables contain bibliographic metadata, screening annotations, and aggregate results only.
+- Proprietary impact-factor, quartile, and ranking tables are excluded.
+- `SCI` and `SSCI` describe the corpus scope. This independent project is not affiliated with Clarivate, any journal, or any publisher.
+- The Skill is a public beta and does not replace author, specialist, or professional editorial review.
 
 ## License
 
-原创代码、Skill 指令和项目文档使用 [Apache License 2.0](LICENSE)。第三方书目事实与外部资源受各自来源条款约束，详见 [数据说明](corpus/README.md)。
+Original code, Skill instructions, and project documentation are licensed under the [Apache License 2.0](LICENSE). Third-party bibliographic facts and external resources remain subject to their source terms; see the [data notes](corpus/README.md).
