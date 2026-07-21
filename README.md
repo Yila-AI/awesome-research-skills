@@ -123,6 +123,30 @@ The Skill routes prose by rhetorical job rather than applying one generic “aca
 
 For a complete section, the Skill maps each paragraph's rhetorical job before repairing cross-paragraph progression.
 
+## Personal or house style overlay
+
+Beyond the built-in academic defaults, you can supply your own surface-style
+ruleset: a lab or supervisor convention, a personal voice, or a journal's
+language preferences. The overlay is optional and off by default.
+
+It governs wording only and never outranks the preservation contract:
+
+```text
+invariants  >  author style overlay  >  generic style defaults
+```
+
+So an overlay can enforce British spelling, ban em-dashes, or keep a marked
+sentence verbatim, but it can never change a number, move a claim up the
+claim-strength ladder, drop a limitation, or touch a citation.
+
+```text
+Use $sci-ssci-polishing to polish this Discussion section. Apply my house
+style as an overlay: British English, no em-dashes, no rule-of-three cadence.
+Keep all claims, citations, and limitations exactly as in the source.
+```
+
+[Author style overlay reference](skills/sci-ssci-polishing/references/author-style-overlay.md)
+
 ## Preservation contract
 
 Unless the author explicitly requests and verifies a substantive correction, the Skill preserves:
