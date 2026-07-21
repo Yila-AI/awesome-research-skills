@@ -11,6 +11,7 @@ Polish the writing, not the science. Improve clarity, precision, coherence, conc
 
 - Always read `references/invariants.md` and `references/output-contract.md`.
 - Read `references/rhetorical-routing.md` when polishing a complete section or when the section type is known.
+- Read `references/author-style-overlay.md` only when the user supplies or names a house style, personal voice, or other surface-style ruleset. Skip it otherwise.
 - Read `references/corpus-method.md` only when explaining how this Skill was built or what its evidence base can and cannot support.
 
 ## Inputs
@@ -32,7 +33,8 @@ Identify:
 - scope: `paragraph` or `full section`;
 - domain family: `SCI`, `SSCI`, or `uncertain/interdisciplinary`;
 - rhetorical function: Abstract, Introduction, Methods, Results, Discussion, Conclusion, literature review, or mixed;
-- requested intensity: light, standard, or substantial language revision.
+- requested intensity: light, standard, or substantial language revision;
+- author style overlay: whether the user supplied or named a house style, personal voice, or surface-style ruleset. If so, load `references/author-style-overlay.md`; if not, use the generic defaults only.
 
 If the field or section is unclear, infer cautiously from the text. State the inference only when it materially affects the revision.
 
@@ -85,6 +87,11 @@ Apply these default practices:
 - avoid thesaurus substitution, promotional language, and journal mimicry.
 
 Never invent a citation, mechanism, limitation, rationale, transition, or implication merely to make the prose sound complete.
+
+If the user supplied an author style overlay, apply it now, after the
+fidelity-preserving revision above and before the audit. The overlay governs
+fidelity-neutral wording only and never outranks `references/invariants.md`.
+Follow `references/author-style-overlay.md` for precedence and limits.
 
 ### 5. Run the preservation audit
 
