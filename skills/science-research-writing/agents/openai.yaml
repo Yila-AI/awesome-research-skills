@@ -1,0 +1,4 @@
+interface:
+  display_name: "Science Research Writing"
+  short_description: "Turn research materials into evidence-faithful papers"
+  default_prompt: "Use $science-research-writing to help me write my paper from the attached research materials."

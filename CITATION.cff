@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use or adapt these research-writing Skills, please cite this repository."
+title: "SCI/SSCI Research Writing Skills"
+type: software
+authors:
+  - given-names: "Yila-AI"
+    family-names: "Contributors"
+repository-code: "https://github.com/Yila-AI/sci-ssci-skills"
+url: "https://github.com/Yila-AI/sci-ssci-skills"
+license: Apache-2.0
+keywords:
+  - academic writing
+  - research writing
+  - agent skills
+  - SCI
+  - SSCI
+  - evidence preservation

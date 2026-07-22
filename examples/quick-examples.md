@@ -1,5 +1,34 @@
 # Quick examples
 
+## Science Research Writing
+
+### Start with whatever you have
+
+```text
+Use $science-research-writing to help me write my paper.
+Here are my current materials: [attach protocol, tables, notes, or draft]
+```
+
+### Draft an evidence-calibrated Discussion
+
+```text
+Use $science-research-writing to draft my Discussion.
+This is a cross-sectional observational study of 612 students.
+Sleep regularity was associated with GPA (beta = 0.17, p = 0.01),
+but sleep duration was not associated with GPA (p = 0.42).
+Preserve the null result, do not claim causality, and do not add citations.
+```
+
+Expected response order:
+
+1. draft or diagnosis;
+2. how it is organized;
+3. author confirmation;
+4. one next step;
+5. risk flags only when needed.
+
+Use `science-research-writing` to create or restructure scientific content from author-supplied evidence. Use `sci-ssci-polishing` when the scientific content already exists and the primary need is translation or language polishing.
+
 All examples below are synthetic.
 
 ## Chinese SCI Results

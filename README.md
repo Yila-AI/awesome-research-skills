@@ -1,48 +1,111 @@
-<div align="center">
-  <img src="assets/sci-ssci-skills-banner.png" alt="1,000 high-quality papers. One SCI/SSCI polishing skill." width="100%">
-</div>
+# SCI/SSCI Research Writing Skills
 
-<p align="center">
-  <a href="README_CN.md">中文</a>
-</p>
+> **Plan. Draft. Polish. Preserve the science.**
 
-# SCI/SSCI Skills
+Open-source Agent Skills for turning research materials into evidence-faithful empirical papers, then improving the language without rewriting the science.
 
-> **1,000 high-quality papers. One SCI/SSCI polishing skill.**
->
-> Polish the writing. Preserve the science.
+<p align="center"><a href="README_CN.md">中文</a></p>
 
-`sci-ssci-skills` is an open-source collection of Agent Skills for research writing. Its first package, `sci-ssci-polishing`, translates Chinese academic prose into publication-oriented English and polishes English paragraphs or complete manuscript sections.
+```mermaid
+flowchart LR
+    A[Research materials] --> B[science-research-writing]
+    B --> C[Structured manuscript]
+    C --> D[sci-ssci-polishing]
+    D --> E[Polished manuscript]
+    F[Evidence-preserving contract] -. protects data, citations, claims, limitations and conclusions .-> B
+    F -. protects data, citations, claims, limitations and conclusions .-> D
+```
 
-It is built for one constraint that generic polishing prompts often miss: a sentence can become more fluent while becoming less scientifically faithful.
+## Choose your workflow
 
-## What it does
+| You need to... | Use |
+|---|---|
+| Turn research materials into a paper plan, section draft, revision, or evidence audit | [`science-research-writing`](skills/science-research-writing/SKILL.md) |
+| Translate or polish an existing manuscript without rewriting the science | [`sci-ssci-polishing`](skills/sci-ssci-polishing/SKILL.md) |
 
-- Chinese academic paragraphs or sections -> academic English;
-- English manuscript polishing at paragraph or complete-section level;
-- rhetorical routing for Abstract, Introduction, Methods, Results, Discussion, and Conclusion;
-- SCI, SSCI, and interdisciplinary manuscript support;
-- post-edit audits of data, statistics, technical entities, citations, claim strength, limitations, and conclusions.
+## Install
 
-The core principle is simple:
+Node.js 18 or later is required.
 
-> **Polish the writing. Never rewrite the science.**
+```bash
+# Write from research materials
+npx skills add Yila-AI/sci-ssci-skills --global --agent codex --skill science-research-writing --yes --copy
 
-## Why this is not another “Please polish” prompt
+# Translate or polish an existing draft
+npx skills add Yila-AI/sci-ssci-skills --global --agent codex --skill sci-ssci-polishing --yes --copy
+```
 
-Generic language polishing often optimizes fluency alone. It may silently turn `was associated with` into `led to`, detach a citation from its proposition, remove a null result, or smooth away a limitation.
+List all installable Skills:
 
-`sci-ssci-polishing` uses a preservation-first workflow:
+```bash
+npx skills add Yila-AI/sci-ssci-skills --list
+```
+
+## Start with one sentence
+
+```text
+Use $science-research-writing to help me write my paper.
+Here are my current materials: [attach files or paste text]
+```
+
+The Skill reads the materials, identifies whether you need a plan, draft, revision, or audit, and produces the next useful result. It does not require a long intake prompt or force the user to choose internal modes.
+
+[One-minute guide](docs/science-research-writing/getting-started.md) · [Use cases](docs/science-research-writing/use-cases.md) · [Copyable inputs](docs/science-research-writing/input-examples.md) · [Output guide](docs/science-research-writing/output-guide.md)
+
+## Featured Skill: Science Research Writing
+
+`science-research-writing` is an independent, unofficial Agent Skill inspired by the reverse-engineering pedagogy and section-by-section writing approach presented in Hilary Glasman-Deal's *Science Research Writing: For Native and Non-Native Speakers of English* (2nd ed., World Scientific, 2020).
+
+The book is a widely valued practical guide among researchers learning to write empirical papers in English. Its reverse-engineering approach asks writers to examine successful papers in their own field, identify how sections meet reader expectations, test those patterns against target articles, and adapt the resulting model to their own research. A detailed independent review reports that the first edition sold more than 35,000 copies and was translated into Chinese, Korean, and Japanese ([Anna Clemens, 2020](https://annaclemens.com/blog/book-review-science-research-writing-hilary-glasman-deal/)).
+
+This Skill operationalizes that general approach for Agent use while adding original safeguards:
+
+- automatic routing from idea, materials, partial draft, or full draft;
+- section-function workflows for Introduction, Methods, Results, Discussion, Conclusion, Abstract, and Title;
+- target-journal modeling that stores functions and variation, not copied prose;
+- evidence provenance and author-confirmation boundaries;
+- deterministic audits of numbers, citations, protected terms, and semantic markers;
+- novice-readable outputs with no more than one blocking question at a time.
+
+This project is not affiliated with or endorsed by the author or World Scientific. It does not reproduce the book, exercises, answer key, phrase lists, sample passages, or page content. See [privacy and copyright boundaries](docs/science-research-writing/privacy-and-copyright.md).
+
+## Reusable mechanisms
+
+These components have stable documentation so other research-agent projects can reuse and cite them directly:
+
+| Mechanism | What it protects or enables |
+|---|---|
+| [Target-Journal Model Builder](skills/science-research-writing/references/reverse-engineering-protocol.md) | Learns rhetorical functions without copying target-paper wording |
+| [Section Function Map](skills/science-research-writing/assets/section-function-map.md) | Maps reader questions, functions, evidence, and boundaries |
+| [Evidence-Preserving Draft Contract](skills/science-research-writing/SKILL.md) | Prevents unsupported intellectual content during drafting |
+| [Content Provenance Ledger](skills/science-research-writing/assets/evidence-ledger.csv) | Records where consequential statements come from |
+| [Claim-Strength Contract](skills/science-research-writing/references/certainty-and-claim-strength.md) | Prevents silent movement between suggestion, association, prediction, effect, and causation |
+| [Title-Paper Promise Check](skills/science-research-writing/references/title.md) | Tests whether every title promise is supported by the paper |
+| [Draft Invariant Checker](skills/science-research-writing/scripts/check_draft_invariants.py) | Flags token drift and semantic-marker changes |
+
+Suggested attribution:
+
+```markdown
+**Credit:** The evidence-preserving research-writing workflow is adapted from
+[Yila-AI/sci-ssci-skills](https://github.com/Yila-AI/sci-ssci-skills),
+including its Target-Journal Model Builder and claim-strength controls.
+```
+
+## SCI/SSCI Polishing
+
+`sci-ssci-polishing` translates Chinese academic prose into publication-oriented English and polishes existing English paragraphs or complete sections.
+
+Its preservation-first workflow is:
 
 ```text
 classify -> lock invariants -> route by section -> revise -> audit
 ```
 
-It will not invent mechanisms, citations, data, limitations, or implications merely to make a passage sound more complete or more “top-journal-like.” If the scientific meaning is ambiguous, it preserves the narrower interpretation and asks the author.
+It will not invent mechanisms, citations, data, limitations, or implications merely to make prose sound more complete or more "top-journal-like."
 
-## The 1,000-paper evidence pool
+### The 1,000-paper evidence pool
 
-V2 began with a **1,000-paper SCI/SSCI metadata candidate pool** and used staged screening to build a balanced core corpus:
+The polishing Skill began with a 1,000-paper SCI/SSCI metadata candidate pool and used staged screening to build a balanced 60-paper core portfolio:
 
 ```text
 1,000-paper metadata candidate pool
@@ -54,89 +117,15 @@ V2 began with a **1,000-paper SCI/SSCI metadata candidate pool** and used staged
 40 distillation  10 calibration  10 sealed blind evaluation
 ```
 
-The final portfolio contains 30 SCI and 30 SSCI papers across nine broad discipline clusters. The 40-paper distillation split contains 20 SCI and 20 SSCI papers from 28 journals, yielding aggregate observations from 1,750 usable paragraphs and 220,158 words.
-
-Here, **distillation does not mean model fine-tuning or copying journal sentences**. It means abstracting recurring rhetorical functions, information order, evidence boundaries, and failure modes into reusable editing rules.
-
-The 1,000-paper pool is a screening universe. It is not a claim that 1,000 full texts were downloaded, read, or used to train a model.
+Distillation means abstracting recurring rhetorical functions, information order, evidence boundaries, and failure modes. It does not mean model fine-tuning or copying journal sentences. The 1,000-paper pool is a screening universe, not a claim that 1,000 full texts were downloaded or used to train a model.
 
 [Corpus method](skills/sci-ssci-polishing/references/corpus-method.md) · [Selection method](corpus/selection-rubric.md) · [Corpus summary](corpus/corpus-summary.md) · [Public metadata](corpus/README.md)
 
-## Install
+## Evaluation
 
-Node.js 18 or later is required.
+Evaluation claims remain Skill-specific.
 
-```bash
-npx skills add Yila-AI/sci-ssci-skills \
-  --global \
-  --agent codex \
-  --skill sci-ssci-polishing \
-  --yes \
-  --copy
-```
-
-List the installable Skills first:
-
-```bash
-npx skills add Yila-AI/sci-ssci-skills --list
-```
-
-## Use
-
-### Chinese to academic English
-
-```text
-Use $sci-ssci-polishing to translate this Chinese Results paragraph into
-academic English. Preserve every number, statistic, technical term, citation,
-and causal qualification.
-```
-
-### English manuscript polishing
-
-```text
-Use $sci-ssci-polishing to polish this SSCI Discussion section. Improve
-cross-paragraph coherence without changing claims, citations, limitations,
-or conclusions.
-```
-
-The default response contains:
-
-1. polished English;
-2. key language or organization changes;
-3. a preservation audit;
-4. author queries only when the source is ambiguous or incomplete.
-
-[See synthetic input/output examples](examples/quick-examples.md)
-
-## Section-aware editing
-
-The Skill routes prose by rhetorical job rather than applying one generic “academic style.”
-
-| Section | Primary editing objective |
-|---|---|
-| Abstract | Compact problem, approach, result, and calibrated implication |
-| Introduction | Clear progression from established knowledge to gap and present study |
-| Methods | Reproducibility, stable terminology, and procedural order |
-| Results | Evidence order, quantitative precision, and null-result preservation |
-| Discussion | Separation of finding, interpretation, implication, and limitation |
-| Conclusion | Synthesis without scope inflation |
-
-For a complete section, the Skill maps each paragraph's rhetorical job before repairing cross-paragraph progression.
-
-## Preservation contract
-
-Unless the author explicitly requests and verifies a substantive correction, the Skill preserves:
-
-- numbers, statistics, ranges, units, sample sizes, and time points;
-- genes, proteins, chemicals, datasets, instruments, scales, algorithms, and model names;
-- in-text citations and the proposition each citation supports;
-- positive, negative, and null directions;
-- association, prediction, explanation, and causation boundaries;
-- uncertainty markers, exceptions, limitations, and conclusions.
-
-The included `check_invariants.py` helper provides a deterministic first pass over numbers, citations, and protected terms. Semantic checks—such as negation, causal strength, citation scope, and conclusion reach—remain mandatory and cannot be reduced to token matching.
-
-## Current evaluation
+### `sci-ssci-polishing`
 
 | Evaluation | Result |
 |---|---:|
@@ -147,20 +136,23 @@ The included `check_invariants.py` helper provides a deterministic first pass ov
 | Changed numbers or citation markers | 0/18 |
 | Unnecessary rewrites | 0/18 |
 
-The blind test asks a deliberately narrow question: when already strong, publication-grade prose does not clearly benefit from editing, can the Skill retain it instead of forcing cosmetic rewrites?
-
-These results support safety and consistency claims only. They are not independent human ratings, evidence of journal acceptance, proof of universal disciplinary coverage, or proof of superiority to professional domain editors.
-
 [Synthetic cases](benchmarks/synthetic-cases.md) · [Synthetic outputs](benchmarks/synthetic-case-outputs.md) · [Blind retention report](benchmarks/blind-retention-results.md)
+
+### `science-research-writing`
+
+The test set and scoring rubric were frozen before implementation. Comparative results will be added only after all raw outputs, model settings, case-level scores, failures, and limitations are available.
+
+[Benchmark protocol](benchmarks/science-research-writing/README.md) · [Frozen cases](benchmarks/science-research-writing/test-cases.json) · [Evaluation rubric](benchmarks/science-research-writing/evaluation-rubric.md) · [Development smoke tests](benchmarks/science-research-writing/smoke-test-results.md)
+
+These evaluations support narrow safety and consistency claims. They do not prove journal acceptance, universal disciplinary coverage, scientific correctness, or superiority to domain experts and professional editors.
 
 ## Copyright, data, and affiliation boundaries
 
-- The repository contains no article PDFs, subscription full text, extracted paper paragraphs, or private access traces.
+- The repository contains no book PDF, article PDF, subscription full text, extracted paper paragraphs, phrase bank, or private access trace.
 - Public corpus tables contain bibliographic metadata, screening annotations, and aggregate results only.
-- Proprietary impact-factor, quartile, and ranking tables are excluded.
-- `SCI` and `SSCI` describe the corpus scope. This independent project is not affiliated with Clarivate, any journal, or any publisher.
-- The Skill is a public beta and does not replace author, specialist, or professional editorial review.
+- `SCI` and `SSCI` describe corpus and user scope. This independent project is not affiliated with Clarivate, any journal, author, or publisher.
+- Both Skills are public beta software and do not replace author, specialist, statistical, ethical, or professional editorial review.
 
-## License
+## Citation and license
 
-Original code, Skill instructions, and project documentation are licensed under the [Apache License 2.0](LICENSE). Third-party bibliographic facts and external resources remain subject to their source terms; see the [data notes](corpus/README.md).
+See [`CITATION.cff`](CITATION.cff) for repository citation metadata. Original code, Skill instructions, and project documentation are licensed under the [Apache License 2.0](LICENSE). Third-party facts, names, and external resources remain subject to their source terms.
