@@ -12,7 +12,8 @@
   <a href="README.md">English</a> ·
   <a href="docs/science-research-writing/getting-started.md">1 分钟上手</a> ·
   <a href="#安装"> 安装</a> ·
-  <a href="#在你的项目中复用这些机制">复用与引用</a>
+  <a href="#在你的项目中复用这些机制">复用与引用</a> ·
+  <a href="#使用这些-skills-的项目">项目展示</a>
 </p>
 
 ## 两个来源，一条科研写作流程
@@ -26,15 +27,15 @@
 
 用大白话说：**经典写作方法帮助 Agent 理解论文应该怎么写；经过筛选的 SCI/SSCI 论文语料帮助 Agent 理解论文应该怎么表达。**两个 Skill 共同帮助研究者获得结构更清楚、表达更准确、证据更忠实的论文，最终的学术判断仍然属于作者。
 
-```mermaid
-flowchart LR
-    A[想法、笔记、数据、文献] --> B[science-research-writing]
-    B --> C[结构清楚的论文]
-    C --> D[sci-ssci-polishing]
-    D --> E[润色后的学术英文]
-    F[证据保护合约] -. 保护数据、引用、论断、局限和结论 .-> B
-    F -. 保护数据、引用、论断、局限和结论 .-> D
-```
+<div align="center">
+  <img src="assets/sci-ssci-research-writing-architecture.png" alt="SCI/SSCI 科研写作 Skills 架构：由经典著作启发的写作工作流、SCI/SSCI 论文语料筛选流程与证据保护合约" width="100%">
+</div>
+
+### 正在开发科研 Agent？
+
+你可以在自己的项目中复用本仓库的证据保护合约、论断强度控制和目标期刊建模方法。
+
+[查看可复用机制](#在你的项目中复用这些机制) · [引用本仓库](CITATION.cff) · [添加你的项目](#使用这些-skills-的项目)
 
 ## 看看你现在适合哪个 Skill
 
@@ -172,6 +173,12 @@ including its Evidence-Preserving Draft Contract and Claim-Strength Contract.
 ```
 
 复用仍须遵守仓库许可证和适用的第三方权利。
+
+## 使用这些 Skills 的项目
+
+如果你的科研 Agent、学术写作工具或开源项目正在使用或改编这套工作流，欢迎提交 [Issue](https://github.com/Yila-AI/sci-ssci-skills/issues) 或 Pull Request，并附上一句简介和公开链接。
+
+_暂时还没有收录项目。_
 
 ## 评测
 

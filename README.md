@@ -12,7 +12,8 @@ Open-source Agent Skills for planning, drafting, revising, translating, and poli
   <a href="README_CN.md">中文说明</a> ·
   <a href="docs/science-research-writing/getting-started.md">1-minute start</a> ·
   <a href="#install">Install</a> ·
-  <a href="#build-on-these-mechanisms">Reuse &amp; cite</a>
+  <a href="#build-on-these-mechanisms">Reuse &amp; cite</a> ·
+  <a href="#projects-using-these-skills">Projects</a>
 </p>
 
 ## Two foundations, one research-writing workflow
@@ -26,15 +27,15 @@ This repository does two connected jobs:
 
 In plain language: **a research-writing classic informs how to build the paper; a curated SCI/SSCI corpus informs how to communicate it.** Together, the two Skills help researchers produce clearer, better-structured, and more evidence-faithful manuscripts. Scientific judgment remains with the author.
 
-```mermaid
-flowchart LR
-    A[Ideas, notes, data, references] --> B[science-research-writing]
-    B --> C[Structured manuscript]
-    C --> D[sci-ssci-polishing]
-    D --> E[Polished academic English]
-    F[Evidence-preserving contracts] -. protect data, citations, claims, limitations and conclusions .-> B
-    F -. protect data, citations, claims, limitations and conclusions .-> D
-```
+<div align="center">
+  <img src="assets/sci-ssci-research-writing-architecture.png" alt="Architecture of SCI/SSCI Research Writing Skills: a book-informed writing workflow and a curated SCI/SSCI corpus pipeline connected by evidence-preserving contracts" width="100%">
+</div>
+
+### Building a research Agent?
+
+You can reuse the repository's Evidence-Preserving Draft Contract, Claim-Strength Contract, and Target-Journal Model Builder in your own project.
+
+[Reuse the mechanisms](#build-on-these-mechanisms) · [Cite this repository](CITATION.cff) · [Add your project](#projects-using-these-skills)
 
 ## Choose where you are
 
@@ -172,6 +173,12 @@ including its Evidence-Preserving Draft Contract and Claim-Strength Contract.
 ```
 
 Reuse remains subject to the repository license and any applicable third-party rights.
+
+## Projects using these Skills
+
+Using or adapting this workflow in your own research Agent, academic-writing tool, or open-source project? Open an [issue](https://github.com/Yila-AI/sci-ssci-skills/issues) or pull request to add your project here. Please include a short description and a public link.
+
+_No projects listed yet._
 
 ## Evaluation
 
