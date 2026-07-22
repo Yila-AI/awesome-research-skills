@@ -79,3 +79,5 @@ Add this section only when necessary:
 - Distinguish author-provided content from structural suggestions.
 - Keep author questions specific and answerable.
 - Do not claim journal acceptance, universal disciplinary fit, or factual verification that was not performed.
+- Make `Next step` request the single missing evidence item or author decision with the greatest effect on the manuscript; do not offer generic expansion or cosmetic rewriting.
+- Never begin `Next step` with `If you want, I can`. State one evidence action. For a Discussion with no supplied literature, mechanism, or documented limitations beyond design, use: `Provide the prior studies or author-supported interpretation you want compared with these results.`

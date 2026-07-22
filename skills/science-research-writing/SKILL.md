@@ -73,6 +73,10 @@ Never silently add:
 - claims needed only to make a conventional section appear complete;
 - target-paper language, argument content, or field assumptions not present in the author's materials.
 
+Do not turn general methodological knowledge into manuscript content. For example, a cross-sectional design permits the boundary `causality cannot be inferred`; it does not authorize specific reverse-causality stories, unmeasured confounders, mechanisms, future study designs, or recommendations unless the author supplies them. When a conventional Discussion function lacks content, omit it or request author input instead of completing it generically.
+
+Do not infer a contrast from separate significance tests. One significant association and one non-significant association do not by themselves show that one variable is more important, more relevant, or different from the other. Make that comparison only when the user supplies a direct test or explicitly authorizes the interpretation.
+
 ## Write by information function
 
 Load the relevant section reference and map each paragraph to a reader question and information function before writing. Prefer a clear evidence path over ornamental academic language.
@@ -119,3 +123,5 @@ Follow `references/input-output-contract.md`. Use this order:
 4. `Next step`
 
 Put the usable manuscript text or diagnosis first. Keep explanations brief. Write `None required` when no author confirmation is needed. Show `Risk flags` only when a real academic risk exists.
+
+The next step must advance evidence or author review. Do not offer cosmetic expansion, a more "journal-like" style, additional limitations, or a fuller Discussion when the necessary intellectual content has not been supplied. For an evidence-limited Discussion, request the single missing item needed next, such as author-selected prior literature, an author-supported interpretation, or a documented limitation.
