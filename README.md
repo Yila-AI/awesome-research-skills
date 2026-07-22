@@ -4,35 +4,64 @@
 
 # SCI/SSCI Research Writing Skills
 
-> **Plan. Draft. Polish. Preserve the science.**
+> **From research materials to a structured manuscript—without invented evidence, inflated claims, or rewritten science.**
 
-Open-source Agent Skills for turning research materials into evidence-faithful empirical papers, then improving the language without rewriting the science.
+Open-source Agent Skills for planning, drafting, revising, translating, and polishing research papers. The repository combines a classic section-by-section research-writing method with writing observations derived through a curated SCI/SSCI corpus pipeline.
 
-<p align="center"><a href="README_CN.md">中文</a></p>
+<p align="center">
+  <a href="README_CN.md">中文说明</a> ·
+  <a href="docs/science-research-writing/getting-started.md">1-minute start</a> ·
+  <a href="#install">Install</a> ·
+  <a href="#build-on-these-mechanisms">Reuse &amp; cite</a>
+</p>
 
-## Choose your workflow
+## Two foundations, one research-writing workflow
 
-| You need to... | Use |
-|---|---|
-| Turn research materials into a paper plan, section draft, revision, or evidence audit | [`science-research-writing`](skills/science-research-writing/SKILL.md) |
-| Translate or polish an existing manuscript without rewriting the science | [`sci-ssci-polishing`](skills/sci-ssci-polishing/SKILL.md) |
+This repository does two connected jobs:
+
+| Foundation | Skill | What it helps you do |
+|---|---|---|
+| The section-by-section and reverse-engineering pedagogy associated with Hilary Glasman-Deal's *Science Research Writing* | [`science-research-writing`](skills/science-research-writing/SKILL.md) | Decide what each section needs to accomplish, then turn ideas, notes, data, references, or drafts into the next useful manuscript artifact |
+| Writing observations derived through a corpus pipeline beginning with a 1,000-paper SCI/SSCI metadata candidate pool | [`sci-ssci-polishing`](skills/sci-ssci-polishing/SKILL.md) | Translate or polish an existing manuscript while preserving data, citations, terminology, limitations, and claim strength |
+
+In plain language: **a research-writing classic informs how to build the paper; a curated SCI/SSCI corpus informs how to communicate it.** Together, the two Skills help researchers produce clearer, better-structured, and more evidence-faithful manuscripts. Scientific judgment remains with the author.
 
 ```mermaid
 flowchart LR
-    A[Research materials] --> B[science-research-writing]
+    A[Ideas, notes, data, references] --> B[science-research-writing]
     B --> C[Structured manuscript]
     C --> D[sci-ssci-polishing]
-    D --> E[Polished manuscript]
-    F[Evidence-preserving contract] -. protects data, citations, claims, limitations and conclusions .-> B
-    F -. protects data, citations, claims, limitations and conclusions .-> D
+    D --> E[Polished academic English]
+    F[Evidence-preserving contracts] -. protect data, citations, claims, limitations and conclusions .-> B
+    F -. protect data, citations, claims, limitations and conclusions .-> D
 ```
+
+## Choose where you are
+
+| What you have now | Use | What you get |
+|---|---|---|
+| An idea or research question | `science-research-writing` | Questions to resolve, a materials checklist, and a practical next step |
+| Notes, data, references, or a protocol | `science-research-writing` | A paper plan or section draft grounded only in supplied materials |
+| A partial or complete draft | `science-research-writing` | Revision, consistency checks, or an evidence audit |
+| Chinese academic prose or an English manuscript | `sci-ssci-polishing` | Academic English plus a preservation audit |
+
+## Start with one sentence
+
+```text
+Use $science-research-writing to help me write my paper.
+Here are the materials I currently have: [attach files or paste text]
+```
+
+The Skill reads what you have, identifies whether the next useful result is a plan, draft, revision, or audit, and proceeds without requiring a long intake prompt or an internal mode selection.
+
+[Getting started](docs/science-research-writing/getting-started.md) · [Use cases](docs/science-research-writing/use-cases.md) · [Copyable inputs](docs/science-research-writing/input-examples.md) · [Output guide](docs/science-research-writing/output-guide.md)
 
 ## Install
 
 Node.js 18 or later is required.
 
 ```bash
-# Write from research materials
+# Start from research materials
 npx skills add Yila-AI/sci-ssci-skills --global --agent codex --skill science-research-writing --yes --copy
 
 # Translate or polish an existing draft
@@ -45,71 +74,64 @@ List all installable Skills:
 npx skills add Yila-AI/sci-ssci-skills --list
 ```
 
-## Start with one sentence
+## Why turn *Science Research Writing* into an Agent workflow?
 
-```text
-Use $science-research-writing to help me write my paper.
-Here are my current materials: [attach files or paste text]
-```
+Hilary Glasman-Deal's *Science Research Writing: For Native and Non-Native Speakers of English* is valued because it teaches more than phrases and grammar. Its section-by-section approach asks what a reader needs from each part of an empirical paper, while its reverse-engineering pedagogy encourages researchers to examine successful papers in their own field and adapt recurring functions without copying sentences.
 
-The Skill reads the materials, identifies whether you need a plan, draft, revision, or audit, and produces the next useful result. It does not require a long intake prompt or force the user to choose internal modes.
+An independent review reports that the first edition sold more than 35,000 copies and was translated into Chinese, Korean, and Japanese ([Anna Clemens, 2020](https://annaclemens.com/blog/book-review-science-research-writing-hilary-glasman-deal/)).
 
-[One-minute guide](docs/science-research-writing/getting-started.md) · [Use cases](docs/science-research-writing/use-cases.md) · [Copyable inputs](docs/science-research-writing/input-examples.md) · [Output guide](docs/science-research-writing/output-guide.md)
+The central idea can be summarized as seven reader questions:
 
-## Featured Skill: Science Research Writing
-
-`science-research-writing` is an independent, unofficial Agent Skill inspired by the reverse-engineering pedagogy and section-by-section writing approach presented in Hilary Glasman-Deal's *Science Research Writing: For Native and Non-Native Speakers of English* (2nd ed., World Scientific, 2020).
-
-The book is a widely valued practical guide among researchers learning to write empirical papers in English. Its reverse-engineering approach asks writers to examine successful papers in their own field, identify how sections meet reader expectations, test those patterns against target articles, and adapt the resulting model to their own research. A detailed independent review reports that the first edition sold more than 35,000 copies and was translated into Chinese, Korean, and Japanese ([Anna Clemens, 2020](https://annaclemens.com/blog/book-review-science-research-writing-hilary-glasman-deal/)).
-
-This Skill operationalizes that general approach for Agent use while adding original safeguards:
-
-- automatic routing from idea, materials, partial draft, or full draft;
-- section-function workflows for Introduction, Methods, Results, Discussion, Conclusion, Abstract, and Title;
-- target-journal modeling that stores functions and variation, not copied prose;
-- evidence provenance and author-confirmation boundaries;
-- deterministic audits of numbers, citations, protected terms, and semantic markers;
-- novice-readable outputs with no more than one blocking question at a time.
-
-This project is not affiliated with or endorsed by the author or World Scientific. It does not reproduce the book, exercises, answer key, phrase lists, sample passages, or page content. See [privacy and copyright boundaries](docs/science-research-writing/privacy-and-copyright.md).
-
-## Reusable mechanisms
-
-These components have stable documentation so other research-agent projects can reuse and cite them directly:
-
-| Mechanism | What it protects or enables |
+| Manuscript section | The reader's question |
 |---|---|
-| [Target-Journal Model Builder](skills/science-research-writing/references/reverse-engineering-protocol.md) | Learns rhetorical functions without copying target-paper wording |
-| [Section Function Map](skills/science-research-writing/assets/section-function-map.md) | Maps reader questions, functions, evidence, and boundaries |
-| [Evidence-Preserving Draft Contract](skills/science-research-writing/SKILL.md) | Prevents unsupported intellectual content during drafting |
-| [Content Provenance Ledger](skills/science-research-writing/assets/evidence-ledger.csv) | Records where consequential statements come from |
-| [Claim-Strength Contract](skills/science-research-writing/references/certainty-and-claim-strength.md) | Prevents silent movement between suggestion, association, prediction, effect, and causation |
-| [Title-Paper Promise Check](skills/science-research-writing/references/title.md) | Tests whether every title promise is supported by the paper |
-| [Draft Invariant Checker](skills/science-research-writing/scripts/check_draft_invariants.py) | Flags token drift and semantic-marker changes |
+| Introduction | Why was this study needed? |
+| Methods | What exactly was done? |
+| Results | What was found? |
+| Discussion | What do the findings mean—and what do they not mean? |
+| Conclusion | What can the evidence actually support? |
+| Abstract | What must a reader understand in one minute? |
+| Title | What does the paper promise? |
 
-Suggested attribution:
+`science-research-writing` operationalizes this general approach for Agent use and adds automatic task routing, target-journal modeling, evidence provenance, author-confirmation boundaries, and deterministic draft checks.
 
-```markdown
-**Credit:** The evidence-preserving research-writing workflow is adapted from
-[Yila-AI/sci-ssci-skills](https://github.com/Yila-AI/sci-ssci-skills),
-including its Target-Journal Model Builder and claim-strength controls.
-```
+It is an independent, unofficial project. It is not affiliated with or endorsed by the author or World Scientific, and it does not reproduce the book, exercises, answer key, phrase lists, sample passages, or page content. See the [privacy and copyright boundaries](docs/science-research-writing/privacy-and-copyright.md).
 
-## SCI/SSCI Polishing
+## Fluent is not always faithful
 
-`sci-ssci-polishing` translates Chinese academic prose into publication-oriented English and polishes existing English paragraphs or complete sections.
+Suppose 120 university students rate nine milk-tea recipes. The evidence shows that 30%-sugar oolong milk tea receives the highest average rating among these participants.
 
-Its preservation-first workflow is:
+**Supported by the study:**
 
-```text
-classify -> lock invariants -> route by section -> revise -> audit
-```
+> Among the participants in this study, 30%-sugar oolong milk tea received the highest rating.
 
-It will not invent mechanisms, citations, data, limitations, or implications merely to make prose sound more complete or more "top-journal-like."
+**Not supported by the study:**
 
-### The 1,000-paper evidence pool
+> 30%-sugar oolong milk tea is the world's best milk-tea recipe.
 
-The polishing Skill began with a 1,000-paper SCI/SSCI metadata candidate pool and used staged screening to build a balanced 60-paper core portfolio:
+The first statement reports a bounded result. The second silently turns a local finding into a universal claim. Both Skills are designed to detect this kind of drift: evidence can be clarified, organized, translated, and polished, but it must not be silently strengthened.
+
+## What the two Skills add
+
+### `science-research-writing`
+
+- routes an idea, materials, partial draft, or full draft to the next useful task;
+- maps Introduction, Methods, Results, Discussion, Conclusion, Abstract, and Title by reader question and rhetorical function;
+- models target-journal functions and variation without storing copied prose;
+- records the source of consequential statements and marks missing evidence;
+- checks numbers, citations, protected terms, and claim-strength markers;
+- gives novice-readable outputs and asks no more than one blocking question at a time.
+
+### `sci-ssci-polishing`
+
+- translates Chinese academic prose into publication-oriented English;
+- polishes English paragraphs and complete manuscript sections;
+- improves information order, clarity, cohesion, and academic tone;
+- preserves numbers, statistics, technical entities, citations, null results, limitations, and conclusions;
+- refuses to invent mechanisms, references, results, or implications merely to make prose sound more complete.
+
+## The 1,000-paper evidence pool—what it does and does not mean
+
+The polishing Skill began with a **1,000-paper SCI/SSCI metadata candidate pool** and used staged screening to build a balanced core portfolio:
 
 ```text
 1,000-paper metadata candidate pool
@@ -121,9 +143,33 @@ The polishing Skill began with a 1,000-paper SCI/SSCI metadata candidate pool an
 40 distillation  10 calibration  10 sealed blind evaluation
 ```
 
-Distillation means abstracting recurring rhetorical functions, information order, evidence boundaries, and failure modes. It does not mean model fine-tuning or copying journal sentences. The 1,000-paper pool is a screening universe, not a claim that 1,000 full texts were downloaded or used to train a model.
+The 60-paper portfolio contains 30 SCI and 30 SSCI papers across nine broad discipline clusters. The 40-paper distillation split contains 20 SCI and 20 SSCI papers from 28 journals, yielding aggregate observations from 1,750 usable paragraphs and 220,158 words.
+
+Here, **distillation does not mean model fine-tuning or copying journal sentences**. It means abstracting recurring rhetorical functions, information order, evidence boundaries, and failure modes into reusable editing rules. The 1,000-paper pool is a screening universe: it is not a claim that 1,000 full texts were downloaded, read, distilled, or used to train a model.
 
 [Corpus method](skills/sci-ssci-polishing/references/corpus-method.md) · [Selection method](corpus/selection-rubric.md) · [Corpus summary](corpus/corpus-summary.md) · [Public metadata](corpus/README.md)
+
+## Build on these mechanisms
+
+The following mechanisms are documented as reusable components for other research Agents and academic-writing projects:
+
+| Featured mechanism | What it protects or enables |
+|---|---|
+| [Evidence-Preserving Draft Contract](skills/science-research-writing/SKILL.md) | Prevents unsupported intellectual content during planning, drafting, and revision |
+| [Claim-Strength Contract](skills/science-research-writing/references/certainty-and-claim-strength.md) | Prevents silent movement between suggestion, association, prediction, effect, and causation |
+| [Target-Journal Model Builder](skills/science-research-writing/references/reverse-engineering-protocol.md) | Learns rhetorical functions and variation without copying target-paper wording |
+
+Additional components include the [Section Function Map](skills/science-research-writing/assets/section-function-map.md), [Content Provenance Ledger](skills/science-research-writing/assets/evidence-ledger.csv), [Title-Paper Promise Check](skills/science-research-writing/references/title.md), and [Draft Invariant Checker](skills/science-research-writing/scripts/check_draft_invariants.py).
+
+Suggested short credit:
+
+```markdown
+**Credit:** The evidence-preserving research-writing workflow is adapted from
+[Yila-AI/sci-ssci-skills](https://github.com/Yila-AI/sci-ssci-skills),
+including its Evidence-Preserving Draft Contract and Claim-Strength Contract.
+```
+
+Reuse remains subject to the repository license and any applicable third-party rights.
 
 ## Evaluation
 
@@ -144,19 +190,19 @@ Evaluation claims remain Skill-specific.
 
 ### `science-research-writing`
 
-The test set and scoring rubric were frozen before implementation. Comparative results will be added only after all raw outputs, model settings, case-level scores, failures, and limitations are available.
+The test set and scoring rubric were frozen before implementation. Comparative results will be added only after raw outputs, model settings, case-level scores, failures, and limitations are available.
 
 [Benchmark protocol](benchmarks/science-research-writing/README.md) · [Frozen cases](benchmarks/science-research-writing/test-cases.json) · [Evaluation rubric](benchmarks/science-research-writing/evaluation-rubric.md) · [Development smoke tests](benchmarks/science-research-writing/smoke-test-results.md)
 
 These evaluations support narrow safety and consistency claims. They do not prove journal acceptance, universal disciplinary coverage, scientific correctness, or superiority to domain experts and professional editors.
 
-## Copyright, data, and affiliation boundaries
+## Copyright, data, and professional boundaries
 
 - The repository contains no book PDF, article PDF, subscription full text, extracted paper paragraphs, phrase bank, or private access trace.
 - Public corpus tables contain bibliographic metadata, screening annotations, and aggregate results only.
 - `SCI` and `SSCI` describe corpus and user scope. This independent project is not affiliated with Clarivate, any journal, author, or publisher.
-- Both Skills are public beta software and do not replace author, specialist, statistical, ethical, or professional editorial review.
+- Both Skills are public beta software and do not replace author, domain-specialist, statistical, ethical, or professional editorial review.
 
 ## Citation and license
 
-See [`CITATION.cff`](CITATION.cff) for repository citation metadata. Original code, Skill instructions, and project documentation are licensed under the [Apache License 2.0](LICENSE). Third-party facts, names, and external resources remain subject to their source terms.
+See [`CITATION.cff`](CITATION.cff) for formal citation metadata. Original code, Skill instructions, and project documentation are licensed under the [Apache License 2.0](LICENSE). Third-party facts, names, and external resources remain subject to their source terms.
