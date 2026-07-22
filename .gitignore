@@ -1,5 +1,6 @@
 .DS_Store
 .worktrees/
+benchmarks/science-research-writing/.scratch/
 __pycache__/
 *.pyc
 *.pdf
