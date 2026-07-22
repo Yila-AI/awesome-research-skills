@@ -2,6 +2,10 @@
 
 ## Science Research Writing
 
+New to the Skill? Follow the complete synthetic milk-tea example from an everyday question to a paper map:
+
+[Complete walkthrough](science-research-writing-walkthrough.md) · [中文完整案例](science-research-writing-walkthrough_CN.md)
+
 ### Start with whatever you have
 
 ```text

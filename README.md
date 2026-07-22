@@ -110,6 +110,8 @@ Suppose 120 university students rate nine milk-tea recipes. The evidence shows t
 
 The first statement reports a bounded result. The second silently turns a local finding into a universal claim. Both Skills are designed to detect this kind of drift: evidence can be clarified, organized, translated, and polished, but it must not be silently strengthened.
 
+[Read the complete milk-tea walkthrough](examples/science-research-writing-walkthrough.md) · [查看中文完整案例](examples/science-research-writing-walkthrough_CN.md)
+
 ## What the two Skills add
 
 ### `science-research-writing`

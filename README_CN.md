@@ -110,6 +110,8 @@ Hilary Glasman-Deal 的《*Science Research Writing: For Native and Non-Native S
 
 第一句只报告了有边界的研究结果；第二句却偷偷把局部发现变成了普遍结论。两个 Skill 都会尽量发现这种漂移：证据可以被理清、组织、翻译和润色，但不能被悄悄加强。
 
+[查看奶茶案例完整中文版](examples/science-research-writing-walkthrough_CN.md) · [Read the complete walkthrough in English](examples/science-research-writing-walkthrough.md)
+
 ## 两个 Skill 分别增加了什么？
 
 ### `science-research-writing`
