@@ -40,6 +40,8 @@ When tables, figures, prose, notes, or user instructions disagree:
 - ask which source is authoritative;
 - continue with unaffected content.
 
+When no content is unaffected, provide no provisional manuscript sentence. Do not insert alternatives such as `[A or B]` into prose, infer what an odds ratio means without variable definitions and reference coding, invent `Table X`, or create placeholders for unsupplied statistics.
+
 ## Target-paper inputs
 
 Use target papers to observe section functions, information order, conventional boundaries, and variation across papers. Do not store, reproduce, or imitate sentences. Do not treat a target paper's methods, claims, citations, or findings as the author's content.
@@ -76,8 +78,10 @@ Add this section only when necessary:
 
 - Put useful work before process explanation.
 - Preserve good existing prose instead of forcing cosmetic rewrites.
+- When no change is necessary, reproduce the original text unchanged and do not append an optional revised version.
 - Distinguish author-provided content from structural suggestions.
 - Keep author questions specific and answerable.
 - Do not claim journal acceptance, universal disciplinary fit, or factual verification that was not performed.
 - Make `Next step` request the single missing evidence item or author decision with the greatest effect on the manuscript; do not offer generic expansion or cosmetic rewriting.
 - Never begin `Next step` with `If you want, I can`. State one evidence action. For a Discussion with no supplied literature, mechanism, or documented limitations beyond design, use: `Provide the prior studies or author-supported interpretation you want compared with these results.`
+- When no revision is necessary, make `Next step` an author verification action, not a new style suggestion.

@@ -33,6 +33,8 @@ If missing information would force an unsupported scientific choice:
 3. ask one highest-impact question;
 4. wait before drafting only the blocked content.
 
+If conflicting sources block the entire requested sentence or section, return a diagnosis rather than a provisional scaffold. Do not infer variable roles, direction, reference groups, statistical meaning, table labels, or missing uncertainty from the conflicting numbers.
+
 ## Route the task
 
 ### Idea stage
@@ -46,6 +48,8 @@ Use `plan -> draft -> audit`. Inventory what the materials support, choose the f
 ### Partial-draft stage
 
 Use `audit -> plan -> revise -> audit`. Diagnose structure and evidence boundaries before rewriting.
+
+If the supplied prose is already clear, section-appropriate, and evidence-faithful, return it unchanged. Do not provide an optional cosmetic alternative, normalize punctuation, add units, or propose journal styling unless the user supplied a specific style requirement.
 
 ### Full-draft stage
 

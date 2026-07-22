@@ -21,6 +21,8 @@ Observe evidence order, table/figure integration, density of numeric reporting, 
 
 Do not add mechanisms, explanations, implications, recommendations, literature comparison, or causal language unsupported by design. Minimal directional description is not interpretation.
 
+Do not infer direction or meaning from an odds ratio, coefficient, sign, p value, or confidence interval without the supplied variable definition, coding, comparator, and outcome. Do not invent a table or figure callout.
+
 ## Failure modes
 
 - reporting only significant outcomes;
