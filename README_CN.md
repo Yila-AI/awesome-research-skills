@@ -12,6 +12,7 @@
   <a href="README.md">English</a> ·
   <a href="docs/science-research-writing/getting-started.md">1 分钟上手</a> ·
   <a href="#安装"> 安装</a> ·
+  <a href="#只想使用一个-skill">轻量下载</a> ·
   <a href="#在你的项目中复用这些机制">复用与引用</a> ·
   <a href="#使用这些-skills-的项目">项目展示</a>
 </p>
@@ -74,6 +75,12 @@ npx skills add Yila-AI/sci-ssci-skills --global --agent codex --skill sci-ssci-p
 ```bash
 npx skills add Yila-AI/sci-ssci-skills --list
 ```
+
+### 只想使用一个 Skill？
+
+如果只是为了运行某个 Skill，你不需要克隆完整仓库，也不需要让 Agent 读取仓库根目录。上面带有 `--skill ... --copy` 的命令只会把选中的运行时 Skill 复制到 Agent 的 Skills 目录。
+
+如需手动安装或集成到其他项目，可以从[最新 Lean Release](https://github.com/Yila-AI/sci-ssci-skills/releases/latest)下载已打包的 `sci-ssci-polishing` Skill。完整仓库继续保留语料、评测、来源记录和案例，供需要审查 Skill 构建与评估方法的研究者使用。
 
 ## 为什么把《*Science Research Writing*》的方法变成 Agent 工作流？
 
