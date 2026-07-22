@@ -1,0 +1,42 @@
+name: Release lean sci-ssci-polishing Skill
+
+on:
+  push:
+    tags:
+      - "sci-ssci-polishing-v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out tagged source
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run repository tests
+        run: python3 -m unittest discover -s tests -v
+
+      - name: Build lean archive
+        id: build
+        shell: bash
+        run: |
+          release_version="${GITHUB_REF_NAME#sci-ssci-polishing-}"
+          archive_path="$(python3 scripts/build_lean_release.py --version "$release_version" --output-dir dist)"
+          echo "archive_path=$archive_path" >> "$GITHUB_OUTPUT"
+
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ARCHIVE_PATH: ${{ steps.build.outputs.archive_path }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" "$ARCHIVE_PATH" \
+            --verify-tag \
+            --title "SCI/SSCI Polishing Lean $GITHUB_REF_NAME" \
+            --generate-notes

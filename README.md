@@ -12,6 +12,7 @@ Open-source Agent Skills for planning, drafting, revising, translating, and poli
   <a href="README_CN.md">中文说明</a> ·
   <a href="docs/science-research-writing/getting-started.md">1-minute start</a> ·
   <a href="#install">Install</a> ·
+  <a href="#use-only-one-skill">Lean download</a> ·
   <a href="#build-on-these-mechanisms">Reuse &amp; cite</a> ·
   <a href="#projects-using-these-skills">Projects</a>
 </p>
@@ -74,6 +75,12 @@ List all installable Skills:
 ```bash
 npx skills add Yila-AI/sci-ssci-skills --list
 ```
+
+### Use only one Skill?
+
+You do not need to clone the complete repository or point an Agent at the repository root merely to run one Skill. The `--skill ... --copy` commands above copy only the selected runtime Skill into your Agent's Skills directory.
+
+For manual installation or downstream integration, download the packaged `sci-ssci-polishing` Skill from the [latest Lean Release](https://github.com/Yila-AI/sci-ssci-skills/releases/latest). The full repository keeps the corpus, benchmarks, provenance, and examples available for researchers who want to inspect how the Skill was built and evaluated.
 
 ## Why turn *Science Research Writing* into an Agent workflow?
 
