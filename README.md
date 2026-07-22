@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="assets/sci-ssci-research-writing-hero.png" alt="SCI/SSCI Research Writing Skills — Plan. Draft. Polish. Preserve the science." width="100%">
+</div>
+
 # SCI/SSCI Research Writing Skills
 
 > **Plan. Draft. Polish. Preserve the science.**
@@ -5,6 +9,13 @@
 Open-source Agent Skills for turning research materials into evidence-faithful empirical papers, then improving the language without rewriting the science.
 
 <p align="center"><a href="README_CN.md">中文</a></p>
+
+## Choose your workflow
+
+| You need to... | Use |
+|---|---|
+| Turn research materials into a paper plan, section draft, revision, or evidence audit | [`science-research-writing`](skills/science-research-writing/SKILL.md) |
+| Translate or polish an existing manuscript without rewriting the science | [`sci-ssci-polishing`](skills/sci-ssci-polishing/SKILL.md) |
 
 ```mermaid
 flowchart LR
@@ -15,13 +26,6 @@ flowchart LR
     F[Evidence-preserving contract] -. protects data, citations, claims, limitations and conclusions .-> B
     F -. protects data, citations, claims, limitations and conclusions .-> D
 ```
-
-## Choose your workflow
-
-| You need to... | Use |
-|---|---|
-| Turn research materials into a paper plan, section draft, revision, or evidence audit | [`science-research-writing`](skills/science-research-writing/SKILL.md) |
-| Translate or polish an existing manuscript without rewriting the science | [`sci-ssci-polishing`](skills/sci-ssci-polishing/SKILL.md) |
 
 ## Install
 
