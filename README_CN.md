@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="assets/sci-ssci-research-writing-hero.png" alt="SCI/SSCI 科研写作 Skills——规划、起草、润色，保护科学内容" width="100%">
+</div>
+
 # SCI/SSCI 科研写作 Skills
 
 > **规划、起草、润色，保护科学内容。**
@@ -5,6 +9,13 @@
 从研究材料到英文论文：两个开源 Agent Skills，一条证据保真的科研写作工作流。
 
 <p align="center"><a href="README.md">English</a></p>
+
+## 选择你的工作流
+
+| 你需要做什么 | 使用 |
+|---|---|
+| 把研究材料变成论文计划、章节初稿、修改稿或证据审计 | [`science-research-writing`](skills/science-research-writing/SKILL.md) |
+| 翻译或润色已有论文，不改写科学内容 | [`sci-ssci-polishing`](skills/sci-ssci-polishing/SKILL.md) |
 
 ```mermaid
 flowchart LR
@@ -15,13 +26,6 @@ flowchart LR
     F[证据保护合约] -. 保护数据、引用、论断、局限与结论 .-> B
     F -. 保护数据、引用、论断、局限与结论 .-> D
 ```
-
-## 选择你的工作流
-
-| 你需要做什么 | 使用 |
-|---|---|
-| 把研究材料变成论文计划、章节初稿、修改稿或证据审计 | [`science-research-writing`](skills/science-research-writing/SKILL.md) |
-| 翻译或润色已有论文，不改写科学内容 | [`sci-ssci-polishing`](skills/sci-ssci-polishing/SKILL.md) |
 
 ## 安装
 
