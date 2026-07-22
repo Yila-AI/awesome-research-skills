@@ -91,7 +91,7 @@ Skill 会先读取材料，判断你需要的是计划、起草、修改还是�
 
 `science-research-writing` 的测试集和评分规则已在实现前冻结。只有在公开原始输出、模型设置、逐案分数、失败和局限之后，才会增加效果对比。
 
-[新 Skill 评测协议](benchmarks/science-research-writing/README.md) · [冻结案例](benchmarks/science-research-writing/test-cases.json) · [评分标准](benchmarks/science-research-writing/evaluation-rubric.md)
+[新 Skill 评测协议](benchmarks/science-research-writing/README.md) · [冻结案例](benchmarks/science-research-writing/test-cases.json) · [评分标准](benchmarks/science-research-writing/evaluation-rubric.md) · [开发烟测记录](benchmarks/science-research-writing/smoke-test-results.md)
 
 ## 版权、数据与声明
 
