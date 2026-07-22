@@ -1,9 +1,12 @@
 # Development Smoke-Test Results
 
-**Run date:** 2026-07-22  
-**Agent:** OpenAI Codex CLI 0.142.4  
-**Model:** `gpt-5.4`  
-**Skill source:** local `feat/science-research-writing` worktree  
+**Run date:** 2026-07-22
+
+**Agent:** OpenAI Codex CLI 0.142.4
+
+**Model:** `gpt-5.4`
+
+**Skill source:** local `feat/science-research-writing` worktree
 **Purpose:** forward-test routing and safety behavior during development
 
 These tests are not the frozen three-arm benchmark and do not support superiority claims. They use four synthetic prompts to expose implementation failures before release.
