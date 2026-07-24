@@ -4,18 +4,43 @@
 
 # SCI/SSCI 科研写作 Skills
 
-> **从研究材料到结构完整的论文：不编造证据，不夸大结论，不改写科学内容。**
+> **把你的研究变成一篇结构清楚的论文：一节一节写。**
 
-这是一组用于规划、起草、修改、翻译和润色科研论文的开源 Agent Skills。仓库将一套经典的分章节论文写作方法，与通过筛选后 SCI/SSCI 论文语料流程提炼的写作观察结合起来。
+**润色文字，但不改写科学内容。** 这是一组用于规划、起草、修改、翻译和润色 SCI/SSCI 论文的开源 Agent Skills，重点保护作者原意、数据、引用、研究局限和论断强度。
+
+适用于 Codex、Claude Code、WorkBuddy 风格科研 Agent，以及其他支持可复用 Skill 指令的 Agent 工作流。
 
 <p align="center">
   <a href="README.md">English</a> ·
+  <a href="README_ja.md">日本語</a> ·
+  <a href="README_ko.md">한국어</a> ·
   <a href="docs/science-research-writing/getting-started.md">1 分钟上手</a> ·
   <a href="#安装"> 安装</a> ·
+  <a href="#我应该用哪个-skill">我该用哪个 Skill？</a> ·
   <a href="#只想使用一个-skill">轻量下载</a> ·
   <a href="#在你的项目中复用这些机制">复用与引用</a> ·
-  <a href="#使用这些-skills-的项目">项目展示</a>
+  <a href="#使用致谢或改编本项目的项目">项目展示</a>
 </p>
+
+## 我应该用哪个 Skill？
+
+| 如果你现在…… | 使用 | 可以这样开始 |
+|---|---|---|
+| 只有研究想法、笔记、结果、表格或文献 | `science-research-writing` | `请使用 $science-research-writing。我有研究材料，但不知道怎么组织成论文。` |
+| 想把材料整理成引言、方法、结果、讨论、摘要或标题 | `science-research-writing` | `请使用 $science-research-writing，基于下面材料帮我起草当前最需要的论文章节。` |
+| 有中文学术文字，想翻译成论文英文 | `sci-ssci-polishing` | `请使用 $sci-ssci-polishing，把下面内容翻译成学术英文，但不要新增观点或引用。` |
+| 有英文初稿，想润色但不想改原意 | `sci-ssci-polishing` | `请使用 $sci-ssci-polishing，提升清晰度和连贯性，但保留数字、引用、局限和论断强度。` |
+| 想开发自己的科研 Agent | 复用本仓库机制 | 从 [Evidence-Preserving Draft Contract](skills/science-research-writing/SKILL.md) 和 [Claim-Strength Contract](skills/science-research-writing/references/certainty-and-claim-strength.md) 开始。 |
+
+## 为什么可以 Star 这个仓库？
+
+如果你希望持续关注一套开源科研写作工具，可以 Star 本仓库。它会继续围绕这些方向迭代：
+
+- 一节一节地组织和写作科研论文；
+- 润色 SCI/SSCI 初稿，但不改变科学内容；
+- 在 AI 辅助修改中保护数字、引用、术语、局限和论断强度；
+- 为科研 Agent 提供可复用的证据保护规则；
+- 持续增加案例、评测、多语言说明和新的科研写作 Skills。
 
 ## 两个来源，一条科研写作流程
 
@@ -36,7 +61,7 @@
 
 你可以在自己的项目中复用本仓库的证据保护合约、论断强度控制和目标期刊建模方法。
 
-[查看可复用机制](#在你的项目中复用这些机制) · [引用本仓库](CITATION.cff) · [添加你的项目](#使用这些-skills-的项目)
+[查看可复用机制](#在你的项目中复用这些机制) · [引用本仓库](CITATION.cff) · [添加你的项目](#使用致谢或改编本项目的项目)
 
 ## 看看你现在适合哪个 Skill
 
@@ -57,6 +82,39 @@
 Skill 会先读取你的材料，判断当前最有用的成果是计划、初稿、修改还是审计，不需要用户编写很长的 Prompt，也不需要选择内部模式。
 
 [一分钟上手](docs/science-research-writing/getting-started.md) · [使用场景](docs/science-research-writing/use-cases.md) · [可复制的输入示例](docs/science-research-writing/input-examples.md) · [输出说明](docs/science-research-writing/output-guide.md)
+
+## 可以直接复制的例子
+
+### 从研究材料开始组织论文
+
+```text
+请使用 $science-research-writing。
+我已经完成研究，但不知道怎么把它组织成一篇论文。
+
+研究问题：
+[粘贴你的研究问题]
+
+方法：
+[粘贴你做了什么]
+
+主要结果：
+[粘贴关键发现、表格或笔记]
+
+目标期刊或领域：
+[如果有就粘贴]
+```
+
+### 润色英文，但不改变科学内容
+
+```text
+请使用 $sci-ssci-polishing。
+请帮我润色下面这段 Discussion，让它更清楚、更像论文表达。
+不要改变数字、引用、专业术语、研究局限或论断强度。
+如果有句子证据不足或表达过度，请标出来，不要悄悄替我改掉。
+
+文本：
+[粘贴段落]
+```
 
 ## 安装
 
@@ -181,11 +239,15 @@ including its Evidence-Preserving Draft Contract and Claim-Strength Contract.
 
 复用仍须遵守仓库许可证和适用的第三方权利。
 
-## 使用这些 Skills 的项目
+## 使用、致谢或改编本项目的项目
+
+这里收录公开使用、致谢、改编或讨论本仓库机制的项目。
+
+| 项目 | 关系 |
+|---|---|
+| [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills) | 已 credit 并改编本仓库的 claim-strength ladder 机制，用于防止多轮论文修改中的论断强度漂移。相关讨论见 [issue #569](https://github.com/Imbad0202/academic-research-skills/issues/569)、[issue #570](https://github.com/Imbad0202/academic-research-skills/issues/570) 和 [PR #573](https://github.com/Imbad0202/academic-research-skills/pull/573)。 |
 
 如果你的科研 Agent、学术写作工具或开源项目正在使用或改编这套工作流，欢迎提交 [Issue](https://github.com/Yila-AI/sci-ssci-skills/issues) 或 Pull Request，并附上一句简介和公开链接。
-
-_暂时还没有收录项目。_
 
 ## 评测
 

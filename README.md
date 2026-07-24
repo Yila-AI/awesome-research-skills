@@ -4,18 +4,43 @@
 
 # SCI/SSCI Research Writing Skills
 
-> **From research materials to a structured manuscript—without invented evidence, inflated claims, or rewritten science.**
+> **Turn your research into a clear, well-structured paper—section by section.**
 
-Open-source Agent Skills for planning, drafting, revising, translating, and polishing research papers. The repository combines a classic section-by-section research-writing method with writing observations derived through a curated SCI/SSCI corpus pipeline.
+**Polish the writing. Never rewrite the science.** This repository provides open-source Agent Skills for planning, drafting, revising, translating, and polishing SCI/SSCI papers while preserving meaning, data, citations, limitations, and claim strength.
+
+Designed for Agent workflows such as Codex, Claude Code, WorkBuddy-style research agents, and other systems that support reusable Skill instructions.
 
 <p align="center">
   <a href="README_CN.md">中文说明</a> ·
+  <a href="README_ja.md">日本語</a> ·
+  <a href="README_ko.md">한국어</a> ·
   <a href="docs/science-research-writing/getting-started.md">1-minute start</a> ·
   <a href="#install">Install</a> ·
+  <a href="#which-skill-should-i-use">Which Skill?</a> ·
   <a href="#use-only-one-skill">Lean download</a> ·
   <a href="#build-on-these-mechanisms">Reuse &amp; cite</a> ·
-  <a href="#projects-using-these-skills">Projects</a>
+  <a href="#used-credited-or-adapted-by">Used by</a>
 </p>
+
+## Which Skill should I use?
+
+| If you are... | Use | Copy this starting point |
+|---|---|---|
+| Starting from an idea, notes, results, tables, or references | `science-research-writing` | `Use $science-research-writing. I have research materials but do not know how to organize them into a paper.` |
+| Trying to turn rough materials into Introduction, Methods, Results, Discussion, Abstract, or Title | `science-research-writing` | `Use $science-research-writing to help me draft the next useful manuscript section from the materials below.` |
+| Translating Chinese academic prose into publication-oriented English | `sci-ssci-polishing` | `Use $sci-ssci-polishing. Translate this into academic English, but do not add claims or citations.` |
+| Polishing an English manuscript without changing the science | `sci-ssci-polishing` | `Use $sci-ssci-polishing. Improve clarity and flow while preserving numbers, citations, limitations, and claim strength.` |
+| Building your own research Agent | Reuse the mechanisms | Start from the [Evidence-Preserving Draft Contract](skills/science-research-writing/SKILL.md) and [Claim-Strength Contract](skills/science-research-writing/references/certainty-and-claim-strength.md). |
+
+## Why star this repo?
+
+Star this repository if you want a growing open-source toolkit for:
+
+- writing research papers section by section;
+- polishing SCI/SSCI manuscripts without changing the science;
+- protecting numbers, citations, terminology, limitations, and claim strength during AI-assisted revision;
+- building academic-writing Agents with reusable evidence-preserving rules;
+- contributing examples, benchmarks, translations, and new research-writing Skills.
 
 ## Two foundations, one research-writing workflow
 
@@ -36,7 +61,7 @@ In plain language: **a research-writing classic informs how to build the paper; 
 
 You can reuse the repository's Evidence-Preserving Draft Contract, Claim-Strength Contract, and Target-Journal Model Builder in your own project.
 
-[Reuse the mechanisms](#build-on-these-mechanisms) · [Cite this repository](CITATION.cff) · [Add your project](#projects-using-these-skills)
+[Reuse the mechanisms](#build-on-these-mechanisms) · [Cite this repository](CITATION.cff) · [Add your project](#used-credited-or-adapted-by)
 
 ## Choose where you are
 
@@ -57,6 +82,39 @@ Here are the materials I currently have: [attach files or paste text]
 The Skill reads what you have, identifies whether the next useful result is a plan, draft, revision, or audit, and proceeds without requiring a long intake prompt or an internal mode selection.
 
 [Getting started](docs/science-research-writing/getting-started.md) · [Use cases](docs/science-research-writing/use-cases.md) · [Copyable inputs](docs/science-research-writing/input-examples.md) · [Output guide](docs/science-research-writing/output-guide.md)
+
+## Copy-paste examples
+
+### From materials to a paper structure
+
+```text
+Use $science-research-writing.
+I have finished my study, but I do not know how to organize it into a paper.
+
+Research question:
+[paste your research question]
+
+Methods:
+[paste what you did]
+
+Main results:
+[paste key findings, tables, or notes]
+
+Target journal or field:
+[paste if available]
+```
+
+### Polish without changing the science
+
+```text
+Use $sci-ssci-polishing.
+Please polish this Discussion paragraph for academic clarity.
+Do not change numbers, citations, terminology, limitations, or claim strength.
+If any sentence sounds unsupported or overclaimed, flag it instead of fixing it silently.
+
+Text:
+[paste paragraph]
+```
 
 ## Install
 
@@ -181,11 +239,15 @@ including its Evidence-Preserving Draft Contract and Claim-Strength Contract.
 
 Reuse remains subject to the repository license and any applicable third-party rights.
 
-## Projects using these Skills
+## Used, credited, or adapted by
+
+This section lists public projects that use, credit, adapt, or discuss mechanisms from this repository.
+
+| Project | Relationship |
+|---|---|
+| [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills) | Credited and adapted the claim-strength ladder mechanism for revision-round claim-drift guards. See related discussion in [issue #569](https://github.com/Imbad0202/academic-research-skills/issues/569), [issue #570](https://github.com/Imbad0202/academic-research-skills/issues/570), and [PR #573](https://github.com/Imbad0202/academic-research-skills/pull/573). |
 
 Using or adapting this workflow in your own research Agent, academic-writing tool, or open-source project? Open an [issue](https://github.com/Yila-AI/sci-ssci-skills/issues) or pull request to add your project here. Please include a short description and a public link.
-
-_No projects listed yet._
 
 ## Evaluation
 
