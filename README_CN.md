@@ -22,6 +22,23 @@
   <a href="#使用致谢或改编本项目的项目">项目展示</a>
 </p>
 
+## Paper to Slides 能力展示
+
+`research-presentation` 可以把论文转化为有来源、有叙事、可编辑的科研汇报。
+下面是同一篇网络流行病学论文的两版生成结果；[完整 Showcase](showcase/research-presentation/ecology-network/README.md)
+中包含每一版的 12 张渲染页面。
+
+<p align="center">
+  <a href="showcase/research-presentation/ecology-network/README.md">
+    <img src="showcase/research-presentation/ecology-network/bright-azure-v2/01.webp" alt="Paper to Slides 封面示例" width="48%">
+  </a>
+  <a href="showcase/research-presentation/ecology-network/README.md">
+    <img src="showcase/research-presentation/ecology-network/bright-azure-v2/05.webp" alt="Paper to Slides 结果页示例" width="48%">
+  </a>
+</p>
+
+测试论文：[arXiv:2607.25475](https://arxiv.org/abs/2607.25475)。仓库只保留论文链接和引用信息，不复制原始 PDF。
+
 ## 我应该用哪个 Skill？
 
 | 如果你现在…… | 使用 | 可以这样开始 |
