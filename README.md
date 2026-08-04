@@ -22,6 +22,25 @@ Designed for Agent workflows such as Codex, Claude Code, WorkBuddy-style researc
   <a href="#used-credited-or-adapted-by">Used by</a>
 </p>
 
+## Paper to Slides showcase
+
+`research-presentation` turns a paper into a source-grounded, editable research
+presentation. Here are two generated visual passes from the same network-
+epidemiology paper; the [full showcase](showcase/research-presentation/ecology-network/README.md)
+contains all 12 rendered slides for each pass.
+
+<p align="center">
+  <a href="showcase/research-presentation/ecology-network/README.md">
+    <img src="showcase/research-presentation/ecology-network/bright-azure-v2/01.webp" alt="Paper to Slides showcase cover" width="48%">
+  </a>
+  <a href="showcase/research-presentation/ecology-network/README.md">
+    <img src="showcase/research-presentation/ecology-network/bright-azure-v2/05.webp" alt="Paper to Slides showcase result slide" width="48%">
+  </a>
+</p>
+
+Source paper: [arXiv:2607.25475](https://arxiv.org/abs/2607.25475). The repository
+stores the canonical paper link, not the source PDF.
+
 ## Which Skill should I use?
 
 | If you are... | Use | Copy this starting point |
