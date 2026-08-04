@@ -27,6 +27,7 @@ Designed for Agent workflows such as Codex, Claude Code, WorkBuddy-style researc
 | If you are... | Use | Copy this starting point |
 |---|---|---|
 | Starting from an idea, notes, results, tables, or references | `science-research-writing` | `Use $science-research-writing. I have research materials but do not know how to organize them into a paper.` |
+| Turning a paper, manuscript, or research results into an academic slide deck | `research-presentation` | `Use $research-presentation to turn this paper into a source-grounded research presentation.` |
 | Trying to turn rough materials into Introduction, Methods, Results, Discussion, Abstract, or Title | `science-research-writing` | `Use $science-research-writing to help me draft the next useful manuscript section from the materials below.` |
 | Translating Chinese academic prose into publication-oriented English | `sci-ssci-polishing` | `Use $sci-ssci-polishing. Translate this into academic English, but do not add claims or citations.` |
 | Polishing an English manuscript without changing the science | `sci-ssci-polishing` | `Use $sci-ssci-polishing. Improve clarity and flow while preserving numbers, citations, limitations, and claim strength.` |
@@ -44,14 +45,15 @@ Star this repository if you want a growing open-source toolkit for:
 
 ## Two foundations, one research-writing workflow
 
-This repository does two connected jobs:
+This repository does three connected jobs:
 
 | Foundation | Skill | What it helps you do |
 |---|---|---|
 | The section-by-section and reverse-engineering pedagogy associated with Hilary Glasman-Deal's *Science Research Writing* | [`science-research-writing`](skills/science-research-writing/SKILL.md) | Decide what each section needs to accomplish, then turn ideas, notes, data, references, or drafts into the next useful manuscript artifact |
 | Writing observations derived through a corpus pipeline beginning with a 1,000-paper SCI/SSCI metadata candidate pool | [`sci-ssci-polishing`](skills/sci-ssci-polishing/SKILL.md) | Translate or polish an existing manuscript while preserving data, citations, terminology, limitations, and claim strength |
+| Evidence-first academic presentation design | [`research-presentation`](skills/research-presentation/SKILL.md) | Turn papers and research materials into editable, source-grounded research presentations, with a narrative plan, evidence ledger, speaker notes, and render-based QA |
 
-In plain language: **a research-writing classic informs how to build the paper; a curated SCI/SSCI corpus informs how to communicate it.** Together, the two Skills help researchers produce clearer, better-structured, and more evidence-faithful manuscripts. Scientific judgment remains with the author.
+In plain language: **the writing Skills help build and refine the paper; `research-presentation` carries the evidence into a talk without flattening the science.** Scientific judgment remains with the author.
 
 <div align="center">
   <img src="assets/sci-ssci-research-writing-architecture.png" alt="Architecture of SCI/SSCI Research Writing Skills: a book-informed writing workflow and a curated SCI/SSCI corpus pipeline connected by evidence-preserving contracts" width="100%">
@@ -71,6 +73,7 @@ You can reuse the repository's Evidence-Preserving Draft Contract, Claim-Strengt
 | Notes, data, references, or a protocol | `science-research-writing` | A paper plan or section draft grounded only in supplied materials |
 | A partial or complete draft | `science-research-writing` | Revision, consistency checks, or an evidence audit |
 | Chinese academic prose or an English manuscript | `sci-ssci-polishing` | Academic English plus a preservation audit |
+| A paper or research results that need to become slides | `research-presentation` | A narrative outline, editable deck plan, source map, notes, and visual QA checklist |
 
 ## Start with one sentence
 
@@ -82,6 +85,8 @@ Here are the materials I currently have: [attach files or paste text]
 The Skill reads what you have, identifies whether the next useful result is a plan, draft, revision, or audit, and proceeds without requiring a long intake prompt or an internal mode selection.
 
 [Getting started](docs/science-research-writing/getting-started.md) · [Use cases](docs/science-research-writing/use-cases.md) · [Copyable inputs](docs/science-research-writing/input-examples.md) · [Output guide](docs/science-research-writing/output-guide.md)
+
+For paper-to-slides work, start with the [Research Presentation quick start](docs/research-presentation/getting-started.md) and [use cases](docs/research-presentation/use-cases.md).
 
 ## Copy-paste examples
 
@@ -126,6 +131,9 @@ npx skills add Yila-AI/sci-ssci-skills --global --agent codex --skill science-re
 
 # Translate or polish an existing draft
 npx skills add Yila-AI/sci-ssci-skills --global --agent codex --skill sci-ssci-polishing --yes --copy
+
+# Turn a paper or research materials into an academic presentation
+npx skills add Yila-AI/sci-ssci-skills --global --agent codex --skill research-presentation --yes --copy
 ```
 
 List all installable Skills:
@@ -188,6 +196,14 @@ The first statement reports a bounded result. The second silently turns a local 
 - records the source of consequential statements and marks missing evidence;
 - checks numbers, citations, protected terms, and claim-strength markers;
 - gives novice-readable outputs and asks no more than one blocking question at a time.
+
+### `research-presentation`
+
+- turns a paper, manuscript, figures, tables, or research notes into a source-grounded talk plan;
+- keeps an evidence ledger and source anchors for consequential claims;
+- chooses a narrative arc for journal club, lab meeting, conference talk, seminar, or thesis defense;
+- produces editable slide content, speaker notes, and a render-based QA report;
+- preserves uncertainty, limitations, and claim strength instead of optimizing for visual polish alone.
 
 ### `sci-ssci-polishing`
 

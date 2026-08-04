@@ -27,6 +27,7 @@
 | 如果你现在…… | 使用 | 可以这样开始 |
 |---|---|---|
 | 只有研究想法、笔记、结果、表格或文献 | `science-research-writing` | `请使用 $science-research-writing。我有研究材料，但不知道怎么组织成论文。` |
+| 想把论文、初稿或研究结果做成学术汇报 | `research-presentation` | `请使用 $research-presentation，把这篇论文做成有证据来源的科研汇报 PPT。` |
 | 想把材料整理成引言、方法、结果、讨论、摘要或标题 | `science-research-writing` | `请使用 $science-research-writing，基于下面材料帮我起草当前最需要的论文章节。` |
 | 有中文学术文字，想翻译成论文英文 | `sci-ssci-polishing` | `请使用 $sci-ssci-polishing，把下面内容翻译成学术英文，但不要新增观点或引用。` |
 | 有英文初稿，想润色但不想改原意 | `sci-ssci-polishing` | `请使用 $sci-ssci-polishing，提升清晰度和连贯性，但保留数字、引用、局限和论断强度。` |
@@ -44,14 +45,15 @@
 
 ## 两个来源，一条科研写作流程
 
-这个仓库主要做两件相互衔接的事：
+这个仓库主要做三件相互衔接的事：
 
 | 方法来源 | Skill | 它能帮你做什么 |
 |---|---|---|
 | Hilary Glasman-Deal 的《*Science Research Writing*》所代表的分章节教学和目标论文逆向拆解方法 | [`science-research-writing`](skills/science-research-writing/SKILL.md) | 判断论文每一部分应该完成什么任务，再把想法、笔记、数据、文献或初稿变成当前最有用的论文成果 |
 | 从 1,000 篇 SCI/SSCI 论文元数据候选池出发的筛选和语料分析流程 | [`sci-ssci-polishing`](skills/sci-ssci-polishing/SKILL.md) | 翻译或润色已有论文，同时保护数据、引用、术语、局限和论断强度 |
+| 以证据为中心的学术汇报设计 | [`research-presentation`](skills/research-presentation/SKILL.md) | 将论文和研究材料转化为可编辑、有来源锚点的学术汇报，并配套叙事规划、证据台账、讲稿备注和渲染质检 |
 
-用大白话说：**经典写作方法帮助 Agent 理解论文应该怎么写；经过筛选的 SCI/SSCI 论文语料帮助 Agent 理解论文应该怎么表达。**两个 Skill 共同帮助研究者获得结构更清楚、表达更准确、证据更忠实的论文，最终的学术判断仍然属于作者。
+用大白话说：**写作 Skill 帮你把论文写清楚、改准确；`research-presentation` 再把证据搬进汇报，而不是把科学内容压扁成漂亮的页面。**最终的学术判断仍然属于作者。
 
 <div align="center">
   <img src="assets/sci-ssci-research-writing-architecture.png" alt="SCI/SSCI 科研写作 Skills 架构：由经典著作启发的写作工作流、SCI/SSCI 论文语料筛选流程与证据保护合约" width="100%">
@@ -71,6 +73,7 @@
 | 笔记、数据、文献或研究方案 | `science-research-writing` | 只基于现有材料的论文计划或章节初稿 |
 | 局部初稿或完整论文 | `science-research-writing` | 修改建议、前后一致性检查或证据审计 |
 | 中文学术文字或英文论文 | `sci-ssci-polishing` | 学术英文和一份保真审计 |
+| 一篇论文或一组研究结果 | `research-presentation` | 汇报叙事、可编辑页面规划、来源映射、讲稿备注和视觉质检清单 |
 
 ## 一句话开始
 
@@ -82,6 +85,8 @@
 Skill 会先读取你的材料，判断当前最有用的成果是计划、初稿、修改还是审计，不需要用户编写很长的 Prompt，也不需要选择内部模式。
 
 [一分钟上手](docs/science-research-writing/getting-started.md) · [使用场景](docs/science-research-writing/use-cases.md) · [可复制的输入示例](docs/science-research-writing/input-examples.md) · [输出说明](docs/science-research-writing/output-guide.md)
+
+如果你的目标是把论文做成 PPT，请先看 [Research Presentation 快速上手](docs/research-presentation/getting-started.md) 和[使用场景](docs/research-presentation/use-cases.md)。
 
 ## 可以直接复制的例子
 
@@ -126,6 +131,9 @@ npx skills add Yila-AI/sci-ssci-skills --global --agent codex --skill science-re
 
 # 翻译或润色已有初稿
 npx skills add Yila-AI/sci-ssci-skills --global --agent codex --skill sci-ssci-polishing --yes --copy
+
+# 把论文或研究材料做成学术汇报
+npx skills add Yila-AI/sci-ssci-skills --global --agent codex --skill research-presentation --yes --copy
 ```
 
 查看仓库中所有可安装的 Skills：
@@ -188,6 +196,14 @@ Hilary Glasman-Deal 的《*Science Research Writing: For Native and Non-Native S
 - 记录关键陈述的来源，并标出缺失的证据；
 - 检查数字、引用、保护术语和论断强度标记；
 - 给出小白也能理解的输出，每次最多追问一个阻断性问题。
+
+### `research-presentation`
+
+- 从论文、初稿、图表或研究笔记开始规划有证据来源的汇报；
+- 为关键论断保留证据台账和来源锚点；
+- 根据文献汇报、组会、会议报告、研讨课或答辩选择叙事弧线；
+- 输出可编辑的页面内容、讲稿备注和基于渲染结果的质检报告；
+- 保留不确定性、局限和论断强度，而不是只追求视觉效果。
 
 ### `sci-ssci-polishing`
 
