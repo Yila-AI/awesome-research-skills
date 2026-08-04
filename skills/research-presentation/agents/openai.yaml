@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Presentation — Paper to Slides"
+  short_description: "Turn papers into source-grounded research slide decks"
+  default_prompt: "Use $research-presentation to turn this paper or research material into a source-grounded academic slide deck."
