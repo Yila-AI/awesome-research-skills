@@ -25,9 +25,9 @@ Designed for Agent workflows such as Codex, Claude Code, WorkBuddy-style researc
 ## Paper to Slides showcase
 
 `research-presentation` turns a paper into a source-grounded, editable research
-presentation. Here are two generated visual passes from the same network-
-epidemiology paper; the [full showcase](showcase/research-presentation/ecology-network/README.md)
-contains all 12 rendered slides for each pass.
+presentation. The [full showcase](showcase/research-presentation/README.md)
+now covers six cross-disciplinary cases; the network-epidemiology case also
+includes two complete 12-slide visual passes.
 
 <p align="center">
   <a href="showcase/research-presentation/ecology-network/README.md">
@@ -40,6 +40,14 @@ contains all 12 rendered slides for each pass.
 
 Source paper: [arXiv:2607.25475](https://arxiv.org/abs/2607.25475). The repository
 stores the canonical paper link, not the source PDF.
+
+| Education research | Epidemiology | Materials science |
+|---|---|---|
+| [![Education opportunity](showcase/research-presentation/education-opportunity/slate-orange/01-cover.webp)](showcase/research-presentation/README.md) | [![Epidemic mobility](showcase/research-presentation/epidemic-mobility/pku-red/01-cover.webp)](showcase/research-presentation/README.md) | [![Materials alloy](showcase/research-presentation/materials-alloy/forest-green/01-cover.webp)](showcase/research-presentation/README.md) |
+
+| Sociology | Statistics | Full gallery |
+|---|---|---|
+| [![Sociology and democracy](showcase/research-presentation/sociology-democracy/zju-blue/01-cover.webp)](showcase/research-presentation/README.md) | [![Statistics ranking](showcase/research-presentation/statistics-ranking/deep-purple/01-cover.webp)](showcase/research-presentation/README.md) | [Browse all six cases →](showcase/research-presentation/README.md) |
 
 ## Which Skill should I use?
 
