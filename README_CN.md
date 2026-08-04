@@ -25,8 +25,8 @@
 ## Paper to Slides 能力展示
 
 `research-presentation` 可以把论文转化为有来源、有叙事、可编辑的科研汇报。
-下面是同一篇网络流行病学论文的两版生成结果；[完整 Showcase](showcase/research-presentation/ecology-network/README.md)
-中包含每一版的 12 张渲染页面。
+[完整 Showcase](showcase/research-presentation/README.md) 现在覆盖 6 个跨学科案例；
+其中网络流行病学案例包含两版完整的 12 页结果。
 
 <p align="center">
   <a href="showcase/research-presentation/ecology-network/README.md">
@@ -38,6 +38,14 @@
 </p>
 
 测试论文：[arXiv:2607.25475](https://arxiv.org/abs/2607.25475)。仓库只保留论文链接和引用信息，不复制原始 PDF。
+
+| 教育研究 | 流行病学 | 材料科学 |
+|---|---|---|
+| [![教育机会](showcase/research-presentation/education-opportunity/slate-orange/01-cover.webp)](showcase/research-presentation/README_CN.md) | [![流动与接触网络](showcase/research-presentation/epidemic-mobility/pku-red/01-cover.webp)](showcase/research-presentation/README_CN.md) | [![材料合金](showcase/research-presentation/materials-alloy/forest-green/01-cover.webp)](showcase/research-presentation/README_CN.md) |
+
+| 社会学 | 统计学 | 完整展示 |
+|---|---|---|
+| [![民主满意度](showcase/research-presentation/sociology-democracy/zju-blue/01-cover.webp)](showcase/research-presentation/README_CN.md) | [![统计排序模型](showcase/research-presentation/statistics-ranking/deep-purple/01-cover.webp)](showcase/research-presentation/README_CN.md) | [浏览全部 6 个案例 →](showcase/research-presentation/README_CN.md) |
 
 ## 我应该用哪个 Skill？
 
