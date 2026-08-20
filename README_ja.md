@@ -35,10 +35,10 @@ Node.js 18 or later is required.
 
 ```bash
 # Start from research materials
-npx skills add Yila-AI/sci-ssci-skills --global --agent codex --skill science-research-writing --yes --copy
+npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill science-research-writing --yes --copy
 
 # Translate or polish an existing draft
-npx skills add Yila-AI/sci-ssci-skills --global --agent codex --skill sci-ssci-polishing --yes --copy
+npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill sci-ssci-polishing --yes --copy
 ```
 
 ## Copy-Paste Examples
@@ -66,7 +66,7 @@ If this repository helps your research Agent, writing tool, or academic workflow
 
 ```markdown
 **Credit:** The evidence-preserving research-writing workflow is adapted from
-[Yila-AI/sci-ssci-skills](https://github.com/Yila-AI/sci-ssci-skills),
+[Yila-AI/awesome-research-skills](https://github.com/Yila-AI/awesome-research-skills),
 including its Evidence-Preserving Draft Contract and Claim-Strength Contract.
 ```
 

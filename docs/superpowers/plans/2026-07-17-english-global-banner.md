@@ -40,7 +40,7 @@ Expand it to include the full content depth of the Chinese version, led by globa
 
 - [x] **Step 3: Add reciprocal language links and banner reference**
 
-Both files must link to the other language and reference `assets/sci-ssci-skills-banner.png` at the top.
+Both files must link to the other language and reference `assets/awesome-research-skills-banner.png` at the top.
 
 - [x] **Step 4: Verify relative links**
 
@@ -51,7 +51,7 @@ Expected: every relative target in `README.md` and `README_CN.md` exists; no ref
 ### Task 2: Original global banner
 
 **Files:**
-- Create: `assets/sci-ssci-skills-banner.png`
+- Create: `assets/awesome-research-skills-banner.png`
 
 **Interfaces:**
 - Consumes: approved headline, support line, dark scientific editorial art direction, and factual constraints.
@@ -67,7 +67,7 @@ Check exact text, spelling, crop safety, hierarchy, contrast, absence of waterma
 
 - [x] **Step 3: Save the selected asset in the repository**
 
-Copy the final generated image to `assets/sci-ssci-skills-banner.png`; do not leave a README-referenced asset only in the generated-images directory.
+Copy the final generated image to `assets/awesome-research-skills-banner.png`; do not leave a README-referenced asset only in the generated-images directory.
 
 ### Task 3: Validate and publish
 
@@ -76,7 +76,7 @@ Copy the final generated image to `assets/sci-ssci-skills-banner.png`; do not le
 
 **Interfaces:**
 - Consumes: completed English/Chinese documentation and banner.
-- Produces: a tested GitHub commit available from `Yila-AI/sci-ssci-skills`.
+- Produces: a tested GitHub commit available from `Yila-AI/awesome-research-skills`.
 
 - [x] **Step 1: Run repository checks**
 
@@ -100,6 +100,6 @@ Stage only the intended README, banner, design, and plan changes; review the sta
 
 - [x] **Step 4: Verify the remote landing page and installation discovery**
 
-Run `npx skills add Yila-AI/sci-ssci-skills --list` from a clean temporary directory.
+Run `npx skills add Yila-AI/awesome-research-skills --list` from a clean temporary directory.
 
 Expected: the remote repository exposes `sci-ssci-polishing` and the GitHub landing page uses the English README with the banner.

@@ -2,7 +2,7 @@
 
 ## Goal
 
-Reposition `sci-ssci-skills` as one evidence-preserving research-writing
+Reposition `awesome-research-skills` as one evidence-preserving research-writing
 workflow built from two complementary sources:
 
 1. the section-by-section and reverse-engineering pedagogy associated with

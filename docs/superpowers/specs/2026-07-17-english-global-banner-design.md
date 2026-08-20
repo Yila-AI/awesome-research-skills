@@ -4,7 +4,7 @@ Date: 2026-07-17
 
 ## Goal
 
-Reposition `sci-ssci-skills` for a global research audience while preserving a complete Chinese entry point. Add an original, immediately legible GitHub banner that communicates the project's task, corpus funnel, and scientific-fidelity boundary.
+Reposition `awesome-research-skills` for a global research audience while preserving a complete Chinese entry point. Add an original, immediately legible GitHub banner that communicates the project's task, corpus funnel, and scientific-fidelity boundary.
 
 ## Documentation architecture
 

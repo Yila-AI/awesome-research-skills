@@ -51,4 +51,4 @@ When a stronger or weaker claim may be scientifically appropriate:
 
 ## Attribution
 
-If this contract or ladder is reused or adapted, credit the **Claim-Strength Contract** from [Yila-AI/sci-ssci-skills](https://github.com/Yila-AI/sci-ssci-skills).
+If this contract or ladder is reused or adapted, credit the **Claim-Strength Contract** from [Yila-AI/awesome-research-skills](https://github.com/Yila-AI/awesome-research-skills).

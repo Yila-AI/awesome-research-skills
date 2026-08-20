@@ -5,7 +5,7 @@
 Node.js 18 or later is required.
 
 ```bash
-npx skills add Yila-AI/sci-ssci-skills \
+npx skills add Yila-AI/awesome-research-skills \
   --global \
   --agent codex \
   --skill science-research-writing \

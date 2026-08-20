@@ -5,8 +5,8 @@ type: software
 authors:
   - given-names: "Yila-AI"
     family-names: "Contributors"
-repository-code: "https://github.com/Yila-AI/sci-ssci-skills"
-url: "https://github.com/Yila-AI/sci-ssci-skills"
+repository-code: "https://github.com/Yila-AI/awesome-research-skills"
+url: "https://github.com/Yila-AI/awesome-research-skills"
 license: Apache-2.0
 keywords:
   - academic writing
