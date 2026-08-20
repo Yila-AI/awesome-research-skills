@@ -1,6 +1,6 @@
 # SCI/SSCI Academic Polishing — Lean Distribution
 
-This is the use-only distribution of [`sci-ssci-polishing`](https://github.com/Yila-AI/sci-ssci-skills/tree/main/skills/sci-ssci-polishing). It contains the complete runtime Skill, its references and invariant checker, and the repository license. The corpus, benchmarks, provenance documents, and promotional assets remain in the full research repository.
+This is the use-only distribution of [`sci-ssci-polishing`](https://github.com/Yila-AI/awesome-research-skills/tree/main/skills/sci-ssci-polishing). It contains the complete runtime Skill, its references and invariant checker, and the repository license. The corpus, benchmarks, provenance documents, and promotional assets remain in the full research repository.
 
 ## Install
 
@@ -13,7 +13,7 @@ $sci-ssci-polishing
 If your Agent supports the Skills CLI, installing the selected Skill directly from the repository remains the simplest option:
 
 ```bash
-npx skills add Yila-AI/sci-ssci-skills --global --agent codex --skill sci-ssci-polishing --yes --copy
+npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill sci-ssci-polishing --yes --copy
 ```
 
 That command installs only the selected Skill; it does not place the complete research repository in the Agent's Skills directory.
@@ -26,4 +26,4 @@ That command installs only the selected Skill; it does not place the complete re
 - `agents/openai.yaml`: Agent metadata;
 - `LICENSE`: Apache License 2.0.
 
-For corpus construction, benchmarks, public metadata, examples, and citation information, see the [full repository](https://github.com/Yila-AI/sci-ssci-skills).
+For corpus construction, benchmarks, public metadata, examples, and citation information, see the [full repository](https://github.com/Yila-AI/awesome-research-skills).

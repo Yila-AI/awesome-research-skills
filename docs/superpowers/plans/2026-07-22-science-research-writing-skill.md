@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Add an English-first, novice-friendly `science-research-writing` Skill to `Yila-AI/sci-ssci-skills`, evaluate it against frozen baselines, and publish repository documentation that clearly distinguishes it from `sci-ssci-polishing`.
+**Goal:** Add an English-first, novice-friendly `science-research-writing` Skill to `Yila-AI/awesome-research-skills`, evaluate it against frozen baselines, and publish repository documentation that clearly distinguishes it from `sci-ssci-polishing`.
 
 **Architecture:** Keep both Skills as independent siblings under `skills/`. Route novice requests through a compact `SKILL.md`, load section-specific guidance from `references/`, and use standard-library Python scripts for deterministic model-schema and invariant checks. Store human-facing guides and benchmark evidence at repository level so the installable Skill remains lean.
 
@@ -10,7 +10,7 @@
 
 ## Global Constraints
 
-- Preserve the repository URL `Yila-AI/sci-ssci-skills` and present the outer brand as **SCI/SSCI Research Writing Skills**.
+- Preserve the repository URL `Yila-AI/awesome-research-skills` and present the outer brand as **SCI/SSCI Research Writing Skills**.
 - Use `science-research-writing` as the Skill folder and YAML name; use *Science Research Writing* as the display name.
 - Make `README.md`, Skill instructions, reference documents, schemas, scripts, and benchmark records English-authoritative; keep `README_CN.md` aligned for Chinese users.
 - Describe the project as independent and unofficial, inspired by the reverse-engineering pedagogy in Hilary Glasman-Deal's book; never imply author or publisher endorsement.
@@ -481,8 +481,8 @@ Keep the 1,000-paper corpus explanation and existing evaluation claims explicitl
 - [ ] **Step 3: Add parallel install commands**
 
 ```bash
-npx skills add Yila-AI/sci-ssci-skills --global --agent codex --skill science-research-writing --yes --copy
-npx skills add Yila-AI/sci-ssci-skills --global --agent codex --skill sci-ssci-polishing --yes --copy
+npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill science-research-writing --yes --copy
+npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill sci-ssci-polishing --yes --copy
 ```
 
 - [ ] **Step 4: Align the Chinese README**
@@ -491,7 +491,7 @@ Mirror the information hierarchy and claims while allowing natural Chinese wordi
 
 - [ ] **Step 5: Add citation metadata and local-artifact ignores**
 
-Set `CITATION.cff` title to `SCI/SSCI Research Writing Skills`, repository URL to `https://github.com/Yila-AI/sci-ssci-skills`, license to `Apache-2.0`, and preferred citation type to `software`. Add `.superpowers/` and benchmark scratch-output paths to `.gitignore` without ignoring committed benchmark evidence.
+Set `CITATION.cff` title to `SCI/SSCI Research Writing Skills`, repository URL to `https://github.com/Yila-AI/awesome-research-skills`, license to `Apache-2.0`, and preferred citation type to `software`. Add `.superpowers/` and benchmark scratch-output paths to `.gitignore` without ignoring committed benchmark evidence.
 
 - [ ] **Step 6: Check links and commit**
 

@@ -152,26 +152,26 @@ Skill 会先读取你的材料，判断当前最有用的成果是计划、初�
 
 ```bash
 # 从研究材料开始写论文
-npx skills add Yila-AI/sci-ssci-skills --global --agent codex --skill science-research-writing --yes --copy
+npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill science-research-writing --yes --copy
 
 # 翻译或润色已有初稿
-npx skills add Yila-AI/sci-ssci-skills --global --agent codex --skill sci-ssci-polishing --yes --copy
+npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill sci-ssci-polishing --yes --copy
 
 # 把论文或研究材料做成学术汇报
-npx skills add Yila-AI/sci-ssci-skills --global --agent codex --skill research-presentation --yes --copy
+npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill research-presentation --yes --copy
 ```
 
 查看仓库中所有可安装的 Skills：
 
 ```bash
-npx skills add Yila-AI/sci-ssci-skills --list
+npx skills add Yila-AI/awesome-research-skills --list
 ```
 
 ### 只想使用一个 Skill？
 
 如果只是为了运行某个 Skill，你不需要克隆完整仓库，也不需要让 Agent 读取仓库根目录。上面带有 `--skill ... --copy` 的命令只会把选中的运行时 Skill 复制到 Agent 的 Skills 目录。
 
-如需手动安装或集成到其他项目，可以从[最新 Lean Release](https://github.com/Yila-AI/sci-ssci-skills/releases/latest)下载已打包的 `sci-ssci-polishing` Skill。完整仓库继续保留语料、评测、来源记录和案例，供需要审查 Skill 构建与评估方法的研究者使用。
+如需手动安装或集成到其他项目，可以从[最新 Lean Release](https://github.com/Yila-AI/awesome-research-skills/releases/latest)下载已打包的 `sci-ssci-polishing` Skill。完整仓库继续保留语料、评测、来源记录和案例，供需要审查 Skill 构建与评估方法的研究者使用。
 
 ## 为什么把《*Science Research Writing*》的方法变成 Agent 工作流？
 
@@ -274,7 +274,7 @@ Hilary Glasman-Deal 的《*Science Research Writing: For Native and Non-Native S
 
 ```markdown
 **Credit:** The evidence-preserving research-writing workflow is adapted from
-[Yila-AI/sci-ssci-skills](https://github.com/Yila-AI/sci-ssci-skills),
+[Yila-AI/awesome-research-skills](https://github.com/Yila-AI/awesome-research-skills),
 including its Evidence-Preserving Draft Contract and Claim-Strength Contract.
 ```
 
@@ -288,7 +288,7 @@ including its Evidence-Preserving Draft Contract and Claim-Strength Contract.
 |---|---|
 | [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills) | 已 credit 并改编本仓库的 claim-strength ladder 机制，用于防止多轮论文修改中的论断强度漂移。相关讨论见 [issue #569](https://github.com/Imbad0202/academic-research-skills/issues/569)、[issue #570](https://github.com/Imbad0202/academic-research-skills/issues/570) 和 [PR #573](https://github.com/Imbad0202/academic-research-skills/pull/573)。 |
 
-如果你的科研 Agent、学术写作工具或开源项目正在使用或改编这套工作流，欢迎提交 [Issue](https://github.com/Yila-AI/sci-ssci-skills/issues) 或 Pull Request，并附上一句简介和公开链接。
+如果你的科研 Agent、学术写作工具或开源项目正在使用或改编这套工作流，欢迎提交 [Issue](https://github.com/Yila-AI/awesome-research-skills/issues) 或 Pull Request，并附上一句简介和公开链接。
 
 ## 评测
 

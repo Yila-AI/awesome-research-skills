@@ -56,4 +56,4 @@ Run `../scripts/validate_writing_model.py` before using the model.
 
 ## Attribution
 
-If this protocol is reused or adapted, credit the **Target-Journal Model Builder** from [Yila-AI/sci-ssci-skills](https://github.com/Yila-AI/sci-ssci-skills).
+If this protocol is reused or adapted, credit the **Target-Journal Model Builder** from [Yila-AI/awesome-research-skills](https://github.com/Yila-AI/awesome-research-skills).

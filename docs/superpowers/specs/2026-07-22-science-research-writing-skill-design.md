@@ -248,7 +248,7 @@ Skill 目录内不创建 README、安装手册或发布日志。这些面向人�
 
 ## 9. 仓库级文档与可引用性
 
-本 Skill 不新建独立仓库，而是作为第二个平级 Skill 加入 `Yila-AI/sci-ssci-skills`：
+本 Skill 不新建独立仓库，而是作为第二个平级 Skill 加入 `Yila-AI/awesome-research-skills`：
 
 ```text
 skills/

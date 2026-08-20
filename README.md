@@ -154,26 +154,26 @@ Node.js 18 or later is required.
 
 ```bash
 # Start from research materials
-npx skills add Yila-AI/sci-ssci-skills --global --agent codex --skill science-research-writing --yes --copy
+npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill science-research-writing --yes --copy
 
 # Translate or polish an existing draft
-npx skills add Yila-AI/sci-ssci-skills --global --agent codex --skill sci-ssci-polishing --yes --copy
+npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill sci-ssci-polishing --yes --copy
 
 # Turn a paper or research materials into an academic presentation
-npx skills add Yila-AI/sci-ssci-skills --global --agent codex --skill research-presentation --yes --copy
+npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill research-presentation --yes --copy
 ```
 
 List all installable Skills:
 
 ```bash
-npx skills add Yila-AI/sci-ssci-skills --list
+npx skills add Yila-AI/awesome-research-skills --list
 ```
 
 ### Use only one Skill?
 
 You do not need to clone the complete repository or point an Agent at the repository root merely to run one Skill. The `--skill ... --copy` commands above copy only the selected runtime Skill into your Agent's Skills directory.
 
-For manual installation or downstream integration, download the packaged `sci-ssci-polishing` Skill from the [latest Lean Release](https://github.com/Yila-AI/sci-ssci-skills/releases/latest). The full repository keeps the corpus, benchmarks, provenance, and examples available for researchers who want to inspect how the Skill was built and evaluated.
+For manual installation or downstream integration, download the packaged `sci-ssci-polishing` Skill from the [latest Lean Release](https://github.com/Yila-AI/awesome-research-skills/releases/latest). The full repository keeps the corpus, benchmarks, provenance, and examples available for researchers who want to inspect how the Skill was built and evaluated.
 
 ## Why turn *Science Research Writing* into an Agent workflow?
 
@@ -276,7 +276,7 @@ Suggested short credit:
 
 ```markdown
 **Credit:** The evidence-preserving research-writing workflow is adapted from
-[Yila-AI/sci-ssci-skills](https://github.com/Yila-AI/sci-ssci-skills),
+[Yila-AI/awesome-research-skills](https://github.com/Yila-AI/awesome-research-skills),
 including its Evidence-Preserving Draft Contract and Claim-Strength Contract.
 ```
 
@@ -290,7 +290,7 @@ This section lists public projects that use, credit, adapt, or discuss mechanism
 |---|---|
 | [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills) | Credited and adapted the claim-strength ladder mechanism for revision-round claim-drift guards. See related discussion in [issue #569](https://github.com/Imbad0202/academic-research-skills/issues/569), [issue #570](https://github.com/Imbad0202/academic-research-skills/issues/570), and [PR #573](https://github.com/Imbad0202/academic-research-skills/pull/573). |
 
-Using or adapting this workflow in your own research Agent, academic-writing tool, or open-source project? Open an [issue](https://github.com/Yila-AI/sci-ssci-skills/issues) or pull request to add your project here. Please include a short description and a public link.
+Using or adapting this workflow in your own research Agent, academic-writing tool, or open-source project? Open an [issue](https://github.com/Yila-AI/awesome-research-skills/issues) or pull request to add your project here. Please include a short description and a public link.
 
 ## Evaluation
 

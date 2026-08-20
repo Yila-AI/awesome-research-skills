@@ -77,7 +77,7 @@ class LeanReleaseTests(unittest.TestCase):
                 readme = (REPO_ROOT / readme_name).read_text(encoding="utf-8")
                 self.assertIn("--skill sci-ssci-polishing", readme)
                 self.assertIn(
-                    "https://github.com/Yila-AI/sci-ssci-skills/releases/latest",
+                    "https://github.com/Yila-AI/awesome-research-skills/releases/latest",
                     readme,
                 )
 

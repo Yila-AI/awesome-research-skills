@@ -7,7 +7,7 @@
 需要 Node.js 18 或更高版本：
 
 ```bash
-npx skills add Yila-AI/sci-ssci-skills \
+npx skills add Yila-AI/awesome-research-skills \
   --global \
   --agent codex \
   --skill research-presentation \
