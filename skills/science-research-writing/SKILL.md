@@ -1,6 +1,7 @@
 ---
 name: science-research-writing
 description: Use when researchers need to plan, draft, revise, or audit an empirical research paper from their own materials, including Introduction, Methods, Results, Discussion, Conclusion, Abstract, and Title, with evidence-preserving and target-journal-aware guidance.
+license: Apache-2.0
 ---
 
 # Science Research Writing

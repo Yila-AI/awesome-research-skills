@@ -1,6 +1,7 @@
 ---
 name: research-presentation
 description: Create, revise, and quality-check source-grounded research presentations from papers, research notes, data, or manuscripts. Use for paper-to-slides, research presentation, scientific presentation, journal club, lab meeting, conference talk, seminar, thesis defense, dissertation defense, PPT/PPTX, 学术PPT, 科研汇报, 论文汇报, 组会汇报, 答辩PPT, and related slide-deck tasks.
+license: Apache-2.0; see NOTICE for third-party attributions
 ---
 
 # Research Presentation

@@ -1,47 +1,69 @@
-# SCI/SSCI Research Writing Skills
+# Awesome Research Skills
 
 [English](README.md) · [中文](README_CN.md) · [한국어](README_ko.md)
 
-> Turn your research into a clear, well-structured paper, section by section.
+<p align="center">
+  <img src="assets/research-workflow-hero-yila.webp" alt="Awesome Research Skills by Yila.ai — すべての AI Agent に必要な研究ワークフロー" width="100%">
+</p>
 
-**Polish the writing. Never rewrite the science.** This repository provides open-source Agent Skills for planning, drafting, revising, translating, and polishing SCI/SSCI papers while preserving meaning, data, citations, limitations, and claim strength.
+> **すべての AI Agent に必要な研究ワークフロー。**
 
-This short Japanese guide is for researchers who want to quickly understand what the repository does. The main documentation is maintained in English and Chinese.
+文献の発見と理解から、執筆、レビュー、推敲、発表まで、研究ライフサイクル全体を支援する成長中のオープンソース Skill スタックです。
 
-## What Problem Does It Solve?
+現在は研究執筆、忠実な学術推敲、論文からスライドへの変換を提供しています。今後さらに多くの研究段階へ拡張します。すべての段階で、Agent は出典、確認事項、不確実性、変更点を明示し、研究内容を勝手に書き換えないことを重視します。
 
-Many researchers, especially non-native English writers, use AI to improve academic writing. The risk is that the text becomes more fluent while the science changes silently:
+本プロジェクトは **[Yila.ai](https://yila.ai/?utm_source=github&utm_medium=referral&utm_campaign=awesome-research-skills)** が開発・保守しています。Yila.ai では、文献、証拠、データ、執筆、発表をつなぐ統合研究ワークスペースを利用できます。
 
-- a cautious result becomes a causal claim;
-- a limitation disappears;
-- a number, citation, or technical term changes;
-- the prose sounds stronger than the evidence supports.
+Codex、Claude Code、その他の再利用可能な Skill 指示に対応する Agent で利用できます。この日本語ページは要点版です。詳細な資料は英語版と中国語版で管理されています。
 
-These Skills are designed to help AI improve the writing while keeping the author's scientific meaning intact.
+## 今のタスクから始める
 
-## Which Skill Should I Use?
+| やりたいこと | 使用するモジュール | 出力 |
+|---|---|---|
+| アイデア、メモ、データ、文献を論文にまとめる | **Research Writer** · [`science-research-writing`](skills/science-research-writing/SKILL.md) | 証拠に基づく計画、セクション草稿、改訂、または原稿監査 |
+| 研究内容を変えずに学術英語を改善する | **Paper Polisher** · [`sci-ssci-polishing`](skills/sci-ssci-polishing/SKILL.md) | 投稿向けの英文と保全監査 |
+| 論文や研究結果を発表に変換する | **Paper to Slides** · [`research-presentation`](skills/research-presentation/SKILL.md) | 編集可能で出典に基づくデッキ計画、ノート、出典マップ、視覚 QA |
 
-| If you are... | Use |
-|---|---|
-| Starting from ideas, notes, results, tables, or references | `science-research-writing` |
-| Drafting Introduction, Methods, Results, Discussion, Abstract, or Title | `science-research-writing` |
-| Translating Chinese academic prose into English | `sci-ssci-polishing` |
-| Polishing English without changing the science | `sci-ssci-polishing` |
-| Building your own research Agent | Reuse the evidence and claim-strength mechanisms |
+## 30 秒でインストール
 
-## Install
-
-Node.js 18 or later is required.
+インストーラーには Node.js 18 以降が必要です。現在利用可能な機能をすべてインストールするには：
 
 ```bash
-# Start from research materials
-npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill science-research-writing --yes --copy
-
-# Translate or polish an existing draft
-npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill sci-ssci-polishing --yes --copy
+npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill '*' --yes --copy
 ```
 
-## Copy-Paste Examples
+必要な機能だけをインストールすることもできます。
+
+```bash
+# 論文の計画、執筆、改訂、監査
+npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill science-research-writing --yes --copy
+
+# 既存原稿の翻訳または推敲
+npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill sci-ssci-polishing --yes --copy
+
+# 論文や研究結果を学術発表に変換
+npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill research-presentation --yes --copy
+```
+
+利用可能な Skill の一覧は、`npx skills add Yila-AI/awesome-research-skills --list` で表示できます。
+
+## 研究ライフサイクル
+
+```text
+問い → 発見 → 読解 → 統合 → 設計 → 分析 → 執筆 → レビュー → 推敲 → 発信
+```
+
+| 開発状況 | 研究段階 |
+|---|---|
+| **現在利用可能** | 執筆、推敲、研究発表 |
+| **次に開発** | 文献検索、論文読解、証拠の統合、研究レビュー |
+| **長期的な範囲** | 研究設計、データ分析、出版、より広い研究コミュニケーション |
+
+将来的には、単一の `$research` 入口が現在の研究段階を判断し、適切な専門モジュールへ処理を振り分けます。統一入口は開発中であり、現在は利用可能な各 Skill を直接呼び出します。
+
+オープンソース化が進行中の段階も含め、文献検索、論文読解、証拠統合、研究設計、データ分析、執筆、図、ポスター、スライドの統合ワークフローは **[Yila.ai で試せます →](https://yila.ai/?utm_source=github&utm_medium=referral&utm_campaign=awesome-research-skills)**
+
+## すぐに使う
 
 ```text
 Use $science-research-writing.
@@ -52,17 +74,30 @@ Here are my research question, methods, main results, and target journal:
 
 ```text
 Use $sci-ssci-polishing.
-Please polish this Discussion paragraph.
-Do not change numbers, citations, terminology, limitations, or claim strength.
-If anything sounds overclaimed, flag it instead of silently rewriting it.
+Please polish this Discussion paragraph without changing numbers, citations,
+terminology, limitations, or claim strength.
 
 Text:
 [paste paragraph]
 ```
 
-## Reuse and Credit
+```text
+Use $research-presentation to turn this paper into a source-grounded,
+editable 10-minute research presentation with speaker notes.
+```
 
-If this repository helps your research Agent, writing tool, or academic workflow, please cite or credit:
+## なぜ必要か
+
+AI による学術的な改稿では、文章が流暢になる一方で、次のような科学的意味の漂流が起こることがあります。
+
+- 慎重な結果が因果主張に変わる。
+- 限界が削除される。
+- 数値、引用、専門用語が変更される。
+- 証拠が支持する範囲よりも強い表現になる。
+
+これらの Skill は、文章の明確さを高めながら、科学的判断を著者の手に残すよう設計されています。
+
+## 再利用と引用
 
 ```markdown
 **Credit:** The evidence-preserving research-writing workflow is adapted from
@@ -70,4 +105,6 @@ If this repository helps your research Agent, writing tool, or academic workflow
 including its Evidence-Preserving Draft Contract and Claim-Strength Contract.
 ```
 
-See the full [English README](README.md) for examples, evaluation notes, corpus boundaries, copyright boundaries, and project credits.
+評価、コーパス、著作権上の境界、詳細な使用例については、[英語版 README](README.md) を参照してください。
+
+Awesome Research Skills is built and maintained by **[Yila.ai](https://yila.ai/?utm_source=github&utm_medium=referral&utm_campaign=awesome-research-skills)**.

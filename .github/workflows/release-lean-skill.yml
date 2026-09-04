@@ -1,9 +1,11 @@
-name: Release lean sci-ssci-polishing Skill
+name: Release versioned lean Skill
 
 on:
   push:
     tags:
+      - "science-research-writing-v*"
       - "sci-ssci-polishing-v*"
+      - "research-presentation-v*"
 
 permissions:
   contents: write
@@ -27,16 +29,26 @@ jobs:
         id: build
         shell: bash
         run: |
-          release_version="${GITHUB_REF_NAME#sci-ssci-polishing-}"
-          archive_path="$(python3 scripts/build_lean_release.py --version "$release_version" --output-dir dist)"
+          skill_name="${GITHUB_REF_NAME%-v*}"
+          release_version="${GITHUB_REF_NAME#${skill_name}-}"
+          archive_path="$(python3 scripts/build_lean_release.py --skill "$skill_name" --version "$release_version" --output-dir dist)"
+          checksum_path="${archive_path}.sha256"
+          archive_dir="$(dirname "$archive_path")"
+          archive_name="$(basename "$archive_path")"
+          (cd "$archive_dir" && sha256sum "$archive_name") > "$checksum_path"
+          echo "skill_name=$skill_name" >> "$GITHUB_OUTPUT"
           echo "archive_path=$archive_path" >> "$GITHUB_OUTPUT"
+          echo "checksum_path=$checksum_path" >> "$GITHUB_OUTPUT"
 
       - name: Publish GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}
           ARCHIVE_PATH: ${{ steps.build.outputs.archive_path }}
+          CHECKSUM_PATH: ${{ steps.build.outputs.checksum_path }}
+          SKILL_NAME: ${{ steps.build.outputs.skill_name }}
         run: |
-          gh release create "$GITHUB_REF_NAME" "$ARCHIVE_PATH" \
+          gh release create "$GITHUB_REF_NAME" "$ARCHIVE_PATH" "$CHECKSUM_PATH" \
             --verify-tag \
-            --title "SCI/SSCI Polishing Lean $GITHUB_REF_NAME" \
+            --title "$SKILL_NAME Lean $GITHUB_REF_NAME" \
+            --notes "Built and maintained by [Yila.ai](https://yila.ai/?utm_source=github&utm_medium=release&utm_campaign=awesome-research-skills), where researchers can use the connected workflow from literature and evidence to data, writing, and presentation." \
             --generate-notes

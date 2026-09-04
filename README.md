@@ -1,106 +1,116 @@
-<div align="center">
-  <img src="assets/sci-ssci-research-writing-hero.png" alt="SCI/SSCI Research Writing Skills — Plan. Draft. Polish. Preserve the science." width="100%">
-</div>
+# Awesome Research Skills
 
-# SCI/SSCI Research Writing Skills
+<p align="center">
+  <img src="assets/research-workflow-hero-yila.webp" alt="Awesome Research Skills by Yila.ai — the research workflow every AI agent should have" width="100%">
+</p>
 
-> **Turn your research into a clear, well-structured paper—section by section.**
+> **The research workflow every AI agent should have.**
 
-**Polish the writing. Never rewrite the science.** This repository provides open-source Agent Skills for planning, drafting, revising, translating, and polishing SCI/SSCI papers while preserving meaning, data, citations, limitations, and claim strength.
+A growing open-source Skill stack for the full research lifecycle—from discovering and understanding papers to writing, reviewing, polishing, and presenting research.
 
-Designed for Agent workflows such as Codex, Claude Code, WorkBuddy-style research agents, and other systems that support reusable Skill instructions.
+Available today: research writing, faithful academic polishing, and paper-to-slides. More stages are being built. Across the workflow, Agents should show their sources, checks, uncertainty, and changes instead of silently rewriting the research.
+
+Built and maintained by **[Yila.ai](https://yila.ai/?utm_source=github&utm_medium=referral&utm_campaign=awesome-research-skills)**, a research workspace for literature, evidence, data, writing, and presentation workflows.
+
+Designed for Codex, Claude Code, WorkBuddy-style research agents, and other systems that support reusable Skill instructions.
+
+<p align="center">
+  <a href="https://github.com/Yila-AI/awesome-research-skills/actions/workflows/ci.yml"><img src="https://github.com/Yila-AI/awesome-research-skills/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/Yila-AI/awesome-research-skills" alt="Apache-2.0 license"></a>
+  <a href="https://skills.sh/yila-ai/awesome-research-skills"><img src="https://skills.sh/b/yila-ai/awesome-research-skills" alt="Install count on skills.sh"></a>
+  <a href="https://yila.ai/?utm_source=github&amp;utm_medium=referral&amp;utm_campaign=awesome-research-skills"><img src="https://img.shields.io/badge/Built%20by-Yila.ai-C9825A" alt="Built by Yila.ai"></a>
+</p>
 
 <p align="center">
   <a href="README_CN.md">中文说明</a> ·
   <a href="README_ja.md">日本語</a> ·
   <a href="README_ko.md">한국어</a> ·
-  <a href="docs/science-research-writing/getting-started.md">1-minute start</a> ·
-  <a href="#install">Install</a> ·
-  <a href="#which-skill-should-i-use">Which Skill?</a> ·
+  <a href="https://yila.ai/?utm_source=github&amp;utm_medium=referral&amp;utm_campaign=awesome-research-skills">Try Yila.ai</a> ·
+  <a href="#install-in-30-seconds">Install</a> ·
+  <a href="#start-from-your-task">Start from a task</a> ·
+  <a href="#the-full-research-lifecycle">Lifecycle</a> ·
   <a href="#use-only-one-skill">Lean download</a> ·
+  <a href="#paper-to-slides-showcase">Showcase</a> ·
   <a href="#build-on-these-mechanisms">Reuse &amp; cite</a> ·
   <a href="#used-credited-or-adapted-by">Used by</a>
 </p>
 
-## Paper to Slides showcase
+## Start from your task
 
-`research-presentation` turns a paper into a source-grounded, editable research
-presentation. The [full showcase](showcase/research-presentation/README.md)
-now covers six cross-disciplinary cases; the network-epidemiology case also
-includes two complete 12-slide visual passes.
-
-<p align="center">
-  <a href="showcase/research-presentation/ecology-network/README.md">
-    <img src="showcase/research-presentation/ecology-network/bright-azure-v2/01.webp" alt="Paper to Slides showcase cover" width="48%">
-  </a>
-  <a href="showcase/research-presentation/ecology-network/README.md">
-    <img src="showcase/research-presentation/ecology-network/bright-azure-v2/05.webp" alt="Paper to Slides showcase result slide" width="48%">
-  </a>
-</p>
-
-Source paper: [arXiv:2607.25475](https://arxiv.org/abs/2607.25475). The repository
-stores the canonical paper link, not the source PDF.
-
-| Education research | Epidemiology | Materials science |
+| I want to… | Start with | What I get |
 |---|---|---|
-| [![Education opportunity](showcase/research-presentation/education-opportunity/slate-orange/01-cover.webp)](showcase/research-presentation/README.md) | [![Epidemic mobility](showcase/research-presentation/epidemic-mobility/pku-red/01-cover.webp)](showcase/research-presentation/README.md) | [![Materials alloy](showcase/research-presentation/materials-alloy/forest-green/01-cover.webp)](showcase/research-presentation/README.md) |
+| Turn ideas, notes, data, or references into a paper | **Research Writer** · [`science-research-writing`](skills/science-research-writing/SKILL.md) | An evidence-grounded plan, section draft, revision, or manuscript audit |
+| Improve academic English without changing the research | **Paper Polisher** · [`sci-ssci-polishing`](skills/sci-ssci-polishing/SKILL.md) | Publication-oriented English plus a preservation audit |
+| Turn a paper or research results into a talk | **Paper to Slides** · [`research-presentation`](skills/research-presentation/SKILL.md) | An editable, source-grounded deck plan with notes, source map, and visual QA |
 
-| Sociology | Statistics | Full gallery |
+## Install in 30 seconds
+
+Node.js 18 or later is required for the installer. Install the complete currently available stack:
+
+```bash
+npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill '*' --yes --copy
+```
+
+Or install only the capability you need today:
+
+```bash
+# Plan, draft, revise, or audit a paper
+npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill science-research-writing --yes --copy
+
+# Translate or polish an existing manuscript
+npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill sci-ssci-polishing --yes --copy
+
+# Turn a paper or research results into an academic presentation
+npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill research-presentation --yes --copy
+```
+
+List all installable Skills with `npx skills add Yila-AI/awesome-research-skills --list`.
+
+### Use only one Skill?
+
+The commands above copy only the selected runtime Skill into your Agent's Skills directory. You do not need to clone the complete repository or point an Agent at the repository root. Versioned, use-only ZIP archives for production-ready Skills are published on the [Releases page](https://github.com/Yila-AI/awesome-research-skills/releases).
+
+## The full research lifecycle
+
+The project is growing toward one connected workflow rather than a folder of unrelated prompts:
+
+```text
+QUESTION → DISCOVER → READ → SYNTHESIZE → DESIGN → ANALYZE → WRITE → REVIEW → POLISH → COMMUNICATE
+```
+
+| Build status | Research stages |
+|---|---|
+| **Available now** | Write, Polish, Present |
+| **Building next** | Discover, Read, Synthesize, Review |
+| **Longer-term workflow** | Design, Analyze, Publish and broader research communication |
+
+The product direction is a single `$research` entry point that can understand the current stage and route work to the right specialist module. The current release exposes each available Skill directly while that unified workflow is being built.
+
+The modules will share research context—questions, sources, evidence, author decisions, claims, data, and revision history—so that evidence found during search can survive all the way into a manuscript, review, or presentation.
+
+### Use the complete workflow on Yila.ai
+
+These open-source Skills come from the research workflows being built at [Yila.ai](https://yila.ai/?utm_source=github&utm_medium=referral&utm_campaign=awesome-research-skills). While more stages are packaged as reusable Skills, Yila.ai already provides an integrated workspace for literature search, paper reading, evidence synthesis, research design, data analysis, writing, figures, posters, and slides.
+
+**[Start a research task on Yila.ai →](https://yila.ai/?utm_source=github&utm_medium=referral&utm_campaign=awesome-research-skills)**
+
+## Available today
+
+The current release provides three connected capabilities:
+
+| Foundation | Available module | What it helps you do |
 |---|---|---|
-| [![Sociology and democracy](showcase/research-presentation/sociology-democracy/zju-blue/01-cover.webp)](showcase/research-presentation/README.md) | [![Statistics ranking](showcase/research-presentation/statistics-ranking/deep-purple/01-cover.webp)](showcase/research-presentation/README.md) | [Browse all six cases →](showcase/research-presentation/README.md) |
-
-## Which Skill should I use?
-
-| If you are... | Use | Copy this starting point |
-|---|---|---|
-| Starting from an idea, notes, results, tables, or references | `science-research-writing` | `Use $science-research-writing. I have research materials but do not know how to organize them into a paper.` |
-| Turning a paper, manuscript, or research results into an academic slide deck | `research-presentation` | `Use $research-presentation to turn this paper into a source-grounded research presentation.` |
-| Trying to turn rough materials into Introduction, Methods, Results, Discussion, Abstract, or Title | `science-research-writing` | `Use $science-research-writing to help me draft the next useful manuscript section from the materials below.` |
-| Translating Chinese academic prose into publication-oriented English | `sci-ssci-polishing` | `Use $sci-ssci-polishing. Translate this into academic English, but do not add claims or citations.` |
-| Polishing an English manuscript without changing the science | `sci-ssci-polishing` | `Use $sci-ssci-polishing. Improve clarity and flow while preserving numbers, citations, limitations, and claim strength.` |
-| Building your own research Agent | Reuse the mechanisms | Start from the [Evidence-Preserving Draft Contract](skills/science-research-writing/SKILL.md) and [Claim-Strength Contract](skills/science-research-writing/references/certainty-and-claim-strength.md). |
-
-## Why star this repo?
-
-Star this repository if you want a growing open-source toolkit for:
-
-- writing research papers section by section;
-- polishing SCI/SSCI manuscripts without changing the science;
-- protecting numbers, citations, terminology, limitations, and claim strength during AI-assisted revision;
-- building academic-writing Agents with reusable evidence-preserving rules;
-- contributing examples, benchmarks, translations, and new research-writing Skills.
-
-## Two foundations, one research-writing workflow
-
-This repository does three connected jobs:
-
-| Foundation | Skill | What it helps you do |
-|---|---|---|
-| The section-by-section and reverse-engineering pedagogy associated with Hilary Glasman-Deal's *Science Research Writing* | [`science-research-writing`](skills/science-research-writing/SKILL.md) | Decide what each section needs to accomplish, then turn ideas, notes, data, references, or drafts into the next useful manuscript artifact |
-| Writing observations derived through a corpus pipeline beginning with a 1,000-paper SCI/SSCI metadata candidate pool | [`sci-ssci-polishing`](skills/sci-ssci-polishing/SKILL.md) | Translate or polish an existing manuscript while preserving data, citations, terminology, limitations, and claim strength |
-| Evidence-first academic presentation design | [`research-presentation`](skills/research-presentation/SKILL.md) | Turn papers and research materials into editable, source-grounded research presentations, with a narrative plan, evidence ledger, speaker notes, and render-based QA |
+| The section-by-section and reverse-engineering pedagogy associated with Hilary Glasman-Deal's *Science Research Writing* | **Research Writer** · [`science-research-writing`](skills/science-research-writing/SKILL.md) | Decide what each section needs to accomplish, then turn ideas, notes, data, references, or drafts into the next useful manuscript artifact |
+| Writing observations derived through a corpus pipeline beginning with a 1,000-paper SCI/SSCI metadata candidate pool | **Paper Polisher** · [`sci-ssci-polishing`](skills/sci-ssci-polishing/SKILL.md) | Translate or polish an existing manuscript while preserving data, citations, terminology, limitations, and claim strength |
+| Evidence-first academic presentation design | **Paper to Slides** · [`research-presentation`](skills/research-presentation/SKILL.md) | Turn papers and research materials into editable, source-grounded research presentations, with a narrative plan, evidence ledger, speaker notes, and render-based QA |
 
 In plain language: **the writing Skills help build and refine the paper; `research-presentation` carries the evidence into a talk without flattening the science.** Scientific judgment remains with the author.
-
-<div align="center">
-  <img src="assets/sci-ssci-research-writing-architecture.png" alt="Architecture of SCI/SSCI Research Writing Skills: a book-informed writing workflow and a curated SCI/SSCI corpus pipeline connected by evidence-preserving contracts" width="100%">
-</div>
 
 ### Building a research Agent?
 
 You can reuse the repository's Evidence-Preserving Draft Contract, Claim-Strength Contract, and Target-Journal Model Builder in your own project.
 
 [Reuse the mechanisms](#build-on-these-mechanisms) · [Cite this repository](CITATION.cff) · [Add your project](#used-credited-or-adapted-by)
-
-## Choose where you are
-
-| What you have now | Use | What you get |
-|---|---|---|
-| An idea or research question | `science-research-writing` | Questions to resolve, a materials checklist, and a practical next step |
-| Notes, data, references, or a protocol | `science-research-writing` | A paper plan or section draft grounded only in supplied materials |
-| A partial or complete draft | `science-research-writing` | Revision, consistency checks, or an evidence audit |
-| Chinese academic prose or an English manuscript | `sci-ssci-polishing` | Academic English plus a preservation audit |
-| A paper or research results that need to become slides | `research-presentation` | A narrative outline, editable deck plan, source map, notes, and visual QA checklist |
 
 ## Start with one sentence
 
@@ -148,32 +158,20 @@ Text:
 [paste paragraph]
 ```
 
-## Install
+## Paper to Slides showcase
 
-Node.js 18 or later is required.
+`research-presentation` turns a paper into a source-grounded, editable research presentation. The [full showcase](showcase/research-presentation/README.md) covers six cross-disciplinary cases; the network-epidemiology case also includes two complete 12-slide visual passes.
 
-```bash
-# Start from research materials
-npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill science-research-writing --yes --copy
+<p align="center">
+  <a href="showcase/research-presentation/ecology-network/README.md">
+    <img src="showcase/research-presentation/ecology-network/bright-azure-v2/01.webp" alt="Paper to Slides showcase cover" width="48%">
+  </a>
+  <a href="showcase/research-presentation/ecology-network/README.md">
+    <img src="showcase/research-presentation/ecology-network/bright-azure-v2/05.webp" alt="Paper to Slides showcase result slide" width="48%">
+  </a>
+</p>
 
-# Translate or polish an existing draft
-npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill sci-ssci-polishing --yes --copy
-
-# Turn a paper or research materials into an academic presentation
-npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill research-presentation --yes --copy
-```
-
-List all installable Skills:
-
-```bash
-npx skills add Yila-AI/awesome-research-skills --list
-```
-
-### Use only one Skill?
-
-You do not need to clone the complete repository or point an Agent at the repository root merely to run one Skill. The `--skill ... --copy` commands above copy only the selected runtime Skill into your Agent's Skills directory.
-
-For manual installation or downstream integration, download the packaged `sci-ssci-polishing` Skill from the [latest Lean Release](https://github.com/Yila-AI/awesome-research-skills/releases/latest). The full repository keeps the corpus, benchmarks, provenance, and examples available for researchers who want to inspect how the Skill was built and evaluated.
+Source paper: [arXiv:2607.25475](https://arxiv.org/abs/2607.25475). The repository stores the canonical paper link, not the source PDF. [Browse all six cases →](showcase/research-presentation/README.md)
 
 ## Why turn *Science Research Writing* into an Agent workflow?
 
@@ -209,11 +207,11 @@ Suppose 120 university students rate nine milk-tea recipes. The evidence shows t
 
 > 30%-sugar oolong milk tea is the world's best milk-tea recipe.
 
-The first statement reports a bounded result. The second silently turns a local finding into a universal claim. Both Skills are designed to detect this kind of drift: evidence can be clarified, organized, translated, and polished, but it must not be silently strengthened.
+The first statement reports a bounded result. The second silently turns a local finding into a universal claim. The writing Skills are designed to detect this kind of drift: evidence can be clarified, organized, translated, and polished, but it must not be silently strengthened.
 
 [Read the complete milk-tea walkthrough](examples/science-research-writing-walkthrough.md) · [查看中文完整案例](examples/science-research-writing-walkthrough_CN.md)
 
-## What the two Skills add
+## What the available Skills add
 
 ### `science-research-writing`
 
@@ -315,6 +313,10 @@ The test set and scoring rubric were frozen before implementation. Comparative r
 
 [Benchmark protocol](benchmarks/science-research-writing/README.md) · [Frozen cases](benchmarks/science-research-writing/test-cases.json) · [Evaluation rubric](benchmarks/science-research-writing/evaluation-rubric.md) · [Development smoke tests](benchmarks/science-research-writing/smoke-test-results.md)
 
+### `research-presentation`
+
+The public showcase demonstrates cross-disciplinary output design, but a frozen comparative benchmark has not yet been published. Showcase images are examples, not evidence of universal presentation quality.
+
 These evaluations support narrow safety and consistency claims. They do not prove journal acceptance, universal disciplinary coverage, scientific correctness, or superiority to domain experts and professional editors.
 
 ## Copyright, data, and professional boundaries
@@ -322,8 +324,10 @@ These evaluations support narrow safety and consistency claims. They do not prov
 - The repository contains no book PDF, article PDF, subscription full text, extracted paper paragraphs, phrase bank, or private access trace.
 - Public corpus tables contain bibliographic metadata, screening annotations, and aggregate results only.
 - `SCI` and `SSCI` describe corpus and user scope. This independent project is not affiliated with Clarivate, any journal, author, or publisher.
-- Both Skills are public beta software and do not replace author, domain-specialist, statistical, ethical, or professional editorial review.
+- Production-ready Skills in this repository are public beta software and do not replace author, domain-specialist, statistical, ethical, or professional editorial review.
 
 ## Citation and license
 
 See [`CITATION.cff`](CITATION.cff) for formal citation metadata. Original code, Skill instructions, and project documentation are licensed under the [Apache License 2.0](LICENSE). Third-party facts, names, and external resources remain subject to their source terms.
+
+Awesome Research Skills is built and maintained by **[Yila.ai](https://yila.ai/?utm_source=github&utm_medium=referral&utm_campaign=awesome-research-skills)**.

@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Run repository tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Validate Skill packages
+        run: python scripts/validate_skills.py
+
+      - name: Check local Markdown links
+        run: python scripts/check_markdown_links.py
+
+      - name: Build every lean distribution
+        run: |
+          for skill in science-research-writing sci-ssci-polishing research-presentation; do
+            python scripts/build_lean_release.py \
+              --skill "$skill" \
+              --version v0.0.0-ci \
+              --output-dir dist
+          done
