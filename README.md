@@ -1,10 +1,16 @@
-# Evidence-Preserving Research Agent Skills — 3 first-party skills
+# Awesome Research Skills
 
-> **Three first-party Agent Skills to plan, write, polish, and present research without silently changing the science.**
+<p align="center">
+  <img src="assets/research-workflow-hero.webp" alt="Awesome Research Skills — the research workflow every AI agent should have" width="100%">
+</p>
 
-**Polish the writing. Never rewrite the science.** This open-source toolkit protects meaning, data, citations, limitations, and claim strength across the research-writing workflow.
+> **The research workflow every AI agent should have.**
 
-Designed for Agent workflows such as Codex, Claude Code, WorkBuddy-style research agents, and other systems that support reusable Skill instructions.
+A growing open-source Skill stack for the full research lifecycle—from discovering and understanding papers to writing, reviewing, polishing, and presenting research.
+
+Available today: research writing, faithful academic polishing, and paper-to-slides. More stages are being built. Across the workflow, Agents should show their sources, checks, uncertainty, and changes instead of silently rewriting the research.
+
+Designed for Codex, Claude Code, WorkBuddy-style research agents, and other systems that support reusable Skill instructions.
 
 <p align="center">
   <a href="https://github.com/Yila-AI/awesome-research-skills/actions/workflows/ci.yml"><img src="https://github.com/Yila-AI/awesome-research-skills/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
@@ -17,24 +23,31 @@ Designed for Agent workflows such as Codex, Claude Code, WorkBuddy-style researc
   <a href="README_ja.md">日本語</a> ·
   <a href="README_ko.md">한국어</a> ·
   <a href="#install-in-30-seconds">Install</a> ·
-  <a href="#choose-a-skill">Which Skill?</a> ·
+  <a href="#start-from-your-task">Start from a task</a> ·
+  <a href="#the-full-research-lifecycle">Lifecycle</a> ·
   <a href="#use-only-one-skill">Lean download</a> ·
   <a href="#paper-to-slides-showcase">Showcase</a> ·
   <a href="#build-on-these-mechanisms">Reuse &amp; cite</a> ·
   <a href="#used-credited-or-adapted-by">Used by</a>
 </p>
 
-## Choose a Skill
+## Start from your task
 
-| Skill | Use it when | What you get |
+| I want to… | Start with | What I get |
 |---|---|---|
-| [`science-research-writing`](skills/science-research-writing/SKILL.md) | You have an idea, notes, data, references, or a partial manuscript | An evidence-grounded plan, section draft, revision, or manuscript audit |
-| [`sci-ssci-polishing`](skills/sci-ssci-polishing/SKILL.md) | You need Chinese-to-English translation or faithful English polishing | Publication-oriented English plus a preservation audit |
-| [`research-presentation`](skills/research-presentation/SKILL.md) | You need to turn a paper or research results into slides | An editable, source-grounded deck plan with notes, source map, and visual QA |
+| Turn ideas, notes, data, or references into a paper | **Research Writer** · [`science-research-writing`](skills/science-research-writing/SKILL.md) | An evidence-grounded plan, section draft, revision, or manuscript audit |
+| Improve academic English without changing the research | **Paper Polisher** · [`sci-ssci-polishing`](skills/sci-ssci-polishing/SKILL.md) | Publication-oriented English plus a preservation audit |
+| Turn a paper or research results into a talk | **Paper to Slides** · [`research-presentation`](skills/research-presentation/SKILL.md) | An editable, source-grounded deck plan with notes, source map, and visual QA |
 
 ## Install in 30 seconds
 
-Node.js 18 or later is required for the installer. Choose one Skill:
+Node.js 18 or later is required for the installer. Install the complete currently available stack:
+
+```bash
+npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill '*' --yes --copy
+```
+
+Or install only the capability you need today:
 
 ```bash
 # Plan, draft, revise, or audit a paper
@@ -51,17 +64,35 @@ List all installable Skills with `npx skills add Yila-AI/awesome-research-skills
 
 ### Use only one Skill?
 
-The commands above copy only the selected runtime Skill into your Agent's Skills directory. You do not need to clone the complete repository or point an Agent at the repository root. Versioned, use-only ZIP archives for all three Skills are published on the [Releases page](https://github.com/Yila-AI/awesome-research-skills/releases).
+The commands above copy only the selected runtime Skill into your Agent's Skills directory. You do not need to clone the complete repository or point an Agent at the repository root. Versioned, use-only ZIP archives for production-ready Skills are published on the [Releases page](https://github.com/Yila-AI/awesome-research-skills/releases).
 
-## Three Skills, one evidence-preserving workflow
+## The full research lifecycle
 
-This repository does three connected jobs:
+The project is growing toward one connected workflow rather than a folder of unrelated prompts:
 
-| Foundation | Skill | What it helps you do |
+```text
+QUESTION → DISCOVER → READ → SYNTHESIZE → DESIGN → ANALYZE → WRITE → REVIEW → POLISH → COMMUNICATE
+```
+
+| Build status | Research stages |
+|---|---|
+| **Available now** | Write, Polish, Present |
+| **Building next** | Discover, Read, Synthesize, Review |
+| **Longer-term workflow** | Design, Analyze, Publish and broader research communication |
+
+The product direction is a single `$research` entry point that can understand the current stage and route work to the right specialist module. The current release exposes each available Skill directly while that unified workflow is being built.
+
+The modules will share research context—questions, sources, evidence, author decisions, claims, data, and revision history—so that evidence found during search can survive all the way into a manuscript, review, or presentation.
+
+## Available today
+
+The current release provides three connected capabilities:
+
+| Foundation | Available module | What it helps you do |
 |---|---|---|
-| The section-by-section and reverse-engineering pedagogy associated with Hilary Glasman-Deal's *Science Research Writing* | [`science-research-writing`](skills/science-research-writing/SKILL.md) | Decide what each section needs to accomplish, then turn ideas, notes, data, references, or drafts into the next useful manuscript artifact |
-| Writing observations derived through a corpus pipeline beginning with a 1,000-paper SCI/SSCI metadata candidate pool | [`sci-ssci-polishing`](skills/sci-ssci-polishing/SKILL.md) | Translate or polish an existing manuscript while preserving data, citations, terminology, limitations, and claim strength |
-| Evidence-first academic presentation design | [`research-presentation`](skills/research-presentation/SKILL.md) | Turn papers and research materials into editable, source-grounded research presentations, with a narrative plan, evidence ledger, speaker notes, and render-based QA |
+| The section-by-section and reverse-engineering pedagogy associated with Hilary Glasman-Deal's *Science Research Writing* | **Research Writer** · [`science-research-writing`](skills/science-research-writing/SKILL.md) | Decide what each section needs to accomplish, then turn ideas, notes, data, references, or drafts into the next useful manuscript artifact |
+| Writing observations derived through a corpus pipeline beginning with a 1,000-paper SCI/SSCI metadata candidate pool | **Paper Polisher** · [`sci-ssci-polishing`](skills/sci-ssci-polishing/SKILL.md) | Translate or polish an existing manuscript while preserving data, citations, terminology, limitations, and claim strength |
+| Evidence-first academic presentation design | **Paper to Slides** · [`research-presentation`](skills/research-presentation/SKILL.md) | Turn papers and research materials into editable, source-grounded research presentations, with a narrative plan, evidence ledger, speaker notes, and render-based QA |
 
 In plain language: **the writing Skills help build and refine the paper; `research-presentation` carries the evidence into a talk without flattening the science.** Scientific judgment remains with the author.
 
@@ -170,7 +201,7 @@ The first statement reports a bounded result. The second silently turns a local 
 
 [Read the complete milk-tea walkthrough](examples/science-research-writing-walkthrough.md) · [查看中文完整案例](examples/science-research-writing-walkthrough_CN.md)
 
-## What the three Skills add
+## What the available Skills add
 
 ### `science-research-writing`
 
@@ -283,7 +314,7 @@ These evaluations support narrow safety and consistency claims. They do not prov
 - The repository contains no book PDF, article PDF, subscription full text, extracted paper paragraphs, phrase bank, or private access trace.
 - Public corpus tables contain bibliographic metadata, screening annotations, and aggregate results only.
 - `SCI` and `SSCI` describe corpus and user scope. This independent project is not affiliated with Clarivate, any journal, author, or publisher.
-- All three Skills are public beta software and do not replace author, domain-specialist, statistical, ethical, or professional editorial review.
+- Production-ready Skills in this repository are public beta software and do not replace author, domain-specialist, statistical, ethical, or professional editorial review.
 
 ## Citation and license
 

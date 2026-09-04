@@ -1,24 +1,36 @@
-# 근거 보존 연구 Agent Skills
+# Awesome Research Skills
 
 [English](README.md) · [中文](README_CN.md) · [日本語](README_ja.md)
 
-> **과학적 내용을 조용히 바꾸지 않고 연구를 기획·작성·교정·발표하도록 돕는 3개의 공식 Agent Skill입니다.**
+<p align="center">
+  <img src="assets/research-workflow-hero.webp" alt="Awesome Research Skills — 모든 AI Agent가 갖춰야 할 연구 워크플로" width="100%">
+</p>
 
-**문장은 다듬되, 과학은 다시 쓰지 않습니다.** 이 오픈소스 툴킷은 연구 글쓰기 전 과정에서 의미, 데이터, 인용, 한계, 주장의 강도를 보존합니다.
+> **모든 AI Agent가 갖춰야 할 연구 워크플로.**
+
+논문 탐색과 이해부터 작성, 검토, 교정, 발표까지 연구의 전체 생애주기를 지원하도록 확장되는 오픈소스 Skill 스택입니다.
+
+현재 연구 글쓰기, 충실한 학술 교정, 논문 기반 발표 제작 기능을 제공합니다. 더 많은 연구 단계가 계속 추가됩니다. 모든 단계에서 Agent가 출처, 검사 결과, 불확실성, 변경 사항을 명확히 밝히고 연구 내용을 조용히 바꾸지 않도록 설계합니다.
 
 Codex, Claude Code 및 재사용 가능한 Skill 지시를 지원하는 다른 Agent에서 사용할 수 있습니다. 이 한국어 페이지는 핵심 요약본이며, 상세 문서는 영어와 중국어로 관리됩니다.
 
-## Skill 선택
+## 지금의 작업에서 시작하기
 
-| Skill | 사용할 때 | 제공 결과 |
+| 하고 싶은 일 | 사용할 모듈 | 제공 결과 |
 |---|---|---|
-| [`science-research-writing`](skills/science-research-writing/SKILL.md) | 아이디어, 메모, 데이터, 문헌 또는 미완성 초고로 시작할 때 | 근거에 기반한 계획, 섹션 초고, 개정 또는 원고 감사 |
-| [`sci-ssci-polishing`](skills/sci-ssci-polishing/SKILL.md) | 중국어 학술 문장을 영어로 번역하거나 영문 원고를 충실하게 교정할 때 | 투고용 학술 영어와 보존 감사 |
-| [`research-presentation`](skills/research-presentation/SKILL.md) | 논문이나 연구 결과를 슬라이드로 만들 때 | 편집 가능하고 출처에 기반한 덱 계획, 발표자 노트, 출처 맵, 시각 QA |
+| 아이디어, 메모, 데이터, 문헌을 논문으로 발전시키기 | **Research Writer** · [`science-research-writing`](skills/science-research-writing/SKILL.md) | 근거에 기반한 계획, 섹션 초고, 개정 또는 원고 감사 |
+| 연구 내용을 바꾸지 않고 학술 영어 개선하기 | **Paper Polisher** · [`sci-ssci-polishing`](skills/sci-ssci-polishing/SKILL.md) | 투고용 학술 영어와 보존 감사 |
+| 논문이나 연구 결과를 발표로 변환하기 | **Paper to Slides** · [`research-presentation`](skills/research-presentation/SKILL.md) | 편집 가능하고 출처에 기반한 덱 계획, 발표자 노트, 출처 맵, 시각 QA |
 
 ## 30초 설치
 
-설치 도구는 Node.js 18 이상이 필요합니다. 필요한 Skill 하나를 선택하세요.
+설치 도구는 Node.js 18 이상이 필요합니다. 현재 사용 가능한 기능을 모두 설치하려면 다음 명령을 실행하세요.
+
+```bash
+npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill '*' --yes --copy
+```
+
+필요한 기능만 선택해 설치할 수도 있습니다.
 
 ```bash
 # 논문 기획, 작성, 개정 또는 감사
@@ -32,6 +44,20 @@ npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill re
 ```
 
 `npx skills add Yila-AI/awesome-research-skills --list`로 설치 가능한 모든 Skill을 확인할 수 있습니다.
+
+## 연구 전체 생애주기
+
+```text
+질문 → 탐색 → 읽기 → 종합 → 설계 → 분석 → 작성 → 검토 → 교정 → 소통
+```
+
+| 개발 상태 | 연구 단계 |
+|---|---|
+| **현재 사용 가능** | 작성, 교정, 연구 발표 |
+| **다음 개발 단계** | 문헌 검색, 논문 읽기, 근거 종합, 연구 검토 |
+| **장기 범위** | 연구 설계, 데이터 분석, 출판, 더 넓은 연구 커뮤니케이션 |
+
+장기적으로는 하나의 `$research` 진입점이 현재 연구 단계를 파악하고 적절한 전문 모듈로 작업을 연결합니다. 통합 진입점은 개발 중이며, 현재는 사용 가능한 각 Skill을 직접 호출합니다.
 
 ## 바로 사용하기
 

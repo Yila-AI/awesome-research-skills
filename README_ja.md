@@ -1,24 +1,36 @@
-# 証拠を保全する研究 Agent Skills
+# Awesome Research Skills
 
 [English](README.md) · [中文](README_CN.md) · [한국어](README_ko.md)
 
-> **科学的な内容を勝手に変えずに、研究の計画、執筆、推敲、発表を支援する 3 つの公式 Agent Skill。**
+<p align="center">
+  <img src="assets/research-workflow-hero.webp" alt="Awesome Research Skills — すべての AI Agent に必要な研究ワークフロー" width="100%">
+</p>
 
-**文章は磨いても、科学は書き換えない。** このオープンソース・ツールキットは、研究執筆のワークフロー全体で、意味、データ、引用、限界、主張の強さを保全します。
+> **すべての AI Agent に必要な研究ワークフロー。**
+
+文献の発見と理解から、執筆、レビュー、推敲、発表まで、研究ライフサイクル全体を支援する成長中のオープンソース Skill スタックです。
+
+現在は研究執筆、忠実な学術推敲、論文からスライドへの変換を提供しています。今後さらに多くの研究段階へ拡張します。すべての段階で、Agent は出典、確認事項、不確実性、変更点を明示し、研究内容を勝手に書き換えないことを重視します。
 
 Codex、Claude Code、その他の再利用可能な Skill 指示に対応する Agent で利用できます。この日本語ページは要点版です。詳細な資料は英語版と中国語版で管理されています。
 
-## Skill を選ぶ
+## 今のタスクから始める
 
-| Skill | 使用する場面 | 出力 |
+| やりたいこと | 使用するモジュール | 出力 |
 |---|---|---|
-| [`science-research-writing`](skills/science-research-writing/SKILL.md) | アイデア、メモ、データ、文献、未完成原稿から始める | 証拠に基づく計画、セクション草稿、改訂、または原稿監査 |
-| [`sci-ssci-polishing`](skills/sci-ssci-polishing/SKILL.md) | 中国語の学術文章の英訳、または英文原稿の推敲 | 投稿向けの英文と保全監査 |
-| [`research-presentation`](skills/research-presentation/SKILL.md) | 論文や研究結果をスライドにする | 編集可能で出典に基づくデッキ計画、ノート、出典マップ、視覚 QA |
+| アイデア、メモ、データ、文献を論文にまとめる | **Research Writer** · [`science-research-writing`](skills/science-research-writing/SKILL.md) | 証拠に基づく計画、セクション草稿、改訂、または原稿監査 |
+| 研究内容を変えずに学術英語を改善する | **Paper Polisher** · [`sci-ssci-polishing`](skills/sci-ssci-polishing/SKILL.md) | 投稿向けの英文と保全監査 |
+| 論文や研究結果を発表に変換する | **Paper to Slides** · [`research-presentation`](skills/research-presentation/SKILL.md) | 編集可能で出典に基づくデッキ計画、ノート、出典マップ、視覚 QA |
 
 ## 30 秒でインストール
 
-インストーラーには Node.js 18 以降が必要です。必要な Skill を 1 つ選びます。
+インストーラーには Node.js 18 以降が必要です。現在利用可能な機能をすべてインストールするには：
+
+```bash
+npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill '*' --yes --copy
+```
+
+必要な機能だけをインストールすることもできます。
 
 ```bash
 # 論文の計画、執筆、改訂、監査
@@ -32,6 +44,20 @@ npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill re
 ```
 
 利用可能な Skill の一覧は、`npx skills add Yila-AI/awesome-research-skills --list` で表示できます。
+
+## 研究ライフサイクル
+
+```text
+問い → 発見 → 読解 → 統合 → 設計 → 分析 → 執筆 → レビュー → 推敲 → 発信
+```
+
+| 開発状況 | 研究段階 |
+|---|---|
+| **現在利用可能** | 執筆、推敲、研究発表 |
+| **次に開発** | 文献検索、論文読解、証拠の統合、研究レビュー |
+| **長期的な範囲** | 研究設計、データ分析、出版、より広い研究コミュニケーション |
+
+将来的には、単一の `$research` 入口が現在の研究段階を判断し、適切な専門モジュールへ処理を振り分けます。統一入口は開発中であり、現在は利用可能な各 Skill を直接呼び出します。
 
 ## すぐに使う
 
