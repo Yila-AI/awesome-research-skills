@@ -49,6 +49,26 @@ class RepositoryValidationTests(unittest.TestCase):
     def test_repository_markdown_links_are_valid(self):
         self.assertEqual(find_broken_links(REPO_ROOT), [])
 
+    def test_public_entry_points_credit_yila_with_campaign_tracking(self):
+        entry_points = [
+            REPO_ROOT / "README.md",
+            REPO_ROOT / "README_CN.md",
+            REPO_ROOT / "README_ja.md",
+            REPO_ROOT / "README_ko.md",
+            REPO_ROOT / "distribution" / "science-research-writing" / "README.md",
+            REPO_ROOT / "distribution" / "sci-ssci-polishing" / "README.md",
+            REPO_ROOT / "distribution" / "research-presentation" / "README.md",
+        ]
+        for entry_point in entry_points:
+            with self.subTest(entry_point=entry_point.relative_to(REPO_ROOT)):
+                text = entry_point.read_text(encoding="utf-8")
+                self.assertIn("https://yila.ai/?utm_source=github", text)
+                self.assertIn("utm_campaign=awesome-research-skills", text)
+
+        for readme_name in ("README.md", "README_CN.md", "README_ja.md", "README_ko.md"):
+            text = (REPO_ROOT / readme_name).read_text(encoding="utf-8")
+            self.assertIn("assets/research-workflow-hero-yila.webp", text)
+
 
 if __name__ == "__main__":
     unittest.main()

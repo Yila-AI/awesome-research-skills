@@ -1,7 +1,7 @@
 # Awesome Research Skills
 
 <p align="center">
-  <img src="assets/research-workflow-hero.webp" alt="Awesome Research Skills——每个 AI Agent 都应该具备的科研工作流" width="100%">
+  <img src="assets/research-workflow-hero-yila.webp" alt="Awesome Research Skills by Yila.ai——每个 AI Agent 都应该具备的科研工作流" width="100%">
 </p>
 
 > **每个 AI Agent 都应该具备的科研工作流。**
@@ -10,18 +10,22 @@
 
 当前已经提供科研写作、忠实学术润色和论文转汇报能力，更多科研环节正在建设。贯穿整个流程的共同要求是：Agent 必须交代来源、检查、不确定性和修改内容，而不是悄悄改写研究。
 
+本项目由 **[Yila.ai](https://yila.ai/?utm_source=github&utm_medium=referral&utm_campaign=awesome-research-skills)** 构建并持续维护。Yila.ai 提供覆盖文献、证据、数据、写作和学术展示的科研工作空间。
+
 适用于 Codex、Claude Code、WorkBuddy 风格科研 Agent，以及其他支持可复用 Skill 指令的 Agent 工作流。
 
 <p align="center">
   <a href="https://github.com/Yila-AI/awesome-research-skills/actions/workflows/ci.yml"><img src="https://github.com/Yila-AI/awesome-research-skills/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/Yila-AI/awesome-research-skills" alt="Apache-2.0 许可证"></a>
   <a href="https://skills.sh/yila-ai/awesome-research-skills"><img src="https://skills.sh/b/yila-ai/awesome-research-skills" alt="skills.sh 安装量"></a>
+  <a href="https://yila.ai/?utm_source=github&amp;utm_medium=referral&amp;utm_campaign=awesome-research-skills"><img src="https://img.shields.io/badge/Built%20by-Yila.ai-C9825A" alt="由 Yila.ai 构建"></a>
 </p>
 
 <p align="center">
   <a href="README.md">English</a> ·
   <a href="README_ja.md">日本語</a> ·
   <a href="README_ko.md">한국어</a> ·
+  <a href="https://yila.ai/?utm_source=github&amp;utm_medium=referral&amp;utm_campaign=awesome-research-skills">体验 Yila.ai</a> ·
   <a href="#30-秒安装">安装</a> ·
   <a href="#从当前任务开始">从任务开始</a> ·
   <a href="#科研全流程">科研全流程</a> ·
@@ -83,6 +87,12 @@ npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill re
 产品方向是提供一个统一的 `$research` 入口：它能够识别用户当前所处的科研阶段，并把任务路由给对应的专业模块。统一入口尚在建设中；当前版本仍然直接调用已经可用的各个 Skill。
 
 各模块将共享研究问题、文献来源、证据、作者决策、论断、数据和修改记录，让检索阶段找到的依据能够一直延续到论文、审查和汇报，而不是在环节切换时丢失。
+
+### 在 Yila.ai 使用完整科研工作流
+
+这些开源 Skills 来自 [Yila.ai](https://yila.ai/?utm_source=github&utm_medium=referral&utm_campaign=awesome-research-skills) 正在构建的科研工作流。在更多环节被封装成可复用 Skill 的同时，Yila.ai 已经提供文献检索、论文阅读、证据综合、研究设计、数据分析、论文写作、科研配图、学术海报和 Slides 等一体化能力。
+
+**[前往 Yila.ai 开始科研任务 →](https://yila.ai/?utm_source=github&utm_medium=referral&utm_campaign=awesome-research-skills)**
 
 ## 当前可用能力
 
@@ -319,3 +329,5 @@ including its Evidence-Preserving Draft Contract and Claim-Strength Contract.
 ## 引用与许可证
 
 正式引用信息见 [`CITATION.cff`](CITATION.cff)。原创代码、Skill 指令和项目文档使用 [Apache License 2.0](LICENSE)。第三方事实、名称和外部资源仍受各自来源条款约束。
+
+Awesome Research Skills 由 **[Yila.ai](https://yila.ai/?utm_source=github&utm_medium=referral&utm_campaign=awesome-research-skills)** 构建并持续维护。

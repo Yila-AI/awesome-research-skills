@@ -114,6 +114,8 @@ class LeanReleaseTests(unittest.TestCase):
         self.assertIn('--skill "$skill_name"', workflow)
         self.assertIn("sha256sum", workflow)
         self.assertIn("gh release create", workflow)
+        self.assertIn("https://yila.ai/?utm_source=github", workflow)
+        self.assertIn("utm_medium=release", workflow)
 
     def test_both_readmes_explain_selective_install_and_lean_download(self):
         for readme_name in ("README.md", "README_CN.md"):

@@ -3,7 +3,7 @@
 [English](README.md) · [中文](README_CN.md) · [日本語](README_ja.md)
 
 <p align="center">
-  <img src="assets/research-workflow-hero.webp" alt="Awesome Research Skills — 모든 AI Agent가 갖춰야 할 연구 워크플로" width="100%">
+  <img src="assets/research-workflow-hero-yila.webp" alt="Awesome Research Skills by Yila.ai — 모든 AI Agent가 갖춰야 할 연구 워크플로" width="100%">
 </p>
 
 > **모든 AI Agent가 갖춰야 할 연구 워크플로.**
@@ -11,6 +11,8 @@
 논문 탐색과 이해부터 작성, 검토, 교정, 발표까지 연구의 전체 생애주기를 지원하도록 확장되는 오픈소스 Skill 스택입니다.
 
 현재 연구 글쓰기, 충실한 학술 교정, 논문 기반 발표 제작 기능을 제공합니다. 더 많은 연구 단계가 계속 추가됩니다. 모든 단계에서 Agent가 출처, 검사 결과, 불확실성, 변경 사항을 명확히 밝히고 연구 내용을 조용히 바꾸지 않도록 설계합니다.
+
+이 프로젝트는 **[Yila.ai](https://yila.ai/?utm_source=github&utm_medium=referral&utm_campaign=awesome-research-skills)**가 개발하고 유지 관리합니다. Yila.ai에서는 문헌, 근거, 데이터, 글쓰기, 발표를 연결하는 통합 연구 워크스페이스를 사용할 수 있습니다.
 
 Codex, Claude Code 및 재사용 가능한 Skill 지시를 지원하는 다른 Agent에서 사용할 수 있습니다. 이 한국어 페이지는 핵심 요약본이며, 상세 문서는 영어와 중국어로 관리됩니다.
 
@@ -59,6 +61,8 @@ npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill re
 
 장기적으로는 하나의 `$research` 진입점이 현재 연구 단계를 파악하고 적절한 전문 모듈로 작업을 연결합니다. 통합 진입점은 개발 중이며, 현재는 사용 가능한 각 Skill을 직접 호출합니다.
 
+오픈소스 패키징이 진행 중인 단계까지 포함해 문헌 검색, 논문 읽기, 근거 종합, 연구 설계, 데이터 분석, 글쓰기, 그림, 포스터, 슬라이드의 통합 워크플로를 **[Yila.ai에서 사용해 보세요 →](https://yila.ai/?utm_source=github&utm_medium=referral&utm_campaign=awesome-research-skills)**
+
 ## 바로 사용하기
 
 ```text
@@ -102,3 +106,5 @@ including its Evidence-Preserving Draft Contract and Claim-Strength Contract.
 ```
 
 평가, 코퍼스, 저작권 경계 및 상세한 사용 예시는 [영어 README](README.md)를 참고하세요.
+
+Awesome Research Skills is built and maintained by **[Yila.ai](https://yila.ai/?utm_source=github&utm_medium=referral&utm_campaign=awesome-research-skills)**.

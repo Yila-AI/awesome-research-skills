@@ -50,4 +50,5 @@ jobs:
           gh release create "$GITHUB_REF_NAME" "$ARCHIVE_PATH" "$CHECKSUM_PATH" \
             --verify-tag \
             --title "$SKILL_NAME Lean $GITHUB_REF_NAME" \
+            --notes "Built and maintained by [Yila.ai](https://yila.ai/?utm_source=github&utm_medium=release&utm_campaign=awesome-research-skills), where researchers can use the connected workflow from literature and evidence to data, writing, and presentation." \
             --generate-notes

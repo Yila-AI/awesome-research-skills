@@ -1,7 +1,7 @@
 # Awesome Research Skills
 
 <p align="center">
-  <img src="assets/research-workflow-hero.webp" alt="Awesome Research Skills — the research workflow every AI agent should have" width="100%">
+  <img src="assets/research-workflow-hero-yila.webp" alt="Awesome Research Skills by Yila.ai — the research workflow every AI agent should have" width="100%">
 </p>
 
 > **The research workflow every AI agent should have.**
@@ -10,18 +10,22 @@ A growing open-source Skill stack for the full research lifecycle—from discove
 
 Available today: research writing, faithful academic polishing, and paper-to-slides. More stages are being built. Across the workflow, Agents should show their sources, checks, uncertainty, and changes instead of silently rewriting the research.
 
+Built and maintained by **[Yila.ai](https://yila.ai/?utm_source=github&utm_medium=referral&utm_campaign=awesome-research-skills)**, a research workspace for literature, evidence, data, writing, and presentation workflows.
+
 Designed for Codex, Claude Code, WorkBuddy-style research agents, and other systems that support reusable Skill instructions.
 
 <p align="center">
   <a href="https://github.com/Yila-AI/awesome-research-skills/actions/workflows/ci.yml"><img src="https://github.com/Yila-AI/awesome-research-skills/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/Yila-AI/awesome-research-skills" alt="Apache-2.0 license"></a>
   <a href="https://skills.sh/yila-ai/awesome-research-skills"><img src="https://skills.sh/b/yila-ai/awesome-research-skills" alt="Install count on skills.sh"></a>
+  <a href="https://yila.ai/?utm_source=github&amp;utm_medium=referral&amp;utm_campaign=awesome-research-skills"><img src="https://img.shields.io/badge/Built%20by-Yila.ai-C9825A" alt="Built by Yila.ai"></a>
 </p>
 
 <p align="center">
   <a href="README_CN.md">中文说明</a> ·
   <a href="README_ja.md">日本語</a> ·
   <a href="README_ko.md">한국어</a> ·
+  <a href="https://yila.ai/?utm_source=github&amp;utm_medium=referral&amp;utm_campaign=awesome-research-skills">Try Yila.ai</a> ·
   <a href="#install-in-30-seconds">Install</a> ·
   <a href="#start-from-your-task">Start from a task</a> ·
   <a href="#the-full-research-lifecycle">Lifecycle</a> ·
@@ -83,6 +87,12 @@ QUESTION → DISCOVER → READ → SYNTHESIZE → DESIGN → ANALYZE → WRITE �
 The product direction is a single `$research` entry point that can understand the current stage and route work to the right specialist module. The current release exposes each available Skill directly while that unified workflow is being built.
 
 The modules will share research context—questions, sources, evidence, author decisions, claims, data, and revision history—so that evidence found during search can survive all the way into a manuscript, review, or presentation.
+
+### Use the complete workflow on Yila.ai
+
+These open-source Skills come from the research workflows being built at [Yila.ai](https://yila.ai/?utm_source=github&utm_medium=referral&utm_campaign=awesome-research-skills). While more stages are packaged as reusable Skills, Yila.ai already provides an integrated workspace for literature search, paper reading, evidence synthesis, research design, data analysis, writing, figures, posters, and slides.
+
+**[Start a research task on Yila.ai →](https://yila.ai/?utm_source=github&utm_medium=referral&utm_campaign=awesome-research-skills)**
 
 ## Available today
 
@@ -319,3 +329,5 @@ These evaluations support narrow safety and consistency claims. They do not prov
 ## Citation and license
 
 See [`CITATION.cff`](CITATION.cff) for formal citation metadata. Original code, Skill instructions, and project documentation are licensed under the [Apache License 2.0](LICENSE). Third-party facts, names, and external resources remain subject to their source terms.
+
+Awesome Research Skills is built and maintained by **[Yila.ai](https://yila.ai/?utm_source=github&utm_medium=referral&utm_campaign=awesome-research-skills)**.

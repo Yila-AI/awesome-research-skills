@@ -1,12 +1,12 @@
 cff-version: 1.2.0
-message: "If you use or adapt these research-writing Skills, please cite this repository."
+message: "If you use or adapt these research Skills by Yila.ai, please cite this repository."
 title: "Awesome Research Skills"
 type: software
 authors:
   - given-names: "Yila-AI"
     family-names: "Contributors"
 repository-code: "https://github.com/Yila-AI/awesome-research-skills"
-url: "https://github.com/Yila-AI/awesome-research-skills"
+url: "https://yila.ai/"
 license: Apache-2.0
 keywords:
   - academic writing

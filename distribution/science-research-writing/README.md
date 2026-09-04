@@ -26,3 +26,5 @@ npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill sc
 - `LICENSE`: Apache License 2.0.
 
 For evaluation protocols, worked examples, copyright boundaries, and citation information, see the [full repository](https://github.com/Yila-AI/awesome-research-skills).
+
+This Skill is built and maintained by [Yila.ai](https://yila.ai/?utm_source=github&utm_medium=release&utm_campaign=awesome-research-skills), where you can use the connected research workflow from literature and evidence to data, writing, and presentation.

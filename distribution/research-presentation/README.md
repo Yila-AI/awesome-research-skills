@@ -34,3 +34,5 @@ If these dependencies are unavailable, the Skill requires the host's native pres
 - `NOTICE` and `LICENSE`: third-party notices and Apache License 2.0.
 
 For showcases, source-paper links, copyright boundaries, and citation information, see the [full repository](https://github.com/Yila-AI/awesome-research-skills).
+
+This Skill is built and maintained by [Yila.ai](https://yila.ai/?utm_source=github&utm_medium=release&utm_campaign=awesome-research-skills), where you can use the connected research workflow from literature and evidence to data, writing, and presentation.
