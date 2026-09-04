@@ -1,45 +1,47 @@
-# Research Presentation：使用场景
+# Research Presentation: use cases
 
-## 文献汇报 / Journal club
+## Journal club
 
-**提供：**论文 PDF、汇报时长、听众背景和希望重点讨论的问题。
+**Provide:** the paper PDF, presentation length, audience background, and questions you want to discuss.
 
-**Skill 会做：**先交代问题和方法，再用关键图表解释结果，最后把局限和可讨论的问题留在结尾。
+**The Skill will:** establish the question and method, explain the main evidence through key figures or tables, and close with limitations and discussion questions.
 
-**不会做：**把作者没有声称的因果关系、机制或外推范围写成结论。
+**It will not:** turn an unsupported causal relationship, mechanism, or generalization into the paper's conclusion.
 
-## 组会 / Lab meeting
+## Lab meeting
 
-**提供：**研究进展、实验记录、结果图表和当前卡点。
+**Provide:** research progress, experimental notes, result figures or tables, and current blockers.
 
-**Skill 会做：**区分已完成、正在验证和待决策事项，并把结果页与下一步实验连接起来。
+**The Skill will:** distinguish completed work, work being validated, and open decisions, then connect the results to the next experiment or analysis.
 
-**不会做：**用漂亮的流程图掩盖空缺数据或矛盾结果。
+**It will not:** use a polished diagram to conceal missing data or contradictory results.
 
-## 会议报告 / Conference presentation
+## Conference presentation
 
-**提供：**摘要、完整论文或结果材料、会议时长、模板和品牌限制。
+**Provide:** the abstract, paper or result materials, presentation length, template, and branding constraints.
 
-**Skill 会做：**围绕听众在有限时间内必须记住的一条主线压缩内容，并保留可追溯的来源标记。
+**The Skill will:** compress the material around the one defensible thread that the audience should remember, while keeping source anchors visible and traceable.
 
-**不会做：**为了塞进更多内容而牺牲字号、图表可读性或证据边界。
+**It will not:** sacrifice type size, figure readability, or evidence boundaries to fit more content.
 
-## 研讨课 / Seminar
+## Seminar
 
-**提供：**目标听众、先修知识、讨论目标和希望保留的背景内容。
+**Provide:** the target audience, assumed background, discussion goals, and context that must remain.
 
-**Skill 会做：**增加必要的背景层级和过渡，让非本领域听众能跟上核心论证。
+**The Skill will:** add the background layers and transitions needed for a non-specialist audience to follow the central argument.
 
-## 答辩 / Thesis defense
+## Thesis defense
 
-**提供：**论文、研究问题、贡献、局限、答辩时长和院系模板。
+**Provide:** the thesis or papers, research questions, contributions, limitations, defense length, and institutional template.
 
-**Skill 会做：**建立“问题—方法—证据—贡献—边界”的闭环，并把可能被追问的证据位置映射出来。
+**The Skill will:** close the loop from question to method, evidence, contribution, and boundary, while mapping evidence that may be challenged during questions.
 
-## 输入不完整或来源冲突
+## Incomplete or conflicting inputs
 
-**提供：**现有 PDF、图片、表格、笔记，以及冲突版本。
+**Provide:** the available PDFs, images, tables, notes, and conflicting versions.
 
-**Skill 会做：**标记冲突、继续完成不受影响的页面，并要求作者确认唯一权威版本。
+**The Skill will:** flag the conflict, continue with unaffected slides, and ask the author to identify the authoritative source.
 
-**不会做：**为了让故事顺滑而静默选择一个数字或补齐缺失结果。
+**It will not:** silently choose a number or invent a missing result to make the narrative smoother.
+
+[中文](use-cases_CN.md)

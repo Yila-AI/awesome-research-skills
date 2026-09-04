@@ -1,74 +1,59 @@
-<div align="center">
-  <img src="assets/sci-ssci-research-writing-hero.png" alt="SCI/SSCI 科研写作 Skills——规划、起草、润色，保护科学内容" width="100%">
-</div>
+# 证据守恒科研 Agent Skills
 
-# SCI/SSCI 科研写作 Skills
+> **3 个第一方 Agent Skills：规划、写作、润色和展示研究，不悄悄改变科学内容。**
 
-> **把你的研究变成一篇结构清楚的论文：一节一节写。**
-
-**润色文字，但不改写科学内容。** 这是一组用于规划、起草、修改、翻译和润色 SCI/SSCI 论文的开源 Agent Skills，重点保护作者原意、数据、引用、研究局限和论断强度。
+**润色文字，但不改写科学内容。** 这套开源工具在整个科研写作流程中保护作者原意、数据、引用、研究局限和论断强度。
 
 适用于 Codex、Claude Code、WorkBuddy 风格科研 Agent，以及其他支持可复用 Skill 指令的 Agent 工作流。
+
+<p align="center">
+  <a href="https://github.com/Yila-AI/awesome-research-skills/actions/workflows/ci.yml"><img src="https://github.com/Yila-AI/awesome-research-skills/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/Yila-AI/awesome-research-skills" alt="Apache-2.0 许可证"></a>
+  <a href="https://skills.sh/yila-ai/awesome-research-skills"><img src="https://skills.sh/b/yila-ai/awesome-research-skills" alt="skills.sh 安装量"></a>
+</p>
 
 <p align="center">
   <a href="README.md">English</a> ·
   <a href="README_ja.md">日本語</a> ·
   <a href="README_ko.md">한국어</a> ·
-  <a href="docs/science-research-writing/getting-started.md">1 分钟上手</a> ·
-  <a href="#安装"> 安装</a> ·
-  <a href="#我应该用哪个-skill">我该用哪个 Skill？</a> ·
+  <a href="#30-秒安装">安装</a> ·
+  <a href="#选择-skill">我该用哪个 Skill？</a> ·
   <a href="#只想使用一个-skill">轻量下载</a> ·
+  <a href="#paper-to-slides-能力展示">Showcase</a> ·
   <a href="#在你的项目中复用这些机制">复用与引用</a> ·
   <a href="#使用致谢或改编本项目的项目">项目展示</a>
 </p>
 
-## Paper to Slides 能力展示
+## 选择 Skill
 
-`research-presentation` 可以把论文转化为有来源、有叙事、可编辑的科研汇报。
-[完整 Showcase](showcase/research-presentation/README.md) 现在覆盖 6 个跨学科案例；
-其中网络流行病学案例包含两版完整的 12 页结果。
-
-<p align="center">
-  <a href="showcase/research-presentation/ecology-network/README.md">
-    <img src="showcase/research-presentation/ecology-network/bright-azure-v2/01.webp" alt="Paper to Slides 封面示例" width="48%">
-  </a>
-  <a href="showcase/research-presentation/ecology-network/README.md">
-    <img src="showcase/research-presentation/ecology-network/bright-azure-v2/05.webp" alt="Paper to Slides 结果页示例" width="48%">
-  </a>
-</p>
-
-测试论文：[arXiv:2607.25475](https://arxiv.org/abs/2607.25475)。仓库只保留论文链接和引用信息，不复制原始 PDF。
-
-| 教育研究 | 流行病学 | 材料科学 |
+| Skill | 适合什么时候用 | 你会得到什么 |
 |---|---|---|
-| [![教育机会](showcase/research-presentation/education-opportunity/slate-orange/01-cover.webp)](showcase/research-presentation/README_CN.md) | [![流动与接触网络](showcase/research-presentation/epidemic-mobility/pku-red/01-cover.webp)](showcase/research-presentation/README_CN.md) | [![材料合金](showcase/research-presentation/materials-alloy/forest-green/01-cover.webp)](showcase/research-presentation/README_CN.md) |
+| [`science-research-writing`](skills/science-research-writing/SKILL.md) | 你有研究想法、笔记、数据、文献或局部初稿 | 有证据依据的论文计划、章节初稿、修订稿或完整性审计 |
+| [`sci-ssci-polishing`](skills/sci-ssci-polishing/SKILL.md) | 你要中译英，或在不改变科学内容的前提下润色英文 | 面向发表的学术英文和一份保真审计 |
+| [`research-presentation`](skills/research-presentation/SKILL.md) | 你要把论文或研究结果做成学术汇报 | 可编辑、有来源的汇报方案，包含讲稿、来源映射和视觉质检 |
 
-| 社会学 | 统计学 | 完整展示 |
-|---|---|---|
-| [![民主满意度](showcase/research-presentation/sociology-democracy/zju-blue/01-cover.webp)](showcase/research-presentation/README_CN.md) | [![统计排序模型](showcase/research-presentation/statistics-ranking/deep-purple/01-cover.webp)](showcase/research-presentation/README_CN.md) | [浏览全部 6 个案例 →](showcase/research-presentation/README_CN.md) |
+## 30 秒安装
 
-## 我应该用哪个 Skill？
+安装器需要 Node.js 18 或更高版本。选择一个 Skill：
 
-| 如果你现在…… | 使用 | 可以这样开始 |
-|---|---|---|
-| 只有研究想法、笔记、结果、表格或文献 | `science-research-writing` | `请使用 $science-research-writing。我有研究材料，但不知道怎么组织成论文。` |
-| 想把论文、初稿或研究结果做成学术汇报 | `research-presentation` | `请使用 $research-presentation，把这篇论文做成有证据来源的科研汇报 PPT。` |
-| 想把材料整理成引言、方法、结果、讨论、摘要或标题 | `science-research-writing` | `请使用 $science-research-writing，基于下面材料帮我起草当前最需要的论文章节。` |
-| 有中文学术文字，想翻译成论文英文 | `sci-ssci-polishing` | `请使用 $sci-ssci-polishing，把下面内容翻译成学术英文，但不要新增观点或引用。` |
-| 有英文初稿，想润色但不想改原意 | `sci-ssci-polishing` | `请使用 $sci-ssci-polishing，提升清晰度和连贯性，但保留数字、引用、局限和论断强度。` |
-| 想开发自己的科研 Agent | 复用本仓库机制 | 从 [Evidence-Preserving Draft Contract](skills/science-research-writing/SKILL.md) 和 [Claim-Strength Contract](skills/science-research-writing/references/certainty-and-claim-strength.md) 开始。 |
+```bash
+# 规划、起草、修订或审计论文
+npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill science-research-writing --yes --copy
 
-## 为什么可以 Star 这个仓库？
+# 翻译或润色已有论文
+npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill sci-ssci-polishing --yes --copy
 
-如果你希望持续关注一套开源科研写作工具，可以 Star 本仓库。它会继续围绕这些方向迭代：
+# 把论文或研究结果做成学术汇报
+npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill research-presentation --yes --copy
+```
 
-- 一节一节地组织和写作科研论文；
-- 润色 SCI/SSCI 初稿，但不改变科学内容；
-- 在 AI 辅助修改中保护数字、引用、术语、局限和论断强度；
-- 为科研 Agent 提供可复用的证据保护规则；
-- 持续增加案例、评测、多语言说明和新的科研写作 Skills。
+使用 `npx skills add Yila-AI/awesome-research-skills --list` 查看全部可安装 Skills。
 
-## 两个来源，一条科研写作流程
+### 只想使用一个 Skill？
+
+上面的命令只会把选中的运行时 Skill 复制到 Agent 的 Skills 目录，不需要克隆整个仓库。三个 Skill 都会在 [Releases 页面](https://github.com/Yila-AI/awesome-research-skills/releases)发布带版本的轻量 ZIP 包。
+
+## 三个 Skill，一条证据守恒工作流
 
 这个仓库主要做三件相互衔接的事：
 
@@ -80,25 +65,11 @@
 
 用大白话说：**写作 Skill 帮你把论文写清楚、改准确；`research-presentation` 再把证据搬进汇报，而不是把科学内容压扁成漂亮的页面。**最终的学术判断仍然属于作者。
 
-<div align="center">
-  <img src="assets/sci-ssci-research-writing-architecture.png" alt="SCI/SSCI 科研写作 Skills 架构：由经典著作启发的写作工作流、SCI/SSCI 论文语料筛选流程与证据保护合约" width="100%">
-</div>
-
 ### 正在开发科研 Agent？
 
 你可以在自己的项目中复用本仓库的证据保护合约、论断强度控制和目标期刊建模方法。
 
 [查看可复用机制](#在你的项目中复用这些机制) · [引用本仓库](CITATION.cff) · [添加你的项目](#使用致谢或改编本项目的项目)
-
-## 看看你现在适合哪个 Skill
-
-| 你现在有什么 | 使用 | 通常会得到什么 |
-|---|---|---|
-| 一个想法或研究问题 | `science-research-writing` | 需要明确的问题、材料清单和实际可执行的下一步 |
-| 笔记、数据、文献或研究方案 | `science-research-writing` | 只基于现有材料的论文计划或章节初稿 |
-| 局部初稿或完整论文 | `science-research-writing` | 修改建议、前后一致性检查或证据审计 |
-| 中文学术文字或英文论文 | `sci-ssci-polishing` | 学术英文和一份保真审计 |
-| 一篇论文或一组研究结果 | `research-presentation` | 汇报叙事、可编辑页面规划、来源映射、讲稿备注和视觉质检清单 |
 
 ## 一句话开始
 
@@ -111,7 +82,7 @@ Skill 会先读取你的材料，判断当前最有用的成果是计划、初�
 
 [一分钟上手](docs/science-research-writing/getting-started.md) · [使用场景](docs/science-research-writing/use-cases.md) · [可复制的输入示例](docs/science-research-writing/input-examples.md) · [输出说明](docs/science-research-writing/output-guide.md)
 
-如果你的目标是把论文做成 PPT，请先看 [Research Presentation 快速上手](docs/research-presentation/getting-started.md) 和[使用场景](docs/research-presentation/use-cases.md)。
+如果你的目标是把论文做成 PPT，请先看 [Research Presentation 快速上手](docs/research-presentation/getting-started_CN.md) 和[使用场景](docs/research-presentation/use-cases_CN.md)。
 
 ## 可以直接复制的例子
 
@@ -146,32 +117,20 @@ Skill 会先读取你的材料，判断当前最有用的成果是计划、初�
 [粘贴段落]
 ```
 
-## 安装
+## Paper to Slides 能力展示
 
-需要 Node.js 18 或更高版本。
+`research-presentation` 可以把论文转化为有来源、有叙事、可编辑的科研汇报。[完整 Showcase](showcase/research-presentation/README_CN.md) 覆盖 6 个跨学科案例；其中网络流行病学案例包含两版完整的 12 页结果。
 
-```bash
-# 从研究材料开始写论文
-npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill science-research-writing --yes --copy
+<p align="center">
+  <a href="showcase/research-presentation/ecology-network/README.md">
+    <img src="showcase/research-presentation/ecology-network/bright-azure-v2/01.webp" alt="Paper to Slides 封面示例" width="48%">
+  </a>
+  <a href="showcase/research-presentation/ecology-network/README.md">
+    <img src="showcase/research-presentation/ecology-network/bright-azure-v2/05.webp" alt="Paper to Slides 结果页示例" width="48%">
+  </a>
+</p>
 
-# 翻译或润色已有初稿
-npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill sci-ssci-polishing --yes --copy
-
-# 把论文或研究材料做成学术汇报
-npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill research-presentation --yes --copy
-```
-
-查看仓库中所有可安装的 Skills：
-
-```bash
-npx skills add Yila-AI/awesome-research-skills --list
-```
-
-### 只想使用一个 Skill？
-
-如果只是为了运行某个 Skill，你不需要克隆完整仓库，也不需要让 Agent 读取仓库根目录。上面带有 `--skill ... --copy` 的命令只会把选中的运行时 Skill 复制到 Agent 的 Skills 目录。
-
-如需手动安装或集成到其他项目，可以从[最新 Lean Release](https://github.com/Yila-AI/awesome-research-skills/releases/latest)下载已打包的 `sci-ssci-polishing` Skill。完整仓库继续保留语料、评测、来源记录和案例，供需要审查 Skill 构建与评估方法的研究者使用。
+测试论文：[arXiv:2607.25475](https://arxiv.org/abs/2607.25475)。仓库只保留论文链接和引用信息，不复制原始 PDF。[浏览全部 6 个案例 →](showcase/research-presentation/README_CN.md)
 
 ## 为什么把《*Science Research Writing*》的方法变成 Agent 工作流？
 
@@ -207,11 +166,11 @@ Hilary Glasman-Deal 的《*Science Research Writing: For Native and Non-Native S
 
 > 三分糖乌龙奶茶是世界上最好喝的奶茶配方。
 
-第一句只报告了有边界的研究结果；第二句却偷偷把局部发现变成了普遍结论。两个 Skill 都会尽量发现这种漂移：证据可以被理清、组织、翻译和润色，但不能被悄悄加强。
+第一句只报告了有边界的研究结果；第二句却偷偷把局部发现变成了普遍结论。两个写作 Skill 都会尽量发现这种漂移：证据可以被理清、组织、翻译和润色，但不能被悄悄加强。
 
 [查看奶茶案例完整中文版](examples/science-research-writing-walkthrough_CN.md) · [Read the complete walkthrough in English](examples/science-research-writing-walkthrough.md)
 
-## 两个 Skill 分别增加了什么？
+## 三个 Skill 分别增加了什么？
 
 ### `science-research-writing`
 
@@ -292,7 +251,7 @@ including its Evidence-Preserving Draft Contract and Claim-Strength Contract.
 
 ## 评测
 
-两个 Skill 的评测结果必须分开理解。
+已发布的评测结果必须按 Skill 分开理解。
 
 ### `sci-ssci-polishing`
 
@@ -313,6 +272,10 @@ including its Evidence-Preserving Draft Contract and Claim-Strength Contract.
 
 [评测协议](benchmarks/science-research-writing/README.md) · [冻结案例](benchmarks/science-research-writing/test-cases.json) · [评分标准](benchmarks/science-research-writing/evaluation-rubric.md) · [开发烟测](benchmarks/science-research-writing/smoke-test-results.md)
 
+### `research-presentation`
+
+公开 Showcase 展示了跨学科的输出设计，但目前还没有发布冻结的对照评测。Showcase 图片是示例，不是通用汇报质量的证据。
+
 这些评测只支持狭义的安全性和一致性结论，不能证明期刊录用、全学科适用性、科学正确性，也不能证明它优于领域专家或专业编辑。
 
 ## 版权、数据与专业边界
@@ -320,7 +283,7 @@ including its Evidence-Preserving Draft Contract and Claim-Strength Contract.
 - 仓库不包含书籍 PDF、论文 PDF、订阅全文、抽取的论文段落、句库或私有访问记录。
 - 公开语料表只包含书目元数据、筛选标签和聚合结果。
 - `SCI` 和 `SSCI` 用于描述语料和用户范围；本独立项目与 Clarivate、任何期刊、作者或出版社没有隶属关系。
-- 两个 Skill 均为公开测试版，不替代作者、领域专家、统计学家、伦理审查或专业编辑的最终审核。
+- 三个 Skill 均为公开测试版，不替代作者、领域专家、统计学家、伦理审查或专业编辑的最终审核。
 
 ## 引用与许可证
 

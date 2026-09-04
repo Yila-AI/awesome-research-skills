@@ -1,9 +1,11 @@
-# 隐私、版权与学术边界
+# Privacy, copyright, and academic boundaries
 
-- 只上传你有权处理的论文、数据、图表和补充材料。
-- Skill 不应把订阅论文、整篇 PDF、受版权保护的图表或他人的演示文稿打包进本仓库。
-- 生成的页面应优先引用论文中的图表编号、章节、页码、DOI 或公开数据链接；必要时提醒用户确认图片再发布的许可。
-- 结果页、结论页和讲稿备注应保持原论文的限定词、研究设计边界、局限和不确定性。
-- 本 Skill 提供的是组织和呈现机制，不替代作者、导师、审稿人或领域专家的科学判断。
+- Upload only papers, data, figures, and supporting materials that you are allowed to process.
+- Do not add subscription papers, complete PDFs, copyrighted figures, or another person's presentation to this repository.
+- Prefer source anchors such as figure or table numbers, sections, page numbers, DOIs, and public data links. Remind the user to confirm republication rights when necessary.
+- Preserve the source paper's qualifications, study-design boundaries, limitations, and uncertainty in result slides, conclusion slides, and speaker notes.
+- This Skill provides organization and presentation mechanisms. It does not replace the scientific judgment of authors, supervisors, reviewers, or domain specialists.
 
-新建主题、图标或布局时，请保留相应的第三方许可证与来源说明。随 Skill 附带的 `themes.md` 和 `layouts.md` 包含改编自 MIT 许可项目的内容，具体见 Skill 目录中的 `NOTICE`。
+When adding a theme, icon, or layout, retain the applicable third-party license and provenance. The bundled `themes.md` and `layouts.md` include material adapted from MIT-licensed projects; see `NOTICE` in the Skill directory for details.
+
+[中文](privacy-and-copyright_CN.md)

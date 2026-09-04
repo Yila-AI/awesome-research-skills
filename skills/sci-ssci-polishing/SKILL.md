@@ -1,6 +1,7 @@
 ---
 name: sci-ssci-polishing
 description: Use when researchers need Chinese academic prose translated into publication-oriented English or English manuscript paragraphs and complete sections polished for SCI, SSCI, or interdisciplinary submission.
+license: Apache-2.0
 ---
 
 # SCI/SSCI Academic Polishing
