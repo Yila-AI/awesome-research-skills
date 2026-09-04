@@ -5,6 +5,7 @@ on:
     tags:
       - "science-research-writing-v*"
       - "sci-ssci-polishing-v*"
+      - "academic-humanizer-v*"
       - "research-presentation-v*"
 
 permissions:

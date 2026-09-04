@@ -8,7 +8,7 @@
 
 A growing open-source Skill stack for the full research lifecycle—from discovering and understanding papers to writing, reviewing, polishing, and presenting research.
 
-Available today: research writing, faithful academic polishing, and paper-to-slides. More stages are being built. Across the workflow, Agents should show their sources, checks, uncertainty, and changes instead of silently rewriting the research.
+Available today: research writing, faithful academic polishing, academic de-templating, and paper-to-slides. More stages are being built. Across the workflow, Agents should show their sources, checks, uncertainty, and changes instead of silently rewriting the research.
 
 Built and maintained by **[Yila.ai](https://yila.ai/?utm_source=github&utm_medium=referral&utm_campaign=awesome-research-skills)**, a research workspace for literature, evidence, data, writing, and presentation workflows.
 
@@ -41,6 +41,7 @@ Designed for Codex, Claude Code, WorkBuddy-style research agents, and other syst
 |---|---|---|
 | Turn ideas, notes, data, or references into a paper | **Research Writer** · [`science-research-writing`](skills/science-research-writing/SKILL.md) | An evidence-grounded plan, section draft, revision, or manuscript audit |
 | Improve academic English without changing the research | **Paper Polisher** · [`sci-ssci-polishing`](skills/sci-ssci-polishing/SKILL.md) | Publication-oriented English plus a preservation audit |
+| Remove generic AI-like patterns without changing the science | **Academic Humanizer** · [`academic-humanizer`](skills/academic-humanizer/SKILL.md) | Less templated prose plus a pattern and fidelity audit |
 | Turn a paper or research results into a talk | **Paper to Slides** · [`research-presentation`](skills/research-presentation/SKILL.md) | An editable, source-grounded deck plan with notes, source map, and visual QA |
 
 ## Install in 30 seconds
@@ -59,6 +60,9 @@ npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill sc
 
 # Translate or polish an existing manuscript
 npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill sci-ssci-polishing --yes --copy
+
+# Remove academic AI-like patterns while preserving the science
+npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill academic-humanizer --yes --copy
 
 # Turn a paper or research results into an academic presentation
 npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill research-presentation --yes --copy
@@ -80,7 +84,7 @@ QUESTION → DISCOVER → READ → SYNTHESIZE → DESIGN → ANALYZE → WRITE �
 
 | Build status | Research stages |
 |---|---|
-| **Available now** | Write, Polish, Present |
+| **Available now** | Write, Polish, De-template, Present |
 | **Building next** | Discover, Read, Synthesize, Review |
 | **Longer-term workflow** | Design, Analyze, Publish and broader research communication |
 
@@ -96,13 +100,16 @@ These open-source Skills come from the research workflows being built at [Yila.a
 
 ## Available today
 
-The current release provides three connected capabilities:
+The current release provides these connected capabilities:
 
 | Foundation | Available module | What it helps you do |
 |---|---|---|
 | The section-by-section and reverse-engineering pedagogy associated with Hilary Glasman-Deal's *Science Research Writing* | **Research Writer** · [`science-research-writing`](skills/science-research-writing/SKILL.md) | Decide what each section needs to accomplish, then turn ideas, notes, data, references, or drafts into the next useful manuscript artifact |
 | Writing observations derived through a corpus pipeline beginning with a 1,000-paper SCI/SSCI metadata candidate pool | **Paper Polisher** · [`sci-ssci-polishing`](skills/sci-ssci-polishing/SKILL.md) | Translate or polish an existing manuscript while preserving data, citations, terminology, limitations, and claim strength |
+| Pattern-cluster diagnostics, author-voice calibration, and claim-evidence discipline | **Academic Humanizer** · [`academic-humanizer`](skills/academic-humanizer/SKILL.md) | Remove generic AI-like patterns while preserving numbers, citations, uncertainty, limitations, and the author's scientific meaning |
 | Evidence-first academic presentation design | **Paper to Slides** · [`research-presentation`](skills/research-presentation/SKILL.md) | Turn papers and research materials into editable, source-grounded research presentations, with a narrative plan, evidence ledger, speaker notes, and render-based QA |
+
+The Academic Humanizer is an independent Yila.ai implementation informed in part by [AIScientists-Dev/academic-humanizer](https://github.com/AIScientists-Dev/academic-humanizer) (MIT). It is not affiliated with or endorsed by the upstream project. See the [third-party notice](skills/academic-humanizer/THIRD_PARTY_NOTICES.md).
 
 In plain language: **the writing Skills help build and refine the paper; `research-presentation` carries the evidence into a talk without flattening the science.** Scientific judgment remains with the author.
 
@@ -157,6 +164,28 @@ If any sentence sounds unsupported or overclaimed, flag it instead of fixing it 
 Text:
 [paste paragraph]
 ```
+
+### Remove the AI template voice
+
+```text
+Use $academic-humanizer.
+Make this academic passage sound less templated and more natural.
+Do not change any claim, number, citation, limitation, or uncertainty.
+Do not optimize for an AI detector; report the patterns you changed.
+
+Text:
+[paste paragraph]
+```
+
+**Before — fluent but generic:**
+
+> In recent years, graph neural networks have attracted increasing attention. Importantly, our novel Model-X leverages a multi-scale encoder to address this crucial challenge. Extensive experiments demonstrate that Model-X improves macro-F1 by 4.7% over Baseline-B on three datasets (Smith et al., 2024), thereby proving its universal superiority.
+
+**After — specific and evidence-bounded:**
+
+> Existing graph neural networks lose long-range dependencies. Model-X uses a multi-scale encoder to address this problem. Across three datasets, Model-X improves macro-F1 by 4.7% over Baseline-B (Smith et al., 2024). This result supports its advantage in the evaluated settings.
+
+The result keeps the method, metric, effect, comparator, dataset scope, and citation while removing the template opening and universal overclaim.
 
 ## Paper to Slides showcase
 
@@ -238,6 +267,14 @@ The first statement reports a bounded result. The second silently turns a local 
 - preserves numbers, statistics, technical entities, citations, null results, limitations, and conclusions;
 - refuses to invent mechanisms, references, results, or implications merely to make prose sound more complete.
 
+### `academic-humanizer`
+
+- audits clusters of generic or mechanical AI-like writing patterns in Chinese and English;
+- replaces empty framing and inflated significance with information already present in the source;
+- calibrates rhythm, hedging, citation integration, and information order to genuine author samples when supplied;
+- preserves numbers, citations, reference labels, technical terms, uncertainty, limitations, and claim strength;
+- does not claim detector evasion or certify that a revision is human-written.
+
 ## The 1,000-paper evidence pool—what it does and does not mean
 
 The polishing Skill began with a **1,000-paper SCI/SSCI metadata candidate pool** and used staged screening to build a balanced core portfolio:
@@ -267,6 +304,8 @@ The following mechanisms are documented as reusable components for other researc
 | [Evidence-Preserving Draft Contract](skills/science-research-writing/SKILL.md) | Prevents unsupported intellectual content during planning, drafting, and revision |
 | [Claim-Strength Contract](skills/science-research-writing/references/certainty-and-claim-strength.md) | Prevents silent movement between suggestion, association, prediction, effect, and causation |
 | [Target-Journal Model Builder](skills/science-research-writing/references/reverse-engineering-protocol.md) | Learns rhetorical functions and variation without copying target-paper wording |
+| [Pattern-Cluster Audit](skills/academic-humanizer/references/pattern-catalog.md) | Reduces generic AI-like prose without treating isolated words as proof of authorship |
+| [Author-Voice Calibration](skills/academic-humanizer/references/voice-calibration.md) | Matches stable rhetorical habits from genuine author samples without copying their sentences |
 
 Additional components include the [Section Function Map](skills/science-research-writing/assets/section-function-map.md), [Content Provenance Ledger](skills/science-research-writing/assets/evidence-ledger.csv), [Title-Paper Promise Check](skills/science-research-writing/references/title.md), and [Draft Invariant Checker](skills/science-research-writing/scripts/check_draft_invariants.py).
 
@@ -293,6 +332,12 @@ Using or adapting this workflow in your own research Agent, academic-writing too
 ## Evaluation
 
 Evaluation claims remain Skill-specific.
+
+### `academic-humanizer`
+
+The initial smoke benchmark covers English and Chinese passages, numeric and author-year citations, TeX cite keys, figure labels, and protected technical terms. All reference transformations pass the deterministic fidelity gate. These cases test preservation and targeted pattern reduction; they are not detector-evasion benchmarks or evidence of universal writing quality.
+
+[Smoke benchmark](benchmarks/academic-humanizer/README.md) · [Reference cases](benchmarks/academic-humanizer/reference-cases.json)
 
 ### `sci-ssci-polishing`
 

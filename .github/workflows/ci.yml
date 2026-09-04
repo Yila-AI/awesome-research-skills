@@ -42,7 +42,7 @@ jobs:
 
       - name: Build every lean distribution
         run: |
-          for skill in science-research-writing sci-ssci-polishing research-presentation; do
+          for skill in science-research-writing sci-ssci-polishing academic-humanizer research-presentation; do
             python scripts/build_lean_release.py \
               --skill "$skill" \
               --version v0.0.0-ci \

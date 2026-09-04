@@ -1,0 +1,4 @@
+interface:
+  display_name: "Academic Humanizer"
+  short_description: "Remove academic AI-like patterns without changing the science"
+  default_prompt: "Use $academic-humanizer to remove templated AI-like phrasing from this academic passage while preserving every claim, number, citation, limitation, and uncertainty."

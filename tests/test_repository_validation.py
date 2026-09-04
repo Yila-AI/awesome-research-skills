@@ -57,6 +57,7 @@ class RepositoryValidationTests(unittest.TestCase):
             REPO_ROOT / "README_ko.md",
             REPO_ROOT / "distribution" / "science-research-writing" / "README.md",
             REPO_ROOT / "distribution" / "sci-ssci-polishing" / "README.md",
+            REPO_ROOT / "distribution" / "academic-humanizer" / "README.md",
             REPO_ROOT / "distribution" / "research-presentation" / "README.md",
         ]
         for entry_point in entry_points:
