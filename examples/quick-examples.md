@@ -1,5 +1,13 @@
 # Quick examples
 
+## Academic Humanizer
+
+See exactly what a user provides, what the Skill changes, and what the final response contains:
+
+[Complete input → optimization → output walkthrough](academic-humanizer-walkthrough.md) · [中文完整案例](academic-humanizer-walkthrough_CN.md)
+
+The walkthrough includes English de-templating, Chinese academic “去 AI 味”, and author-voice calibration. All examples show both pattern changes and a preservation audit.
+
 ## Science Research Writing
 
 New to the Skill? Follow the complete synthetic milk-tea example from an everyday question to a paper map:

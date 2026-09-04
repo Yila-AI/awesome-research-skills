@@ -1,0 +1,26 @@
+[
+  {
+    "id": "english-results-claim",
+    "language": "English",
+    "source": "In recent years, graph neural networks have attracted increasing attention. However, existing models lose long-range dependencies. Importantly, our novel Model-X leverages a multi-scale encoder to address this crucial challenge. Extensive experiments demonstrate that Model-X improves macro-F1 by 4.7% over Baseline-B on three datasets (Smith et al., 2024), thereby proving its universal superiority.",
+    "revision": "Existing graph neural networks lose long-range dependencies. Model-X uses a multi-scale encoder to address this problem. Across three datasets, Model-X improves macro-F1 by 4.7% over Baseline-B (Smith et al., 2024). This result supports its advantage in the evaluated settings.",
+    "protected_terms": ["Model-X", "Baseline-B", "macro-F1", "multi-scale encoder"],
+    "removed_patterns": ["In recent years", "Importantly", "Extensive experiments", "universal superiority"]
+  },
+  {
+    "id": "chinese-external-validation",
+    "language": "Chinese",
+    "source": "随着人工智能技术的快速发展，医学影像诊断日益受到广泛关注。值得注意的是，本研究基于612例患者构建Model-A7。大量实验充分证明，该模型在外部测试集上的准确率达到87.08%，显著优于Baseline-C的82.41% [12]，从而为临床实践提供了重要参考。",
+    "revision": "本研究基于612例患者构建Model-A7。在外部测试集中，Model-A7的准确率为87.08%，高于Baseline-C的82.41% [12]。这一比较表明Model-A7在该外部测试集上的准确率更高。",
+    "protected_terms": ["Model-A7", "Baseline-C", "外部测试集"],
+    "removed_patterns": ["随着人工智能技术的快速发展", "日益受到广泛关注", "值得注意的是", "充分证明", "重要参考"]
+  },
+  {
+    "id": "english-ablation-reference-labels",
+    "language": "English",
+    "source": "Moreover, we conduct comprehensive ablation studies, highlighting the pivotal role of Module-Q. Removing Module-Q reduces AUROC from 0.91 to 0.84 (Figure 3), which is consistent with prior work \\cite{lee2025}.",
+    "revision": "Removing Module-Q reduces AUROC from 0.91 to 0.84 (Figure 3), consistent with prior work \\cite{lee2025}. The ablation therefore identifies the contribution of Module-Q in this evaluation.",
+    "protected_terms": ["Module-Q", "AUROC"],
+    "removed_patterns": ["Moreover", "comprehensive ablation studies", "highlighting the pivotal role"]
+  }
+]

@@ -8,7 +8,7 @@
 
 这是一个面向科研全生命周期、持续扩展的开源 Skill Stack：从发现和理解论文，到研究写作、审查、润色与学术汇报。
 
-当前已经提供科研写作、忠实学术润色和论文转汇报能力，更多科研环节正在建设。贯穿整个流程的共同要求是：Agent 必须交代来源、检查、不确定性和修改内容，而不是悄悄改写研究。
+当前已经提供科研写作、忠实学术润色、学术去 AI 味和论文转汇报能力，更多科研环节正在建设。贯穿整个流程的共同要求是：Agent 必须交代来源、检查、不确定性和修改内容，而不是悄悄改写研究。
 
 本项目由 **[Yila.ai](https://yila.ai/?utm_source=github&utm_medium=referral&utm_campaign=awesome-research-skills)** 构建并持续维护。Yila.ai 提供覆盖文献、证据、数据、写作和学术展示的科研工作空间。
 
@@ -41,6 +41,7 @@
 |---|---|---|
 | 把研究想法、笔记、数据或文献组织成论文 | **Research Writer / 科研写作** · [`science-research-writing`](skills/science-research-writing/SKILL.md) | 有证据依据的论文计划、章节初稿、修订稿或完整性审计 |
 | 在不改变研究内容的前提下提升学术英文 | **Paper Polisher / 论文润色** · [`sci-ssci-polishing`](skills/sci-ssci-polishing/SKILL.md) | 面向发表的学术英文和一份保真审计 |
+| 去掉论文的 AI 模板腔，但不改变科学内容 | **Academic Humanizer / 学术去 AI 味** · [`academic-humanizer`](skills/academic-humanizer/SKILL.md) | 更自然、更具体的学术表达，以及模式和保真审计 |
 | 把论文或研究结果做成学术汇报 | **Paper to Slides / 论文转汇报** · [`research-presentation`](skills/research-presentation/SKILL.md) | 可编辑、有来源的汇报方案，包含讲稿、来源映射和视觉质检 |
 
 ## 30 秒安装
@@ -59,6 +60,9 @@ npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill sc
 
 # 翻译或润色已有论文
 npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill sci-ssci-polishing --yes --copy
+
+# 去掉论文中的 AI 模板腔，同时保护科学内容
+npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill academic-humanizer --yes --copy
 
 # 把论文或研究结果做成学术汇报
 npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill research-presentation --yes --copy
@@ -80,7 +84,7 @@ npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill re
 
 | 建设状态 | 科研环节 |
 |---|---|
-| **当前可用** | 写作、润色、学术汇报 |
+| **当前可用** | 写作、润色、去模板化、学术汇报 |
 | **接下来建设** | 文献检索、论文阅读、证据综合、研究审查 |
 | **长期工作流** | 研究设计、数据分析、发表与更多科研传播场景 |
 
@@ -96,13 +100,16 @@ npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill re
 
 ## 当前可用能力
 
-当前版本已经提供三项相互衔接的能力：
+当前版本已经提供以下相互衔接的能力：
 
 | 方法来源 | 当前模块 | 它能帮你做什么 |
 |---|---|---|
 | Hilary Glasman-Deal 的《*Science Research Writing*》所代表的分章节教学和目标论文逆向拆解方法 | **Research Writer / 科研写作** · [`science-research-writing`](skills/science-research-writing/SKILL.md) | 判断论文每一部分应该完成什么任务，再把想法、笔记、数据、文献或初稿变成当前最有用的论文成果 |
 | 从 1,000 篇 SCI/SSCI 论文元数据候选池出发的筛选和语料分析流程 | **Paper Polisher / 论文润色** · [`sci-ssci-polishing`](skills/sci-ssci-polishing/SKILL.md) | 翻译或润色已有论文，同时保护数据、引用、术语、局限和论断强度 |
+| 模式组合诊断、作者声音校准和“主张—证据”约束 | **Academic Humanizer / 学术去 AI 味** · [`academic-humanizer`](skills/academic-humanizer/SKILL.md) | 去掉空泛、机械的 AI 模板表达，同时保护数字、引用、不确定性、局限和原有科学含义 |
 | 以证据为中心的学术汇报设计 | **Paper to Slides / 论文转汇报** · [`research-presentation`](skills/research-presentation/SKILL.md) | 将论文和研究材料转化为可编辑、有来源锚点的学术汇报，并配套叙事规划、证据台账、讲稿备注和渲染质检 |
+
+Academic Humanizer 是 Yila.ai 的独立实现，其部分设计参考了采用 MIT 许可证的 [AIScientists-Dev/academic-humanizer](https://github.com/AIScientists-Dev/academic-humanizer)。本项目与上游项目不存在隶属或背书关系，详见[第三方说明](skills/academic-humanizer/THIRD_PARTY_NOTICES.md)。
 
 用大白话说：**写作 Skill 帮你把论文写清楚、改准确；`research-presentation` 再把证据搬进汇报，而不是把科学内容压扁成漂亮的页面。**最终的学术判断仍然属于作者。
 
@@ -158,6 +165,34 @@ Skill 会先读取你的材料，判断当前最有用的成果是计划、初�
 [粘贴段落]
 ```
 
+### 去掉论文的 AI 模板腔
+
+| 你提供 | Skill 会优化 | 你会得到 |
+|---|---|---|
+| 学术文本；还可补充章节背景、保护术语和作者真实写作样本 | 空泛开头、先行强调、模糊主语、机械连接、重复句式和无依据的意义拔高 | 修改后文本、模式修改说明、保真审计，以及必须由作者回答的问题 |
+
+```text
+请使用 $academic-humanizer。
+把下面的学术段落改得更自然、更具体，减少模板化的 AI 表达。
+不要改变任何主张、数字、引用、局限或不确定性。
+不要针对 AI 检测器优化；请说明修改了哪些模式。
+
+文本：
+[粘贴段落]
+```
+
+**修改前——流畅，但模板感明显：**
+
+> 随着人工智能技术的快速发展，医学影像诊断日益受到广泛关注。值得注意的是，本研究基于612例患者构建Model-A7。大量实验充分证明，该模型在外部测试集上的准确率达到87.08%，显著优于Baseline-C的82.41% [12]，从而为临床实践提供了重要参考。
+
+**修改后——具体，并与证据边界一致：**
+
+> 本研究基于612例患者构建Model-A7。在外部测试集中，Model-A7的准确率为87.08%，高于Baseline-C的82.41% [12]。这一比较表明Model-A7在该外部测试集上的准确率更高。
+
+修改后保留了样本量、模型、测试集、准确率、比较对象和引用，同时删除空泛开头、无证据的意义拔高和普遍化结论。由于原文没有提供推断统计量，Skill 还会询问“显著优于”是统计结论还是修辞强调；作者补充证据后再决定是否保留。
+
+[查看三个完整的“输入 → 优化 → 输出”案例](examples/academic-humanizer-walkthrough_CN.md) · [Read the complete examples in English](examples/academic-humanizer-walkthrough.md)
+
 ## Paper to Slides 能力展示
 
 `research-presentation` 可以把论文转化为有来源、有叙事、可编辑的科研汇报。[完整 Showcase](showcase/research-presentation/README_CN.md) 覆盖 6 个跨学科案例；其中网络流行病学案例包含两版完整的 12 页结果。
@@ -207,7 +242,7 @@ Hilary Glasman-Deal 的《*Science Research Writing: For Native and Non-Native S
 
 > 三分糖乌龙奶茶是世界上最好喝的奶茶配方。
 
-第一句只报告了有边界的研究结果；第二句却偷偷把局部发现变成了普遍结论。两个写作 Skill 都会尽量发现这种漂移：证据可以被理清、组织、翻译和润色，但不能被悄悄加强。
+第一句只报告了有边界的研究结果；第二句却偷偷把局部发现变成了普遍结论。这些写作 Skill 都会尽量发现这种漂移：证据可以被理清、组织、翻译和润色，但不能被悄悄加强。
 
 [查看奶茶案例完整中文版](examples/science-research-writing-walkthrough_CN.md) · [Read the complete walkthrough in English](examples/science-research-writing-walkthrough.md)
 
@@ -238,6 +273,14 @@ Hilary Glasman-Deal 的《*Science Research Writing: For Native and Non-Native S
 - 保留数字、统计量、专业实体、引用、零结果、局限和结论；
 - 不会为了让文字看起来更完整，自动编造机制、文献、结果或意义。
 
+### `academic-humanizer`
+
+- 以模式组合而不是单个词汇判断中英文论文中的机械化、模板化表达；
+- 用原文已有的具体信息替换空泛开头、意义拔高和无内容的总结句；
+- 在用户提供真实写作样本时，校准句子节奏、hedging、引文整合和信息顺序；
+- 保护数字、引用、图表标签、专业术语、不确定性、局限和论断强度；
+- 不承诺规避 AI 检测，也不把修改后的文本宣称为“纯人工写作”。
+
 ## 1,000 篇论文证据池——它意味着什么，又不意味着什么？
 
 润色 Skill 从一个 **1,000 篇 SCI/SSCI 论文的元数据候选池**出发，通过分层筛选建立平衡的核心论文组合：
@@ -267,6 +310,8 @@ Hilary Glasman-Deal 的《*Science Research Writing: For Native and Non-Native S
 | [Evidence-Preserving Draft Contract](skills/science-research-writing/SKILL.md) | 防止在规划、起草和修改时新增没有依据的学术内容 |
 | [Claim-Strength Contract](skills/science-research-writing/references/certainty-and-claim-strength.md) | 防止论断在提示、相关、预测、影响和因果之间悄悄漂移 |
 | [Target-Journal Model Builder](skills/science-research-writing/references/reverse-engineering-protocol.md) | 学习目标论文的信息功能和变化，不复制原句 |
+| [Pattern-Cluster Audit](skills/academic-humanizer/references/pattern-catalog.md) | 减少 AI 模板腔，但不把单个词汇当成作者身份的证据 |
+| [Author-Voice Calibration](skills/academic-humanizer/references/voice-calibration.md) | 从真实作者样本中学习稳定写作习惯，而不是复制原句 |
 
 其他组件包括 [Section Function Map](skills/science-research-writing/assets/section-function-map.md)、[Content Provenance Ledger](skills/science-research-writing/assets/evidence-ledger.csv)、[Title-Paper Promise Check](skills/science-research-writing/references/title.md) 和 [Draft Invariant Checker](skills/science-research-writing/scripts/check_draft_invariants.py)。
 
@@ -293,6 +338,12 @@ including its Evidence-Preserving Draft Contract and Claim-Strength Contract.
 ## 评测
 
 已发布的评测结果必须按 Skill 分开理解。
+
+### `academic-humanizer`
+
+初始烟测覆盖中英文段落、数字引用、作者—年份引用、TeX cite key、图号和受保护专业术语。所有参考转换均通过确定性保真检查。这些案例只验证内容保护和目标模式减少，不测试“规避 AI 检测”，也不能证明普遍写作质量。
+
+[完整使用案例](examples/academic-humanizer-walkthrough_CN.md) · [烟测说明](benchmarks/academic-humanizer/README.md) · [参考案例](benchmarks/academic-humanizer/reference-cases.json)
 
 ### `sci-ssci-polishing`
 

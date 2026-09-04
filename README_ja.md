@@ -10,7 +10,7 @@
 
 文献の発見と理解から、執筆、レビュー、推敲、発表まで、研究ライフサイクル全体を支援する成長中のオープンソース Skill スタックです。
 
-現在は研究執筆、忠実な学術推敲、論文からスライドへの変換を提供しています。今後さらに多くの研究段階へ拡張します。すべての段階で、Agent は出典、確認事項、不確実性、変更点を明示し、研究内容を勝手に書き換えないことを重視します。
+現在は研究執筆、忠実な学術推敲、学術文の AI テンプレート表現の除去、論文からスライドへの変換を提供しています。今後さらに多くの研究段階へ拡張します。すべての段階で、Agent は出典、確認事項、不確実性、変更点を明示し、研究内容を勝手に書き換えないことを重視します。
 
 本プロジェクトは **[Yila.ai](https://yila.ai/?utm_source=github&utm_medium=referral&utm_campaign=awesome-research-skills)** が開発・保守しています。Yila.ai では、文献、証拠、データ、執筆、発表をつなぐ統合研究ワークスペースを利用できます。
 
@@ -22,6 +22,7 @@ Codex、Claude Code、その他の再利用可能な Skill 指示に対応する
 |---|---|---|
 | アイデア、メモ、データ、文献を論文にまとめる | **Research Writer** · [`science-research-writing`](skills/science-research-writing/SKILL.md) | 証拠に基づく計画、セクション草稿、改訂、または原稿監査 |
 | 研究内容を変えずに学術英語を改善する | **Paper Polisher** · [`sci-ssci-polishing`](skills/sci-ssci-polishing/SKILL.md) | 投稿向けの英文と保全監査 |
+| 科学的内容を変えずに AI 的な定型表現を減らす | **Academic Humanizer** · [`academic-humanizer`](skills/academic-humanizer/SKILL.md) | より自然で具体的な文章、パターン監査、保全監査 |
 | 論文や研究結果を発表に変換する | **Paper to Slides** · [`research-presentation`](skills/research-presentation/SKILL.md) | 編集可能で出典に基づくデッキ計画、ノート、出典マップ、視覚 QA |
 
 ## 30 秒でインストール
@@ -41,6 +42,9 @@ npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill sc
 # 既存原稿の翻訳または推敲
 npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill sci-ssci-polishing --yes --copy
 
+# 学術文の AI 的な定型表現を減らす
+npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill academic-humanizer --yes --copy
+
 # 論文や研究結果を学術発表に変換
 npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill research-presentation --yes --copy
 ```
@@ -55,7 +59,7 @@ npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill re
 
 | 開発状況 | 研究段階 |
 |---|---|
-| **現在利用可能** | 執筆、推敲、研究発表 |
+| **現在利用可能** | 執筆、推敲、定型表現の除去、研究発表 |
 | **次に開発** | 文献検索、論文読解、証拠の統合、研究レビュー |
 | **長期的な範囲** | 研究設計、データ分析、出版、より広い研究コミュニケーション |
 
@@ -80,6 +84,14 @@ terminology, limitations, or claim strength.
 Text:
 [paste paragraph]
 ```
+
+```text
+Use $academic-humanizer.
+Make this academic passage less templated and more natural without changing
+claims, numbers, citations, limitations, or uncertainty.
+```
+
+[入力・最適化・出力を示す完全な英語例](examples/academic-humanizer-walkthrough.md) · [中国語版](examples/academic-humanizer-walkthrough_CN.md)
 
 ```text
 Use $research-presentation to turn this paper into a source-grounded,

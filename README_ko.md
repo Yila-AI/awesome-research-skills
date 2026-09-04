@@ -10,7 +10,7 @@
 
 논문 탐색과 이해부터 작성, 검토, 교정, 발표까지 연구의 전체 생애주기를 지원하도록 확장되는 오픈소스 Skill 스택입니다.
 
-현재 연구 글쓰기, 충실한 학술 교정, 논문 기반 발표 제작 기능을 제공합니다. 더 많은 연구 단계가 계속 추가됩니다. 모든 단계에서 Agent가 출처, 검사 결과, 불확실성, 변경 사항을 명확히 밝히고 연구 내용을 조용히 바꾸지 않도록 설계합니다.
+현재 연구 글쓰기, 충실한 학술 교정, 학술 문장의 AI식 틀 제거, 논문 기반 발표 제작 기능을 제공합니다. 더 많은 연구 단계가 계속 추가됩니다. 모든 단계에서 Agent가 출처, 검사 결과, 불확실성, 변경 사항을 명확히 밝히고 연구 내용을 조용히 바꾸지 않도록 설계합니다.
 
 이 프로젝트는 **[Yila.ai](https://yila.ai/?utm_source=github&utm_medium=referral&utm_campaign=awesome-research-skills)**가 개발하고 유지 관리합니다. Yila.ai에서는 문헌, 근거, 데이터, 글쓰기, 발표를 연결하는 통합 연구 워크스페이스를 사용할 수 있습니다.
 
@@ -22,6 +22,7 @@ Codex, Claude Code 및 재사용 가능한 Skill 지시를 지원하는 다른 A
 |---|---|---|
 | 아이디어, 메모, 데이터, 문헌을 논문으로 발전시키기 | **Research Writer** · [`science-research-writing`](skills/science-research-writing/SKILL.md) | 근거에 기반한 계획, 섹션 초고, 개정 또는 원고 감사 |
 | 연구 내용을 바꾸지 않고 학술 영어 개선하기 | **Paper Polisher** · [`sci-ssci-polishing`](skills/sci-ssci-polishing/SKILL.md) | 투고용 학술 영어와 보존 감사 |
+| 과학적 내용을 바꾸지 않고 AI식 상투 표현 줄이기 | **Academic Humanizer** · [`academic-humanizer`](skills/academic-humanizer/SKILL.md) | 더 자연스럽고 구체적인 문장, 패턴 감사, 보존 감사 |
 | 논문이나 연구 결과를 발표로 변환하기 | **Paper to Slides** · [`research-presentation`](skills/research-presentation/SKILL.md) | 편집 가능하고 출처에 기반한 덱 계획, 발표자 노트, 출처 맵, 시각 QA |
 
 ## 30초 설치
@@ -41,6 +42,9 @@ npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill sc
 # 기존 원고 번역 또는 교정
 npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill sci-ssci-polishing --yes --copy
 
+# 학술 문장의 AI식 상투 표현 줄이기
+npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill academic-humanizer --yes --copy
+
 # 논문이나 연구 결과를 학술 발표로 변환
 npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill research-presentation --yes --copy
 ```
@@ -55,7 +59,7 @@ npx skills add Yila-AI/awesome-research-skills --global --agent codex --skill re
 
 | 개발 상태 | 연구 단계 |
 |---|---|
-| **현재 사용 가능** | 작성, 교정, 연구 발표 |
+| **현재 사용 가능** | 작성, 교정, 상투 표현 제거, 연구 발표 |
 | **다음 개발 단계** | 문헌 검색, 논문 읽기, 근거 종합, 연구 검토 |
 | **장기 범위** | 연구 설계, 데이터 분석, 출판, 더 넓은 연구 커뮤니케이션 |
 
@@ -80,6 +84,14 @@ terminology, limitations, or claim strength.
 Text:
 [paste paragraph]
 ```
+
+```text
+Use $academic-humanizer.
+Make this academic passage less templated and more natural without changing
+claims, numbers, citations, limitations, or uncertainty.
+```
+
+[입력·최적화·출력을 보여 주는 전체 영어 예시](examples/academic-humanizer-walkthrough.md) · [중국어판](examples/academic-humanizer-walkthrough_CN.md)
 
 ```text
 Use $research-presentation to turn this paper into a source-grounded,

@@ -68,6 +68,7 @@ class LeanReleaseTests(unittest.TestCase):
 
     def test_builds_every_installable_skill(self):
         expected_skills = {
+            "academic-humanizer",
             "research-presentation",
             "sci-ssci-polishing",
             "science-research-writing",
@@ -122,6 +123,7 @@ class LeanReleaseTests(unittest.TestCase):
             with self.subTest(readme=readme_name):
                 readme = (REPO_ROOT / readme_name).read_text(encoding="utf-8")
                 self.assertIn("--skill sci-ssci-polishing", readme)
+                self.assertIn("--skill academic-humanizer", readme)
                 self.assertIn("--skill research-presentation", readme)
                 self.assertIn("--skill science-research-writing", readme)
                 self.assertIn(
