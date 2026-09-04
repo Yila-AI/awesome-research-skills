@@ -91,6 +91,8 @@ Make this academic passage less templated and more natural without changing
 claims, numbers, citations, limitations, or uncertainty.
 ```
 
+[入力・最適化・出力を示す完全な英語例](examples/academic-humanizer-walkthrough.md) · [中国語版](examples/academic-humanizer-walkthrough_CN.md)
+
 ```text
 Use $research-presentation to turn this paper into a source-grounded,
 editable 10-minute research presentation with speaker notes.

@@ -167,6 +167,10 @@ Skill 会先读取你的材料，判断当前最有用的成果是计划、初�
 
 ### 去掉论文的 AI 模板腔
 
+| 你提供 | Skill 会优化 | 你会得到 |
+|---|---|---|
+| 学术文本；还可补充章节背景、保护术语和作者真实写作样本 | 空泛开头、先行强调、模糊主语、机械连接、重复句式和无依据的意义拔高 | 修改后文本、模式修改说明、保真审计，以及必须由作者回答的问题 |
+
 ```text
 请使用 $academic-humanizer。
 把下面的学术段落改得更自然、更具体，减少模板化的 AI 表达。
@@ -185,7 +189,9 @@ Skill 会先读取你的材料，判断当前最有用的成果是计划、初�
 
 > 本研究基于612例患者构建Model-A7。在外部测试集中，Model-A7的准确率为87.08%，高于Baseline-C的82.41% [12]。这一比较表明Model-A7在该外部测试集上的准确率更高。
 
-修改后保留了样本量、模型、测试集、准确率、比较对象和引用，同时删除空泛开头、无证据的意义拔高和普遍化结论。
+修改后保留了样本量、模型、测试集、准确率、比较对象和引用，同时删除空泛开头、无证据的意义拔高和普遍化结论。由于原文没有提供推断统计量，Skill 还会询问“显著优于”是统计结论还是修辞强调；作者补充证据后再决定是否保留。
+
+[查看三个完整的“输入 → 优化 → 输出”案例](examples/academic-humanizer-walkthrough_CN.md) · [Read the complete examples in English](examples/academic-humanizer-walkthrough.md)
 
 ## Paper to Slides 能力展示
 
@@ -337,7 +343,7 @@ including its Evidence-Preserving Draft Contract and Claim-Strength Contract.
 
 初始烟测覆盖中英文段落、数字引用、作者—年份引用、TeX cite key、图号和受保护专业术语。所有参考转换均通过确定性保真检查。这些案例只验证内容保护和目标模式减少，不测试“规避 AI 检测”，也不能证明普遍写作质量。
 
-[烟测说明](benchmarks/academic-humanizer/README.md) · [参考案例](benchmarks/academic-humanizer/reference-cases.json)
+[完整使用案例](examples/academic-humanizer-walkthrough_CN.md) · [烟测说明](benchmarks/academic-humanizer/README.md) · [参考案例](benchmarks/academic-humanizer/reference-cases.json)
 
 ### `sci-ssci-polishing`
 

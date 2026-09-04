@@ -167,6 +167,10 @@ Text:
 
 ### Remove the AI template voice
 
+| You provide | The Skill optimizes | You receive |
+|---|---|---|
+| Academic text, plus optional section context, protected terms, and genuine author samples | Empty framing, generic emphasis, vague actors, mechanical transitions, repetitive cadence, and unsupported overclaiming | Revised text, pattern changes, a fidelity audit, and any questions that require the author |
+
 ```text
 Use $academic-humanizer.
 Make this academic passage sound less templated and more natural.
@@ -186,6 +190,8 @@ Text:
 > Existing graph neural networks lose long-range dependencies. Model-X uses a multi-scale encoder to address this problem. Across three datasets, Model-X improves macro-F1 by 4.7% over Baseline-B (Smith et al., 2024). This result supports its advantage in the evaluated settings.
 
 The result keeps the method, metric, effect, comparator, dataset scope, and citation while removing the template opening and universal overclaim.
+
+[See three complete input → optimization → output examples](examples/academic-humanizer-walkthrough.md) · [查看中文完整案例](examples/academic-humanizer-walkthrough_CN.md)
 
 ## Paper to Slides showcase
 
@@ -337,7 +343,7 @@ Evaluation claims remain Skill-specific.
 
 The initial smoke benchmark covers English and Chinese passages, numeric and author-year citations, TeX cite keys, figure labels, and protected technical terms. All reference transformations pass the deterministic fidelity gate. These cases test preservation and targeted pattern reduction; they are not detector-evasion benchmarks or evidence of universal writing quality.
 
-[Smoke benchmark](benchmarks/academic-humanizer/README.md) · [Reference cases](benchmarks/academic-humanizer/reference-cases.json)
+[Complete usage examples](examples/academic-humanizer-walkthrough.md) · [Smoke benchmark](benchmarks/academic-humanizer/README.md) · [Reference cases](benchmarks/academic-humanizer/reference-cases.json)
 
 ### `sci-ssci-polishing`
 
